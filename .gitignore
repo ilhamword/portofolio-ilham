@@ -35,4 +35,8 @@ __pycache__/
 *.py
 gambar/
 test_download.pdf
+*.tmp
+~$*
+*.docx
+
 
