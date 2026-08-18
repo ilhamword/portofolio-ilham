@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhamad Ilham — Data Analyst & Data Engineering</title>
+  <meta name="description" content="Portfolio of Muhamad Ilham — Data Analyst and Data Engineering Enthusiast. Experienced in data processing, database management, dashboards, and machine learning." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhamad Ilham — Data Analyst & Data Engineering" />
+  <meta property="og:description" content="Portfolio of Muhamad Ilham — Experienced in data pipelines, SQL, Python, machine learning, and database systems." />
+  <meta property="og:site_name" content="Muhamad Ilham Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Muhamad Ilham — Data Analyst & Data Engineering" />
+  <meta name="twitter:description" content="Portfolio of Muhamad Ilham — Experienced in data pipelines, SQL, Python, machine learning, and database systems." />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/variables.css" />
+  <link rel="stylesheet" href="/style/base.css" />
+  <link rel="stylesheet" href="/style/layout.css" />
+  <link rel="stylesheet" href="/style/components.css" />
+  <link rel="stylesheet" href="/style/sections/hero.css" />
+  <link rel="stylesheet" href="/style/sections/projects.css" />
+  <link rel="stylesheet" href="/style/sections/experience.css" />
+  <link rel="stylesheet" href="/style/sections/certifications.css" />
+  <link rel="stylesheet" href="/style/sections/skills.css" />
+  <link rel="stylesheet" href="/style/sections/about.css" />
+  <link rel="stylesheet" href="/style/sections/contact.css" />
+
+  <!-- JS -->
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        ilham<span>.</span>
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#experience" class="navbar__link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li><a href="#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Actions: Language Switcher & Mobile Toggle -->
+      <div class="navbar__actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <span class="lang-switch__divider">|</span>
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__grid">
+        
+        <!-- Left: Hero Introduction & Core Metrics -->
+        <div class="hero__content">
+          <p class="hero__greeting" data-i18n="hero.greeting">Hi, I'm</p>
+          <h1 class="hero__name" data-i18n="hero.name">Muhamad Ilham</h1>
+          <p class="hero__headline" data-i18n-html="hero.headline">
+            <span>Data Analyst</span> & Data Engineering Enthusiast
+          </p>
+          <p class="hero__description" data-i18n="hero.description">
+            I work with data — from building data workflows and managing databases to creating dashboards and applying machine learning. Currently a final-year Informatics Engineering student with hands-on experience from internships and real-world projects.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">
+              <i data-lucide="folder-open" style="width:16px;height:16px;"></i>
+              <span data-i18n="hero.btn_projects">View Projects</span>
+            </a>
+            <a href="/CV_Muhamad_Ilham_Data.pdf" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="file-text" style="width:16px;height:16px;"></i>
+              <span data-i18n="hero.btn_cv">View CV</span>
+            </a>
+            <a href="#contact" class="btn btn--ghost">
+              <i data-lucide="mail" style="width:16px;height:16px;"></i>
+              <span data-i18n="hero.btn_contact">Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Metric Highlights Strip -->
+          <div class="hero__metrics-strip">
+            <div class="hero-metric-item">
+              <span class="hero-metric-item__num" data-i18n="hero.metric_rows_num">7 – 8 Juta+</span>
+              <span class="hero-metric-item__label" data-i18n="hero.metric_rows">Kapasitas Data Terpusat</span>
+            </div>
+            <div class="hero-metric-divider"></div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-item__num">2 BUMN</span>
+              <span class="hero-metric-item__label" data-i18n="hero.metric_experience">Enterprise Internships</span>
+            </div>
+            <div class="hero-metric-divider"></div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-item__num">3</span>
+              <span class="hero-metric-item__label" data-i18n="hero.metric_deploy">Production Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Live Analytics Console Showcase -->
+        <div class="hero__visual">
+          <div class="hero-console">
+            
+            <!-- Console Top Header -->
+            <div class="hero-console__header">
+              <div class="hero-console__dots">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+              </div>
+              <span class="hero-console__title">ilham-analytics-core :: live-showcase</span>
+              <div class="hero-console__badge">
+                <span class="pulse-dot"></span>
+                <span data-i18n="hero.console_status">Open to Opportunities</span>
+              </div>
+            </div>
+
+            <!-- Console Tab Switcher for 3 Projects -->
+            <div class="hero-console__tabs" id="heroConsoleTabs">
+              <button class="console-tab console-tab--active" data-project="pln">
+                <i data-lucide="zap" style="width:13px;height:13px;"></i>
+                <span>PLN Pusat</span>
+              </button>
+              <button class="console-tab" data-project="inti">
+                <i data-lucide="building-2" style="width:13px;height:13px;"></i>
+                <span>PT INTI</span>
+              </button>
+              <button class="console-tab" data-project="bbca">
+                <i data-lucide="trending-up" style="width:13px;height:13px;"></i>
+                <span>BBCA Forecast</span>
+              </button>
+            </div>
+
+            <!-- Console Project Content Panes -->
+            <div class="hero-console__body">
+              
+              <!-- PLN Pane -->
+              <div class="console-pane console-pane--active" id="pane-pln">
+                <div class="console-pane__header">
+                  <div>
+                    <span class="console-pane__tag" data-i18n="hero.pln_tag">Enterprise HR Analytics</span>
+                    <h3 class="console-pane__heading" data-i18n="hero.pln_heading">Competency Gap & Placement Matrix</h3>
+                  </div>
+                  <span class="console-pane__org-badge">PT PLN (Persero)</span>
+                </div>
+                <p class="console-pane__desc" data-i18n="hero.pln_desc">
+                  High-volume competency matching engine comparing employee skill matrices against job standards for unbiased mutation and promotion advisory.
+                </p>
+                <div class="console-pane__stats">
+                  <div class="console-stat">
+                    <span class="console-stat__value" data-i18n="hero.pln_stat1_num">7 – 8 Juta</span>
+                    <span class="console-stat__label" data-i18n="hero.pln_stat1">Data Points (All Levels)</span>
+                  </div>
+                  <div class="console-stat">
+                    <span class="console-stat__value">100%</span>
+                    <span class="console-stat__label" data-i18n="hero.pln_stat2">Automated Matrix</span>
+                  </div>
+                </div>
+                <div class="console-pane__footer">
+                  <div class="console-pane__skills">
+                    <span>Excel Advanced</span>
+                    <span>Relational Data</span>
+                    <span>Gap Modeling</span>
+                  </div>
+                  <a href="/projects/competency-pln.html" class="console-pane__link">
+                    <span data-i18n="hero.view_project">Explore Project</span>
+                    <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- PT INTI Pane -->
+              <div class="console-pane" id="pane-inti">
+                <div class="console-pane__header">
+                  <div>
+                    <span class="console-pane__tag" data-i18n="hero.inti_tag">Facility Operations Platform</span>
+                    <h3 class="console-pane__heading" data-i18n="hero.inti_heading">UMPROP QR Code Maintenance & Operations</h3>
+                  </div>
+                  <span class="console-pane__org-badge">PT INTI (Persero)</span>
+                </div>
+                <p class="console-pane__desc" data-i18n="hero.inti_desc">
+                  Digitalized facility maintenance platform using door QR scanning, dynamic task-to-room mapping, and multi-criteria Excel batch ingestion.
+                </p>
+                <div class="console-pane__stats">
+                  <div class="console-stat">
+                    <span class="console-stat__value">11 Modul</span>
+                    <span class="console-stat__label" data-i18n="hero.inti_stat1">System Modules</span>
+                  </div>
+                  <div class="console-stat">
+                    <span class="console-stat__value">100%</span>
+                    <span class="console-stat__label" data-i18n="hero.inti_stat2">Paperless Workflow</span>
+                  </div>
+                </div>
+                <div class="console-pane__footer">
+                  <div class="console-pane__skills">
+                    <span>MySQL Relational</span>
+                    <span>Batch Excel Parser</span>
+                    <span>QR Mobile Web</span>
+                  </div>
+                  <a href="/projects/umprop-inti.html" class="console-pane__link">
+                    <span data-i18n="hero.view_project">Explore Project</span>
+                    <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- BBCA Pane -->
+              <div class="console-pane" id="pane-bbca">
+                <div class="console-pane__header">
+                  <div>
+                    <span class="console-pane__tag" data-i18n="hero.bbca_tag">Machine Learning & NLP</span>
+                    <h3 class="console-pane__heading" data-i18n="hero.bbca_heading">BBCA Hybrid LSTM + News Sentiment</h3>
+                  </div>
+                  <span class="console-pane__org-badge">FinTech ML</span>
+                </div>
+                <p class="console-pane__desc" data-i18n="hero.bbca_desc">
+                  Multi-horizon stock forecasting engine combining historical price time-series with real-time financial news sentiment classification.
+                </p>
+                <div class="console-pane__stats">
+                  <div class="console-stat">
+                    <span class="console-stat__value">H+1 s/d H+7</span>
+                    <span class="console-stat__label" data-i18n="hero.bbca_stat1">Forecast Horizons</span>
+                  </div>
+                  <div class="console-stat">
+                    <span class="console-stat__value">1,475+</span>
+                    <span class="console-stat__label" data-i18n="hero.bbca_stat2">Processed News Headlines</span>
+                  </div>
+                </div>
+                <div class="console-pane__footer">
+                  <div class="console-pane__skills">
+                    <span>Python & LSTM</span>
+                    <span>TF-IDF NLP</span>
+                    <span>Flask Dashboard</span>
+                  </div>
+                  <a href="/projects/bbca-stock.html" class="console-pane__link">
+                    <span data-i18n="hero.view_project">Explore Project</span>
+                    <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Console Floating Tech Mesh Footer -->
+            <div class="hero-console__tech-bar">
+              <span class="tech-bar__label" data-i18n="hero.tech_core">Core Stack:</span>
+              <div class="tech-bar__tags">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">Machine Learning</span>
+                <span class="tech-badge">Advanced Excel</span>
+                <span class="tech-badge">Data Transformation</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="hero__bg-accent" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== Selected Projects ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="projects.section_label">Projects</span>
+        <h2 class="section__title" data-i18n="projects.section_title">Selected Projects</h2>
+        <p class="section__subtitle" data-i18n="projects.section_subtitle">Real-world data projects from internships and academic work.</p>
+      </div>
+
+      <div class="projects__grid">
+
+        <!-- Featured: BBCA Stock Forecasting -->
+        <article class="project-card project-card--featured reveal">
+          <div class="project-card__content">
+            <span class="project-card__label">
+              <i data-lucide="star" style="width:12px;height:12px;"></i>
+              <span data-i18n="projects.featured_badge">Featured Project</span>
+            </span>
+            <h3 class="project-card__title" data-i18n="projects.bbca.title">BBCA Stock Forecasting & News Sentiment Analysis</h3>
+            <p class="project-card__description" data-i18n="projects.bbca.desc">
+              A multi-horizon stock price forecasting system for BBCA (Bank Central Asia) that combines historical price data with news sentiment analysis. The system fetches real-time stock data and news articles, performs sentiment classification, stores everything in a database, and generates price forecasts.
+            </p>
+            <div class="project-card__highlights">
+              <div class="project-card__highlight">
+                <i data-lucide="database" style="width:14px;height:14px;"></i>
+                <span data-i18n="projects.bbca.h1">Automated data pipeline from Yahoo Finance & Google News RSS</span>
+              </div>
+              <div class="project-card__highlight">
+                <i data-lucide="brain" style="width:14px;height:14px;"></i>
+                <span data-i18n="projects.bbca.h2">LSTM model for multi-horizon price forecasting</span>
+              </div>
+              <div class="project-card__highlight">
+                <i data-lucide="message-square-text" style="width:14px;height:14px;"></i>
+                <span data-i18n="projects.bbca.h3">TF-IDF + Logistic Regression for news sentiment</span>
+              </div>
+              <div class="project-card__highlight">
+                <i data-lucide="layout-dashboard" style="width:14px;height:14px;"></i>
+                <span data-i18n="projects.bbca.h4">Flask web dashboard with forecast visualization</span>
+              </div>
+            </div>
+            <div class="project-card__tags">
+              <span class="tag tag--accent">Python</span>
+              <span class="tag">LSTM</span>
+              <span class="tag">TF-IDF</span>
+              <span class="tag">Logistic Regression</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Yahoo Finance</span>
+              <span class="tag">Google News RSS</span>
+            </div>
+            <div class="project-card__footer">
+              <a href="/projects/bbca-stock.html" class="project-card__link">
+                <span data-i18n="projects.view_detail">View Detail</span>
+                <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Featured Visual Window Mockup -->
+          <div class="project-card__visual">
+            <div class="card-mini-window">
+              <div class="card-mini-window__bar">
+                <div class="card-mini-window__dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="card-mini-window__title">bbca-forecast-studio.local</span>
+                <span class="card-mini-window__badge">Flask Web App</span>
+              </div>
+              <div class="card-mini-window__body" style="padding: 0; background: #000000; overflow: hidden;">
+                <img src="/projects/bbca/bbca-dashboard-main.png" alt="BBCA Forecast Studio Dashboard" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Secondary Projects (2-col grid) -->
+        <div class="projects__secondary">
+
+          <!-- Competency Match – PLN -->
+          <article class="project-card reveal">
+            <div class="project-card__preview-frame">
+              <div class="card-mini-window" style="border: none; box-shadow: none; border-radius: 0;">
+                <div class="card-mini-window__bar">
+                  <div class="card-mini-window__dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="card-mini-window__title">pln-competencymatch.internal</span>
+                  <span class="card-mini-window__badge">100K+ Relational</span>
+                </div>
+                <div class="card-mini-window__body" style="padding: 0; background: #0F172A; max-height: 140px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                  <img
+                    src="/projects/pln/pln-web-dashboard-after.png"
+                    alt="PLN Competency Match Dashboard"
+                    style="width: 100%; height: 140px; object-fit: cover; opacity: 0.95; transition: transform 0.3s ease;"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <span class="project-card__label">
+              <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+              <span data-i18n="projects.internship_badge">Internship Project</span>
+            </span>
+            <h3 class="project-card__title" data-i18n="projects.pln.title">Competency Match System</h3>
+            <p class="project-card__description" data-i18n="projects.pln.desc">
+              A data processing system for matching and analyzing employee competency data at PT PLN (Persero). Handles large datasets (100K+ rows) with comparison processes generating millions of data points for gap analysis and career path recommendations.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--accent">Python</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Data Cleaning</span>
+              <span class="tag">Data Transformation</span>
+              <span class="tag">Large Data Processing</span>
+            </div>
+            <div class="project-card__footer">
+              <a href="/projects/competency-pln.html" class="project-card__link">
+                <span data-i18n="projects.view_detail">View Detail</span>
+                <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- UMPROP – PT INTI -->
+          <article class="project-card reveal">
+            <div class="project-card__preview-frame">
+              <div class="card-mini-window" style="border: none; box-shadow: none; border-radius: 0;">
+                <div class="card-mini-window__bar">
+                  <div class="card-mini-window__dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="card-mini-window__title">umprop.inti.co.id :: operations-portal</span>
+                  <span class="card-mini-window__badge">11 Modul QR</span>
+                </div>
+                <div class="card-mini-window__body" style="padding: 0; background: #0F172A; max-height: 140px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                  <img
+                    src="/projects/inti/inti-laporan-aktivitas.png"
+                    alt="UMPROP PT INTI Operations & Reporting Dashboard"
+                    style="width: 100%; height: 140px; object-fit: cover; opacity: 0.95; transition: transform 0.3s ease;"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <span class="project-card__label">
+              <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+              <span data-i18n="projects.internship_badge">Internship Project</span>
+            </span>
+            <h3 class="project-card__title" data-i18n="projects.inti.title">UMPROP Internal System</h3>
+            <p class="project-card__description" data-i18n="projects.inti.desc">
+              Contributed to the redevelopment of an internal system at PT INTI (Persero), focusing on data workflows, database design, Excel data import, automated data mapping, and backend processing logic.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--accent">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Excel Import</span>
+              <span class="tag">Data Processing</span>
+              <span class="tag">Backend</span>
+            </div>
+            <div class="project-card__footer">
+              <a href="/projects/umprop-inti.html" class="project-card__link">
+                <span data-i18n="projects.view_detail">View Detail</span>
+                <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="experience.section_label">Experience</span>
+        <h2 class="section__title" data-i18n="experience.section_title">Work Experience</h2>
+      </div>
+
+      <div class="experience__timeline">
+
+        <!-- 1. PT INTI (Persero) -->
+        <div class="experience__item reveal">
+          <div class="experience__header">
+            <h3 class="experience__role" data-i18n="experience.inti.role">Software Developer Intern</h3>
+            <span class="experience__period" data-i18n="experience.inti.period">Oct 2025 – Jan 2026</span>
+          </div>
+          <div class="experience__company">
+            <i data-lucide="building-2"></i>
+            <span data-i18n="experience.inti.company">PT Industri Telekomunikasi Indonesia (Persero) – PT INTI</span>
+          </div>
+          <p class="experience__description" data-i18n="experience.inti.desc">
+            Led rework and finalization of UMPROP (internal facility management system), optimizing MySQL database schemas, Excel ingestion workflows, and reporting.
+          </p>
+          <div class="experience__highlights">
+            <div class="experience__highlight">
+              <span data-i18n="experience.inti.h1">Reworked and finalized UMPROP internal system, improving MySQL database, data retrieval, UI, monitoring, and reporting</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.inti.h2">Structured automated Excel upload workflows to map spreadsheet data directly to designated room/facility entities, eliminating manual input errors</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.inti.h3">Managed relational database end-to-end, perfecting import/export, filtering, QR Code generation, and role/permission modules for production use</span>
+            </div>
+          </div>
+          <div class="experience__tags">
+            <span class="tag tag--accent">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Excel Ingestion</span>
+            <span class="tag">Data Mapping</span>
+            <span class="tag">Backend</span>
+          </div>
+        </div>
+
+        <!-- 2. PT PLN (Persero) -->
+        <div class="experience__item reveal">
+          <div class="experience__header">
+            <h3 class="experience__role" data-i18n="experience.pln.role">Data Analyst Intern</h3>
+            <span class="experience__period" data-i18n="experience.pln.period">Jul 2025 – Oct 2025</span>
+          </div>
+          <div class="experience__company">
+            <i data-lucide="building-2"></i>
+            <span data-i18n="experience.pln.company">PT PLN (Persero) – Head Office</span>
+          </div>
+          <p class="experience__description" data-i18n="experience.pln.desc">
+            Independently built Competency Match & Career Path Recommendation System, processing 100K+ relational rows and multi-million matching combinations.
+          </p>
+          <div class="experience__highlights">
+            <div class="experience__highlight">
+              <span data-i18n="experience.pln.h1">Independently developed Competency Match & Career Path Recommendation System to calculate cross-job compatibility percentages</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.pln.h2">Processed 100K+ job-competency relational records expanding into millions of candidate matching combinations with filtering, DB storage, and XLSX export</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.pln.h3">Executed data cleaning, transformation, RACI matrix restructuring, and Excel automation using Python and advanced XLOOKUP/VLOOKUP functions</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.pln.h4">Prepped and cleansed job description data from Word to Excel, handling inconsistent text, corrupt characters, and missing fields into structured assessment recaps</span>
+            </div>
+          </div>
+          <div class="experience__tags">
+            <span class="tag tag--accent">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Excel (XLOOKUP)</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Data Transformation</span>
+            <span class="tag">Career Path Match</span>
+          </div>
+        </div>
+
+        <!-- 3. Rakamin Academy x Bank Mandiri -->
+        <div class="experience__item reveal">
+          <div class="experience__header">
+            <h3 class="experience__role" data-i18n="experience.mandiri.role">Mobile Apps Developer (Project-Based Virtual Intern)</h3>
+            <span class="experience__period" data-i18n="experience.mandiri.period">Mar 2025 – Apr 2025</span>
+          </div>
+          <div class="experience__company">
+            <i data-lucide="building-2"></i>
+            <span data-i18n="experience.mandiri.company">Rakamin Academy x Bank Mandiri</span>
+          </div>
+          <p class="experience__description" data-i18n="experience.mandiri.desc">
+            Developed REST API-integrated Android application for financial news feeds with dynamic infinite scrolling, achieving final grade of 91.74/100 (Excellent).
+          </p>
+          <div class="experience__highlights">
+            <div class="experience__highlight">
+              <span data-i18n="experience.mandiri.h1">Engineered REST API integration and async network request pipelines to display live financial headlines and news feeds</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.mandiri.h2">Implemented seamless endless / infinite scrolling list architecture with dynamic pagination</span>
+            </div>
+            <div class="experience__highlight">
+              <span data-i18n="experience.mandiri.h3">Achieved final grade of 91.74 / 100 (Excellent) upon comprehensive project evaluation</span>
+            </div>
+          </div>
+          <div class="experience__tags">
+            <span class="tag tag--accent">REST API</span>
+            <span class="tag">Android Dev</span>
+            <span class="tag">Pagination</span>
+            <span class="tag">Infinite Scrolling</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Certifications & Achievements ===== -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="certifications.section_label">Credentials</span>
+        <h2 class="section__title" data-i18n="certifications.section_title">Certifications & Licenses</h2>
+        <p class="section__subtitle" data-i18n="certifications.section_subtitle">Professional certifications and validated credentials demonstrating technical competencies.</p>
+      </div>
+
+      <div class="certifications__grid">
+
+        <!-- 1. Microsoft Office Specialist (MOS) Excel - FEATURED -->
+        <div class="cert-card cert-card--featured reveal">
+          <div class="cert-card__header">
+            <div class="cert-card__icon-wrapper">
+              <i data-lucide="award"></i>
+            </div>
+            <span class="cert-card__badge cert-card__badge--verified">
+              <i data-lucide="check-circle-2" style="width:12px;height:12px;"></i>
+              <span data-i18n="certifications.mos.badge">Official Certification</span>
+            </span>
+          </div>
+
+          <h3 class="cert-card__title" data-i18n="certifications.mos.title">Microsoft Office Specialist (MOS) — Excel</h3>
+          <div class="cert-card__issuer">
+            <i data-lucide="shield-check" style="width:14px;height:14px;"></i>
+            <span data-i18n="certifications.mos.issuer">Microsoft / Certiport</span>
+          </div>
+
+          <!-- Score Box -->
+          <div class="cert-score-box">
+            <span class="cert-score-box__label" data-i18n="certifications.mos.score_label">Exam Score:</span>
+            <span class="cert-score-box__val" data-i18n="certifications.mos.score">Score: 960 / 1000</span>
+          </div>
+
+          <!-- Section Score Breakdown -->
+          <div class="cert-score-breakdown">
+            <div class="cert-score-breakdown__header">
+              <span data-i18n="certifications.mos.breakdown_title">Exam Section Breakdown:</span>
+              <span style="color: #2D6A4F; font-size: 0.68rem; font-weight: 700;">Pass (≥700)</span>
+            </div>
+            <div class="cert-score-breakdown__grid">
+              <div class="cert-score-breakdown__item">
+                <span data-i18n="certifications.mos.w_worksheets">Worksheets & Workbooks</span>
+                <strong>100%</strong>
+              </div>
+              <div class="cert-score-breakdown__item">
+                <span data-i18n="certifications.mos.w_tables">Tables & Table Data</span>
+                <strong>100%</strong>
+              </div>
+              <div class="cert-score-breakdown__item">
+                <span data-i18n="certifications.mos.w_formulas">Formulas & Functions</span>
+                <strong>100%</strong>
+              </div>
+              <div class="cert-score-breakdown__item">
+                <span data-i18n="certifications.mos.w_charts">Charts & Visuals</span>
+                <strong>100%</strong>
+              </div>
+            </div>
+          </div>
+
+          <p class="cert-card__desc" data-i18n="certifications.mos.desc">
+            Official global certification validating advanced proficiency in Microsoft Excel, including complex formulas, data analysis, lookup functions, and tabular modeling.
+          </p>
+
+          <div class="cert-card__skills">
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.mos.s1">Advanced Formulas & Lookup (XLOOKUP, VLOOKUP, INDEX/MATCH)</span>
+            </div>
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.mos.s2">Data Cleaning, Transformation & Tabular Modeling</span>
+            </div>
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.mos.s3">Pivot Tables, Slicers & Summary Reporting</span>
+            </div>
+          </div>
+
+          <div class="cert-card__actions">
+            <button type="button" class="btn btn--secondary cert-card__btn cert-card__view-btn" data-cert-src="/certificates/MOS_Muhamad_Ilham.png" data-cert-pdf="/certificates/MOS_Muhamad_Ilham.pdf" data-cert-title="Microsoft Office Specialist: Excel Associate" data-cert-issuer="Microsoft / Certiport (Credential ID: CcHy-DkNY)">
+              <i data-lucide="award" style="width:16px;height:16px;"></i>
+              <span data-i18n="certifications.btn_view">View Certificate</span>
+            </button>
+            <button type="button" class="btn cert-card__btn cert-card__btn--score cert-card__view-btn" data-cert-src="/certificates/SCORE_MOS.png" data-cert-pdf="/certificates/SCORE_MOS.pdf" data-cert-title="MOS Excel — Official Exam Score Report" data-cert-issuer="Certiport / Microsoft (Exam Reference #: 50657176 | Score: 960/1000)">
+              <i data-lucide="file-check-2" style="width:16px;height:16px;"></i>
+              <span data-i18n="certifications.mos.btn_score">View Score Report (960/1000)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. PT PLN (Persero) Internship Certificate -->
+        <div class="cert-card reveal">
+          <div class="cert-card__header">
+            <div class="cert-card__icon-wrapper">
+              <i data-lucide="building-2"></i>
+            </div>
+            <span class="cert-card__badge">
+              <i data-lucide="briefcase" style="width:12px;height:12px;"></i>
+              <span data-i18n="certifications.pln.badge">Corporate Internship</span>
+            </span>
+          </div>
+
+          <h3 class="cert-card__title" data-i18n="certifications.pln.title">Data Analyst Internship Certification</h3>
+          <div class="cert-card__issuer">
+            <i data-lucide="check-circle" style="width:14px;height:14px;"></i>
+            <span data-i18n="certifications.pln.issuer">PT PLN (Persero) Kantor Pusat (2025)</span>
+          </div>
+
+          <p class="cert-card__desc" data-i18n="certifications.pln.desc">
+            Awarded upon successful completion of the internship at Human Capital Strategy Division, processing 100K+ competency records and building matching algorithms.
+          </p>
+
+          <div class="cert-card__skills">
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.pln.s1">Large-Scale Data Processing (100K+ rows)</span>
+            </div>
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.pln.s2">Competency Gap Analytics & Mapping</span>
+            </div>
+          </div>
+
+          <div class="cert-card__actions">
+            <button type="button" class="btn btn--secondary cert-card__btn cert-card__view-btn" data-cert-src="/certificates/Muhammad_Ilham_Sertifikat_Magang_PLN_PUSAT.png" data-cert-pdf="/certificates/Muhammad_Ilham_Sertifikat_Magang_PLN_PUSAT.pdf" data-cert-title="Sertifikat Magang PT PLN (Persero)" data-cert-issuer="PT PLN (Persero) Kantor Pusat (No. 1411/HR/HST/2025)">
+              <i data-lucide="eye" style="width:16px;height:16px;"></i>
+              <span data-i18n="certifications.btn_view">View Certificate</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Rakamin Academy x Bank Mandiri -->
+        <div class="cert-card reveal">
+          <div class="cert-card__header">
+            <div class="cert-card__icon-wrapper">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <span class="cert-card__badge cert-card__badge--highlight">
+              <i data-lucide="star" style="width:12px;height:12px;"></i>
+              <span data-i18n="certifications.mandiri.badge">Virtual Internship</span>
+            </span>
+          </div>
+
+          <h3 class="cert-card__title" data-i18n="certifications.mandiri.title">Mobile Apps Developer Certification</h3>
+          <div class="cert-card__issuer">
+            <i data-lucide="check-circle" style="width:14px;height:14px;"></i>
+            <span data-i18n="certifications.mandiri.issuer">Rakamin Academy x Bank Mandiri (2025)</span>
+          </div>
+
+          <!-- Score Box -->
+          <div class="cert-score-box">
+            <span class="cert-score-box__label" data-i18n="certifications.mandiri.score_label">Final Grade:</span>
+            <span class="cert-score-box__val" data-i18n="certifications.mandiri.score">91.74 / 100 (Excellent)</span>
+          </div>
+
+          <p class="cert-card__desc" data-i18n="certifications.mandiri.desc">
+            Completed the project-based virtual internship program with an Excellent grade (91.74), developing REST API connected Android applications.
+          </p>
+
+          <div class="cert-card__skills">
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.mandiri.s1">REST API Integration & Data Fetching</span>
+            </div>
+            <div class="cert-card__skill-item">
+              <i data-lucide="check"></i>
+              <span data-i18n="certifications.mandiri.s2">Endless / Infinite Scrolling Architecture</span>
+            </div>
+          </div>
+
+          <div class="cert-card__actions">
+            <button type="button" class="btn btn--secondary cert-card__btn cert-card__view-btn" data-cert-src="/certificates/MANDIRI.png" data-cert-pdf="/certificates/MANDIRI.pdf" data-cert-title="Project-Based Internship Certificate of Achievement" data-cert-issuer="Rakamin Academy x Bank Mandiri (Credential: 340137IAPMGIM3132025 | Score: 91.74)">
+              <i data-lucide="eye" style="width:16px;height:16px;"></i>
+              <span data-i18n="certifications.btn_view">View Certificate</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="skills.section_label">Skills</span>
+        <h2 class="section__title" data-i18n="skills.section_title">Technical Skills</h2>
+      </div>
+
+      <div class="skills__grid">
+
+        <!-- Spreadsheet & Advanced Excel -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="file-spreadsheet"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.excel">Spreadsheet & Advanced Excel</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent" style="font-weight: 600;"><i data-lucide="award" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:3px;"></i>MOS Certified (960/1000)</span>
+            <span class="tag">XLOOKUP / VLOOKUP</span>
+            <span class="tag">INDEX / MATCH</span>
+            <span class="tag">Pivot Tables & Slicers</span>
+            <span class="tag">Advanced Formulas</span>
+            <span class="tag">Data Cleaning & Formatting</span>
+            <span class="tag">Spreadsheet Modeling</span>
+            <span class="tag">Data Validation & Audit</span>
+            <span class="tag">Multi-Sheet Consolidation</span>
+          </div>
+        </div>
+
+        <!-- Data Analytics & Processing -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="database"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.data">Data Analytics & Processing</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent">Data Transformation</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Data Wrangling</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Large Data Processing (100K+ / 7–8M)</span>
+            <span class="tag">Exploratory Data Analysis (EDA)</span>
+            <span class="tag">Data Quality & Integrity Audit</span>
+          </div>
+        </div>
+
+        <!-- Programming & Backend -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="code"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.programming">Programming & Backend</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent">Python</span>
+            <span class="tag tag--accent">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Flask</span>
+            <span class="tag">REST API</span>
+            <span class="tag">HTML5 & CSS3</span>
+            <span class="tag">DOM Manipulation</span>
+            <span class="tag">Background Task Engine</span>
+            <span class="tag">JSON & Web APIs</span>
+          </div>
+        </div>
+
+        <!-- Database & Storage -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="hard-drive"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.database">Database & Storage</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent">MySQL</span>
+            <span class="tag">Relational Database Design</span>
+            <span class="tag">Query Optimization</span>
+            <span class="tag">Database Normalization (3NF)</span>
+            <span class="tag">Batch Data Ingestion</span>
+            <span class="tag">Indexing & Performance</span>
+            <span class="tag">Foreign Key Integrity</span>
+          </div>
+        </div>
+
+        <!-- Machine Learning & NLP -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="brain"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.ml">Machine Learning & NLP</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent">LSTM (Time-Series)</span>
+            <span class="tag">Logistic Regression</span>
+            <span class="tag">TF-IDF Vectorizer</span>
+            <span class="tag">Sentiment Analysis</span>
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">NLP Text Preprocessing (Regex, NLTK)</span>
+            <span class="tag">Multi-Horizon Forecasting (H+1 s/d H+7)</span>
+            <span class="tag">Model Evaluation (MAPE, Confusion Matrix)</span>
+          </div>
+        </div>
+
+        <!-- Tools & Ecosystem -->
+        <div class="skill-category reveal">
+          <div class="skill-category__icon">
+            <i data-lucide="wrench"></i>
+          </div>
+          <h3 class="skill-category__title" data-i18n="skills.cat.tools">Tools & Ecosystem</h3>
+          <div class="skill-category__items">
+            <span class="tag tag--accent">Microsoft Excel</span>
+            <span class="tag">Jupyter Notebook</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Yahoo Finance API</span>
+            <span class="tag">Google News RSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="about.section_label">About</span>
+        <h2 class="section__title" data-i18n="about.section_title">About Me</h2>
+      </div>
+
+      <div class="about__content reveal">
+        <div class="about__text">
+          <p class="about__paragraph" data-i18n-html="about.p1">
+            I'm a final-year <strong>Informatics Engineering</strong> student with a strong interest in data — specifically in how data is collected, processed, stored, and turned into something useful.
+          </p>
+          <p class="about__paragraph" data-i18n-html="about.p2">
+            Through internships at <strong>PT PLN (Persero)</strong> and <strong>PT INTI (Persero)</strong>, I've had the opportunity to work on real data problems: cleaning and transforming large datasets, designing database schemas, building data import pipelines, and developing backend systems that automate data workflows.
+          </p>
+          <p class="about__paragraph" data-i18n="about.p3">
+            I'm most comfortable working with Python, SQL, and Excel for data processing. I've also explored machine learning — building forecasting models with LSTM and text classification with TF-IDF and Logistic Regression.
+          </p>
+          <p class="about__paragraph" data-i18n-html="about.p4">
+            I'm looking for opportunities as a <strong>Data Analyst</strong> or <strong>Data Engineer</strong> where I can contribute to solving data problems and keep growing in the field.
+          </p>
+        </div>
+
+        <div class="about__facts">
+          <span class="about__facts-title" data-i18n="about.facts_title">Quick Facts</span>
+          <div class="about__fact">
+            <span class="about__fact-label" data-i18n="about.fact.edu_label">Education</span>
+            <span class="about__fact-value" data-i18n="about.fact.edu_val">S1 Teknik Informatika</span>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-label" data-i18n="about.fact.focus_label">Focus</span>
+            <span class="about__fact-value" data-i18n="about.fact.focus_val">Data Analytics & Engineering</span>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-label" data-i18n="about.fact.exp_label">Experience</span>
+            <span class="about__fact-value" data-i18n="about.fact.exp_val">3 Internships (PLN, INTI, Mandiri)</span>
+          </div>
+          <div class="about__fact">
+            <span class="about__fact-label" data-i18n="about.fact.cert_label">Certification</span>
+            <span class="about__fact-value" data-i18n="about.fact.cert_val">MOS Excel (Score 960/1000)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label" data-i18n="contact.section_label">Contact</span>
+        <h2 class="section__title" data-i18n="contact.section_title">Get In Touch</h2>
+      </div>
+
+      <div class="contact__content reveal">
+        <p class="contact__description" data-i18n="contact.desc">
+          I'm open to data analyst and data engineering opportunities. Feel free to reach out.
+        </p>
+
+        <div class="contact__links">
+          <!-- Email -->
+          <a href="mailto:Ilhamx404@gmail.com" class="contact__link">
+            <div class="contact__link-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <div class="contact__link-info">
+              <span class="contact__link-label">Email</span>
+              <span class="contact__link-value">Ilhamx404@gmail.com</span>
+            </div>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/6285156390983?text=Halo%20Ilham,%20saya%20tertarik%20dengan%20portofolio%20Anda." target="_blank" rel="noopener noreferrer" class="contact__link">
+            <div class="contact__link-icon" style="background-color: #E8F5E9; color: #2E7D32;">
+              <i data-lucide="phone"></i>
+            </div>
+            <div class="contact__link-info">
+              <span class="contact__link-label">WhatsApp</span>
+              <span class="contact__link-value">+62 851-5639-0983</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Muhamad Ilham</p>
+  </footer>
+
+  <!-- ===== Certificate Lightbox Modal ===== -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" tabindex="-1">
+    <div class="cert-modal__dialog">
+      <div class="cert-modal__header">
+        <div class="cert-modal__title-box">
+          <h3 class="cert-modal__title" id="certModalTitle">Certificate Preview</h3>
+          <span class="cert-modal__subtitle" id="certModalSubtitle">Verified Credential</span>
+        </div>
+        <button class="cert-modal__close" id="certModalClose" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="cert-modal__body">
+        <img src="" alt="Certificate Document" class="cert-modal__img" id="certModalImg" />
+      </div>
+      <div class="cert-modal__footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm" id="certModalOpenBtn">
+          <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+          <span data-i18n="certifications.modal.open_tab">Open Original File</span>
+        </a>
+        <button type="button" class="btn btn--ghost btn--sm" id="certModalCloseBtn">
+          <span data-i18n="certifications.modal.close">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

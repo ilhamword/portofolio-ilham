@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BBCA Stock Forecasting & Sentiment — Muhamad Ilham</title>
+  <meta name="description" content="Multi-horizon stock price forecasting system for BBCA combining historical price data with news sentiment analysis using LSTM, TF-IDF, and Logistic Regression." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="BBCA Stock Forecasting & News Sentiment Analysis — Muhamad Ilham" />
+  <meta property="og:description" content="Multi-horizon stock price forecasting system for BBCA combining historical price data with news sentiment analysis." />
+  <meta property="og:site_name" content="Muhamad Ilham Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BBCA Stock Forecasting & News Sentiment Analysis" />
+  <meta name="twitter:description" content="Multi-horizon stock price forecasting system for BBCA combining historical price data with news sentiment analysis." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/variables.css" />
+  <link rel="stylesheet" href="/style/base.css" />
+  <link rel="stylesheet" href="/style/layout.css" />
+  <link rel="stylesheet" href="/style/components.css" />
+  <link rel="stylesheet" href="/style/sections/project-detail.css" />
+
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">ilham<span>.</span></a>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#experience" class="navbar__link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="/#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="/#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="/#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Actions: Language Switcher & Mobile Toggle -->
+      <div class="navbar__actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <span class="lang-switch__divider">|</span>
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-detail">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="/#projects" class="project-detail__back">
+        <i data-lucide="arrow-left"></i>
+        <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+      </a>
+
+      <!-- 1. PROJECT HEADER / OVERVIEW (2-COLUMN LAYOUT) -->
+      <header class="project-hero-grid">
+        <div class="project-hero-info">
+          <span class="project-detail__label">
+            <i data-lucide="star" style="width:12px;height:12px;"></i>
+            <span data-i18n="bbca.label">Featured / Hero Project</span>
+          </span>
+          <h1 class="project-detail__title" data-i18n="bbca.title">BBCA Stock Forecasting & News Sentiment Analysis</h1>
+          <p class="project-detail__summary" data-i18n="bbca.summary">
+            An end-to-end data pipeline and machine learning system that forecasts BBCA stock prices across multiple time horizons by integrating quantitative historical market data with qualitative Indonesian news sentiment analysis.
+          </p>
+          <div class="project-detail__meta">
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.type">Project Type</span>
+              <span class="project-detail__meta-value" data-i18n="bbca.meta.type_val">Academic Capstone</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.role">My Role</span>
+              <span class="project-detail__meta-value" data-i18n="bbca.meta.role_val">Data & ML Engineer</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.target">Ticker Target</span>
+              <span class="project-detail__meta-value">BBCA.JK (Bank BCA)</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.horizons">Forecasting Horizons</span>
+              <span class="project-detail__meta-value">H+1, H+3, H+5, H+7</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Project Preview Window -->
+        <div class="project-hero-visual">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title">bbca-analytics-dashboard.local</span>
+              <span class="preview-window__badge">Multi-Horizon LSTM</span>
+            </div>
+            <div class="preview-window__body">
+              
+              <!-- Interactive Real Research Plot Viewer -->
+              <div class="stock-chart-interactive">
+                <div class="stock-chart-interactive__screen">
+                  <img id="bbcaHeroChartImg" src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png" alt="Actual vs Predicted BBCA Stock Price H+1" class="stock-chart-interactive__img" />
+                </div>
+                <div class="stock-chart-interactive__footer">
+                  <div class="stock-chart-interactive__tabs" id="bbcaHeroTabs">
+                    <button type="button" class="horizon-tab horizon-tab--active" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png" data-hybrid="1.53%" data-baseline="2.10%">H+1</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H3_Paper.png" data-hybrid="2.43%" data-baseline="2.94%">H+3</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H5_Paper.png" data-hybrid="3.03%" data-baseline="3.42%">H+5</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H7_Paper.png" data-hybrid="3.64%" data-baseline="4.74%">H+7</button>
+                  </div>
+                  <div class="stock-chart-interactive__metric" id="bbcaHeroMetric">
+                    <span style="color: #2D6A4F;">Hybrid MAPE: <strong>1.53%</strong></span>
+                    <span style="color: #64748B;">Baseline: <strong>2.10%</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Sentiment Feed Widget -->
+              <div class="sentiment-feed-mockup" style="margin-top: 0.75rem;">
+                <div class="sentiment-feed-item">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <i data-lucide="newspaper" style="width: 12px; height: 12px; color: var(--color-text-secondary);"></i>
+                    <span class="sentiment-feed-item__title">BCA Catat Pertumbuhan Laba Bersih Q3...</span>
+                  </div>
+                  <span class="sentiment-feed-item__tag sentiment-feed-item__tag--pos">Positive</span>
+                </div>
+                <div class="sentiment-feed-item">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <i data-lucide="newspaper" style="width: 12px; height: 12px; color: var(--color-text-secondary);"></i>
+                    <span class="sentiment-feed-item__title">Pergerakan IHSG Terbantu Sektor Perbankan...</span>
+                  </div>
+                  <span class="sentiment-feed-item__tag sentiment-feed-item__tag--pos">Positive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. PROBLEM STATEMENT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.challenge">Challenge & Context</span>
+          <h2 class="project-section__title">
+            <i data-lucide="help-circle"></i>
+            <span data-i18n="detail.title.problem">The Problem</span>
+          </h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-narrative">
+            <p data-i18n="bbca.prob.p1">
+              Stock price prediction in the banking sector is inherently challenging because price movements are influenced not only by past technical indicators and trading volume, but also heavily impacted by public market sentiment and financial news releases.
+            </p>
+            <p data-i18n="bbca.prob.p2">
+              Conventional forecasting models often rely exclusively on historical numerical sequences (OHLCV). When significant macro-economic announcements or quarterly earnings reports surface, purely numerical models fail to react in time because they lack context from unstructured text data.
+            </p>
+          </div>
+          <div class="problem-callout">
+            <span class="problem-callout__title">
+              <i data-lucide="alert-circle" style="width:16px;height:16px;color:#DC2626;"></i>
+              <span data-i18n="bbca.prob.callout_title">Core Limitations Addressed</span>
+            </span>
+            <div class="problem-callout__list">
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="bbca.prob.c1">Pure historical price models ignore market sentiment dynamics</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="bbca.prob.c2">Unstructured news text is difficult to feed directly into numerical predictors</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="bbca.prob.c3">Single-day forecasts provide limited strategic foresight for decision-making</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MY CONTRIBUTION (HIGH VISIBILITY) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.roles">Role & Responsibilities</span>
+          <h2 class="project-section__title">
+            <i data-lucide="user-check"></i>
+            <span data-i18n="detail.title.contribution">My Contribution</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="bbca.contrib.lead">
+            I designed, developed, and evaluated the end-to-end data pipeline, NLP sentiment engine, deep learning forecasting model, and interactive dashboard interface.
+          </p>
+        </div>
+
+        <div class="contribution-grid">
+          <!-- Ingestion -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="cloud-download"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="bbca.contrib.t1_title">Data Ingestion Pipeline</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t1_d1">Built automated fetchers for Yahoo Finance API to collect daily historical OHLCV data</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t1_d2">Implemented Google News RSS ingestion targeting BBCA financial news headlines</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NLP -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="message-square-text"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="bbca.contrib.t2_title">NLP Sentiment Engine</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t2_d1">Preprocessed Indonesian financial news (tokenization, stopword removal, TF-IDF vectorization)</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t2_d2">Trained a Logistic Regression classifier to label headlines as Positive, Negative, or Neutral</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ML Modeling -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="brain"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="bbca.contrib.t3_title">Multi-Horizon LSTM</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t3_d1">Engineered combined feature vectors merging price indicators with daily sentiment scores</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t3_d2">Configured and trained an LSTM neural network for multi-step price projection (H+1 to H+7)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend & Dashboard -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="layout-dashboard"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="bbca.contrib.t4_title">Database & Web Dashboard</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t4_d1">Designed MySQL database schema to store prices, article metadata, sentiment labels, and forecasts</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="bbca.contrib.t4_d2">Built Flask backend APIs and dashboard interface for interactive chart and sentiment inspection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WORKFLOW / DATA FLOW (PROMINENT FULL-WIDTH PIPELINE) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.architecture">End-to-End Architecture</span>
+          <h2 class="project-section__title">
+            <i data-lucide="git-branch"></i>
+            <span data-i18n="detail.title.workflow">Workflow & Data Flow</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="bbca.wf.lead">
+            The data moves sequentially from automated ingestion through NLP sentiment scoring and time-series neural network forecasting into a centralized MySQL database and Flask UI.
+          </p>
+        </div>
+
+        <div class="workflow-pipeline-container">
+          <div class="workflow-pipeline">
+            <!-- Step 1 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s1_num">01 / INGESTION</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="download"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s1_name">Dual-Source Collection</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s1_desc">Fetches OHLCV stock data from Yahoo Finance and news headlines from Google News RSS.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s1_badge">Yahoo Finance + RSS</span>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s2_num">02 / NLP PIPELINE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s2_name">Text Preprocessing</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s2_desc">Cleans, normalizes, and transforms raw Indonesian text headlines using TF-IDF feature extraction.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s2_badge">TF-IDF Vectorizer</span>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s3_num">03 / SENTIMENT</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="message-square"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s3_name">Sentiment Scoring</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s3_desc">Classifies each news article (Positive, Neutral, Negative) using Logistic Regression.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s3_badge">Logistic Regression</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s4_num">04 / STORAGE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="database"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s4_name">Feature Aggregation</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s4_desc">Aggregates sentiment by date, merges with price matrices, and saves records into relational database.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s4_badge">MySQL Database</span>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s5_num">05 / MODELING</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="brain"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s5_name">LSTM Forecasting</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s5_desc">LSTM model trained on multi-feature sequences to project prices across H+1, H+3, H+5, H+7.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s5_badge">LSTM Neural Net</span>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="bbca.wf.s6_num">06 / PRESENTATION</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="layout-dashboard"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="bbca.wf.s6_name">Flask Web Interface</span>
+              <span class="workflow-stage__desc" data-i18n="bbca.wf.s6_desc">Serves interactive multi-horizon charts, recent sentiment breakdowns, and historical logs.</span>
+              <span class="workflow-stage__badge" data-i18n="bbca.wf.s6_badge">Flask Web App</span>
+            </div>
+          </div>
+
+          <!-- Interactive Pipeline Showcase Box (End-to-End Data & Model Lifecycle) -->
+          <div style="margin-top: var(--space-2xl);">
+            <div class="preview-window">
+              <div class="preview-window__bar">
+                <div class="preview-window__dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="preview-window__title" data-i18n="bbca.pipe.title">End-to-End Pipeline & Research Implementation Showcase</span>
+                <span class="preview-window__badge" id="bbcaPipeBadge">1. Data Harga Historis</span>
+              </div>
+              <div class="preview-window__body" style="padding: 0;">
+                <!-- Navigation Tabs on Top -->
+                <div style="padding: 10px 16px; background: #F8FAFC; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                  <div class="stock-chart-interactive__tabs" id="bbcaPipeTabs">
+                    <button type="button" class="horizon-tab horizon-tab--active"
+                      data-src="/projects/bbca/bbca-excel-data-harga.png"
+                      data-badge="1. Data Harga Historis"
+                      data-caption-key="bbca.pipe.cap_price"
+                      data-tags="Yahoo Finance API, 1,560+ Baris OHLCV, 2020-2026 Time-Series"
+                      data-i18n="bbca.pipe.tab_price">1. Ingest Data Harga (Yahoo)</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-excel-data-berita-rss.png"
+                      data-badge="2. Data Berita Google RSS"
+                      data-caption-key="bbca.pipe.cap_news"
+                      data-tags="Google News RSS, Multi-Media Portal, 1,700+ Headlines"
+                      data-i18n="bbca.pipe.tab_news">2. Ingest Berita RSS</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-excel-preprocessing-berita.png"
+                      data-badge="3. Preprocessing Teks Python"
+                      data-caption-key="bbca.pipe.cap_prep"
+                      data-tags="Python Regex, Case Folding, Stopwords, Tokenisasi"
+                      data-i18n="bbca.pipe.tab_prep">3. Preprocessing Teks Python</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-architecture-baseline.png"
+                      data-badge="4. Arsitektur Model Baseline"
+                      data-caption-key="bbca.pipe.cap_arch_base"
+                      data-tags="Baseline LSTM, Single Source (Yahoo Finance), Price Only"
+                      data-i18n="bbca.pipe.tab_arch_base">4. Arsitektur Model Baseline</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-architecture-hybrid.png"
+                      data-badge="5. Arsitektur Model Hibrida"
+                      data-caption-key="bbca.pipe.cap_arch_hyb"
+                      data-tags="LSTM Neural Network, Vektor Hibrida (Harga + Sentimen)"
+                      data-i18n="bbca.pipe.tab_arch_hyb">5. Arsitektur Model Hibrida</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png"
+                      data-badge="6. Proyeksi Multi-Horizon"
+                      data-caption-key="bbca.pipe.cap_traj"
+                      data-tags="Multi-Horizon Forecast, H+1 H+3 H+5 H+7, Deep Learning"
+                      data-i18n="bbca.pipe.tab_traj">6. Proyeksi Multi-Horizon</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-excel-manual-mape.png"
+                      data-badge="7. Evaluasi Excel MAPE 1.53%"
+                      data-caption-key="bbca.pipe.cap_mape"
+                      data-tags="Formula MAPE Excel, Evaluasi Per Baris, MAPE Hybrid 1.53%"
+                      data-i18n="bbca.pipe.tab_mape">7. Evaluasi MAPE Excel</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-dashboard-main.png"
+                      data-badge="8. Dashboard Web Flask"
+                      data-caption-key="bbca.pipe.cap_dash"
+                      data-tags="Flask Web App, Candlestick Chart, Background Ingestion (30m)"
+                      data-i18n="bbca.pipe.tab_dash">8. Dashboard Web Flask</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-modal-detail-berita-perhitungan.png"
+                      data-badge="9. Modal Perhitungan Sentimen Harian"
+                      data-caption-key="bbca.pipe.cap_sent_modal"
+                      data-tags="TF-IDF, Logistic Regression, Formula Skor Harian (+0.2526)"
+                      data-i18n="bbca.pipe.tab_sent">9. Modal Perhitungan Sentimen Harian</button>
+                    <button type="button" class="horizon-tab"
+                      data-src="/projects/bbca/bbca-tabel-prediksi-detail-berita.png"
+                      data-badge="10. Log Prediksi & Detail Berita"
+                      data-caption-key="bbca.pipe.cap_logs"
+                      data-tags="Tabel Prediksi, Clickable Modal Berita, Full Audit Trail"
+                      data-i18n="bbca.pipe.tab_logs">10. Log Prediksi & Detail Berita</button>
+                  </div>
+                  <span style="font-size: 0.72rem; color: var(--color-accent); font-weight: 600;">
+                    <i data-lucide="zoom-in" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> Klik gambar untuk Zoom
+                  </span>
+                </div>
+
+                <!-- Split Container: Image on Left, Details on Right -->
+                <div class="pipe-showcase-split" style="border: none; border-radius: 0;">
+                  <div class="pipe-showcase-left" title="Klik untuk memperbesar">
+                    <img
+                      id="bbcaPipeImg"
+                      src="/projects/bbca/bbca-excel-data-harga.png"
+                      alt="BBCA Pipeline Showcase Screenshot"
+                      class="pipe-showcase-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="pipe-showcase-right">
+                    <div id="bbcaPipeCaption" class="pipe-step-card" data-i18n-html="bbca.pipe.cap_price">
+                      <strong>Pengumpulan Data Harga Historis:</strong> Ingest data deret waktu harga saham BBCA.JK (Open, High, Low, Close, Adj Close, Volume) dari Yahoo Finance API periode 2020 s/d 2026 mencakup 1.560+ hari perdagangan.
+                    </div>
+
+                    <!-- Interactive Multi-Horizon Switcher (Visible only when Tab 6 is active) -->
+                    <div id="bbcaPipeHorizonContainer" style="display: none; flex-direction: column; gap: 8px; padding: 10px; background: #F1F5F9; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                      <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; font-weight: 700; color: var(--color-text); flex-wrap: wrap; gap: 4px;">
+                        <span data-i18n="bbca.pipe.select_horizon">Pilih Rentang Horizon:</span>
+                        <span id="bbcaPipeHorizonMetric" style="font-size: 0.7rem; color: #2D6A4F; font-weight: 700;">Hybrid MAPE: 1.53% | Baseline: 2.10%</span>
+                      </div>
+                      <div class="stock-chart-interactive__tabs" id="bbcaPipeSubHorizonTabs" style="display: flex; gap: 4px; flex-wrap: wrap;">
+                        <button type="button" class="horizon-tab horizon-tab--active" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png" data-horizon="H+1" data-hybrid="1.53%" data-baseline="2.10%">H+1 (1.53%)</button>
+                        <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H3_Paper.png" data-horizon="H+3" data-hybrid="2.43%" data-baseline="2.94%">H+3 (2.43%)</button>
+                        <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H5_Paper.png" data-horizon="H+5" data-hybrid="3.03%" data-baseline="3.42%">H+5 (3.03%)</button>
+                        <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H7_Paper.png" data-horizon="H+7" data-hybrid="3.64%" data-baseline="4.74%">H+7 (3.64%)</button>
+                      </div>
+                    </div>
+
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="bbcaPipeTags">
+                      <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">Yahoo Finance API</span>
+                      <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">1,560+ Baris OHLCV</span>
+                      <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">2020-2026 Time-Series</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SOLUTION -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.solution">System Architecture</span>
+          <h2 class="project-section__title">
+            <i data-lucide="lightbulb"></i>
+            <span data-i18n="detail.title.solution">The Solution</span>
+          </h2>
+        </div>
+        <div class="problem-narrative" style="max-width: 800px;">
+          <p data-i18n="bbca.sol.p1">
+            The final solution is a modular application built in Python and Flask that automates the entire lifecycle of stock price analysis. Instead of relying purely on isolated statistical indicators, the system integrates daily sentiment polarity as an additional time-series dimension alongside conventional price signals (closing prices, moving averages, volume).
+          </p>
+          <p data-i18n-html="bbca.sol.p2">
+            By supporting <strong>multi-horizon forecasting (H+1, H+3, H+5, H+7)</strong>, the system provides flexible short-term and medium-term visibility, enabling users to evaluate forecasted trends over different time intervals accompanied by contextual news feeds.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. RESULTS & IMPACT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.outcomes">Outcomes</span>
+          <h2 class="project-section__title">
+            <i data-lucide="trophy"></i>
+            <span data-i18n="detail.title.results">Project Results</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="bbca.res.lead">
+            Key deliverables and technical outcomes achieved upon completion of the project:
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="bbca.res.pill1">Pipeline Automation</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="bbca.res.r1_title">Unified Multi-Source Pipeline</h3>
+            <p class="result-metric-card__desc" data-i18n="bbca.res.r1_desc">
+              Successfully automated the pipeline from live news feed scraping and stock API ingestion to persistent database storage without manual steps.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="bbca.res.pill2">Contextual Modeling</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="bbca.res.r2_title">Hybrid Sentiment & Price Features</h3>
+            <p class="result-metric-card__desc" data-i18n="bbca.res.r2_desc">
+              Integrated quantitative price sequences with qualitative TF-IDF sentiment scores into unified input vectors for deep learning time-series modeling.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="bbca.res.pill3">Forecasting Versatility</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="bbca.res.r3_title">Multi-Horizon Projections</h3>
+            <p class="result-metric-card__desc" data-i18n="bbca.res.r3_desc">
+              Enabled multi-step forward price projections (H+1, H+3, H+5, H+7), giving greater analytical flexibility compared to single-day next-step models.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="bbca.res.pill4">Usability</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="bbca.res.r4_title">Interactive Dashboard Delivery</h3>
+            <p class="result-metric-card__desc" data-i18n="bbca.res.r4_desc">
+              Delivered a clean web interface where technical metrics, forecasted trajectory lines, and categorized news sentiment feeds are visualized in one place.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TECH STACK -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.tech">Technologies Used</span>
+          <h2 class="project-section__title">
+            <i data-lucide="layers"></i>
+            <span data-i18n="detail.title.tech">Tech Stack</span>
+          </h2>
+        </div>
+        <div class="project-tech">
+          <span class="tag tag--accent">Python</span>
+          <span class="tag">LSTM Neural Network</span>
+          <span class="tag">TF-IDF Vectorizer</span>
+          <span class="tag">Logistic Regression</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">TensorFlow / Keras</span>
+          <span class="tag">Yahoo Finance API</span>
+          <span class="tag">Google News RSS</span>
+        </div>
+      </section>
+
+      <!-- 8. PROJECT GALLERY / SCREENSHOTS -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.gallery">Visual Artifacts</span>
+          <h2 class="project-section__title">
+            <i data-lucide="image"></i>
+            <span data-i18n="detail.title.gallery">Project Gallery</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="bbca.gal.lead">
+            Visual overview of the forecasting dashboard, chart interfaces, and sentiment classification results:
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Gallery Card 1: Dashboard UI Interface -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #000000; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-dashboard-main.png" alt="BBCA Forecast Studio Dashboard UI" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c1_title">BBCA Forecast Studio — Main Web App Dashboard</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c1_desc">Interactive Flask web application interface featuring live candlestick charts, multi-horizon filters, background news scraping status (every 30 min), and export buttons.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 2: Daily News Sentiment Score Calculation Modal -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #F8FAFC; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-modal-detail-berita-perhitungan.png" alt="Modal Detail Berita & Perhitungan Skor Sentimen Harian" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c2_title">Daily News Sentiment Score Calculation Modal</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c2_desc">Detail modal displaying 27 processed news articles for the trading day, showing exact mathematical aggregation formula (Total Score: +6.8195 / 27 = +0.2526 daily average), polarity badges, and media source links.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 3: Prediction Table with News Detail Trigger -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #F8FAFC; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-tabel-prediksi-detail-berita.png" alt="Tabel Komparasi Harga Aktual vs Prediksi dengan Tombol Detail Berita" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c3_title">Prediction Comparison Table with News Detail Triggers</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c3_desc">Daily tabular comparison showing Actual Price vs Baseline LSTM vs Hybrid LSTM + Sentiment, equipped with clickable [Detail Berita] modal triggers per trading day.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 4: Multi-Horizon Forecasting View -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #FFFFFF; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <div class="stock-chart-interactive" style="border: none; box-shadow: none; width: 100%;">
+                <div class="stock-chart-interactive__screen">
+                  <img id="bbcaGalleryChartImg" src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png" alt="Actual vs Predicted BBCA Stock Price H+1" class="stock-chart-interactive__img" style="cursor: zoom-in;" />
+                </div>
+                <div class="stock-chart-interactive__footer">
+                  <div class="stock-chart-interactive__tabs" id="bbcaGalleryTabs">
+                    <button type="button" class="horizon-tab horizon-tab--active" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H1_Paper.png">H+1 (1.53%)</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H3_Paper.png">H+3 (2.43%)</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H5_Paper.png">H+5 (3.03%)</button>
+                    <button type="button" class="horizon-tab" data-src="/projects/bbca/Actual_vs_Predicted_BBCA_H7_Paper.png">H+7 (3.64%)</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c4_title">Multi-Horizon Model Trajectory Evaluation</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c4_desc">Interactive comparison of actual prices vs predictions across H+1, H+3, H+5, and H+7 trading horizons.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 5: MAPE Comparison Bar Chart -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #FFFFFF; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-mape-comparison.png" alt="Perbandingan Nilai MAPE Baseline vs Hybrid" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c5_title">MAPE Error Reduction Across All Horizons</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c5_desc">Quantified 11.6% to 27.3% forecasting error reduction achieved by combining news sentiment with LSTM.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 6: News Sentiment Confusion Matrix -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #FFFFFF; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-confusion-matrix.png" alt="Confusion Matrix Sentimen Berita" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c6_title">News Sentiment Classifier Confusion Matrix</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c6_desc">3-class confusion matrix evaluating 1,776 financial news headlines classified via TF-IDF + Logistic Regression.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 7: Manual Excel MAPE Calculation -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-excel-manual-mape.png" alt="Perhitungan Manual Evaluasi MAPE di Excel" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c7_title">Manual Excel Evaluation: MAPE Formula & Horizons</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c7_desc">Authentic spreadsheet (Perhitungan_MAPE.xlsx) verifying mathematical error percentages row-by-row across H+1 to H+7, confirming hybrid model performance (MAPE 1.53% - Sangat Baik).</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 8: Manual News Preprocessing in Excel -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-excel-preprocessing-berita.png" alt="Pembersihan & Preprocessing Teks Berita di Excel" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c8_title">Python Text Preprocessing Audit in Excel</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c8_desc">Spreadsheet audit (Perhitungan_Manual_Berita.xlsx) tracking raw headline ingestion across media sources (CNBC, SINDONews, Ajaib, Kompas) to normalized case-folded tokens.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Card 9: Daily Sentiment Aggregation in Excel -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/bbca/bbca-excel-sentimen-harian.png" alt="Rekapitulasi Sentimen Harian di Excel" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="bbca.gal.c9_title">Daily Sentiment Score & Ratio Time-Series in Excel</h3>
+              <p class="gallery-card__desc" data-i18n="bbca.gal.c9_desc">Time-series matrix (data_sentimen_harian.xlsx) aggregating daily publication count, composite sentiment scores, and positive/negative/neutral ratio proportions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Links -->
+      <div class="project-links">
+        <a href="/#projects" class="btn btn--secondary">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal for Crisp Full-Screen Viewing -->
+  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <div class="image-modal__content">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="imageModalTitle">Screenshot Preview</span>
+        <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">
+          <i data-lucide="x" style="width:18px;height:18px;"></i>
+        </button>
+      </div>
+      <div class="image-modal__body">
+        <img id="imageModalImg" src="" alt="High-Resolution Preview" class="image-modal__img" />
+      </div>
+      <div class="image-modal__footer" id="imageModalDesc"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Muhamad Ilham</p>
+  </footer>
+
+</body>
+</html>

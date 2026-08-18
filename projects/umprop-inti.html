@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMPROP Internal System (PT INTI) — Muhamad Ilham</title>
+  <meta name="description" content="Redevelopment of an internal system at PT INTI (Persero) with focus on data workflows, database design, Excel import, and automated data mapping." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="UMPROP Internal System (PT INTI) — Muhamad Ilham" />
+  <meta property="og:description" content="Redevelopment of an internal system at PT INTI (Persero) with focus on data workflows, database design, Excel import, and automated data mapping." />
+  <meta property="og:site_name" content="Muhamad Ilham Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="UMPROP Internal System — PT INTI (Persero)" />
+  <meta name="twitter:description" content="Redevelopment of an internal system at PT INTI (Persero) with focus on data workflows, database design, Excel import, and automated data mapping." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/variables.css" />
+  <link rel="stylesheet" href="/style/base.css" />
+  <link rel="stylesheet" href="/style/layout.css" />
+  <link rel="stylesheet" href="/style/components.css" />
+  <link rel="stylesheet" href="/style/sections/project-detail.css" />
+
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">ilham<span>.</span></a>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#experience" class="navbar__link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="/#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="/#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="/#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Actions: Language Switcher & Mobile Toggle -->
+      <div class="navbar__actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <span class="lang-switch__divider">|</span>
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-detail">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="/#projects" class="project-detail__back">
+        <i data-lucide="arrow-left"></i>
+        <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+      </a>
+
+      <!-- 1. PROJECT HEADER / OVERVIEW (2-COLUMN LAYOUT) -->
+      <header class="project-hero-grid">
+        <div class="project-hero-info">
+          <span class="project-detail__label">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="inti.label">Internship Project — PT INTI (Persero)</span>
+          </span>
+          <h1 class="project-detail__title" data-i18n="inti.title">UMPROP Internal System</h1>
+          <p class="project-detail__summary" data-i18n="inti.summary">
+            Redevelopment of a core internal operational system at PT INTI (Persero), modernizing legacy data workflows through relational database design, automated Excel ingestion, dynamic column mapping, and server-side processing pipelines.
+          </p>
+          <div class="project-detail__meta">
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.type">Project Type</span>
+              <span class="project-detail__meta-value" data-i18n="inti.meta.type_val">Corporate Internship</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.company">Company</span>
+              <span class="project-detail__meta-value" data-i18n="inti.meta.company_val">PT INTI (Persero)</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.role">My Role</span>
+              <span class="project-detail__meta-value" data-i18n="inti.meta.role_val">Software Developer Intern</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.focus">Core Focus</span>
+              <span class="project-detail__meta-value" data-i18n="inti.meta.focus_val">Data Workflows &amp; Database</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Preview Window (Interactive System Screenshots) -->
+        <div class="project-hero-visual">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title" data-i18n="inti.hero.title_bar">UMPROP General Affairs Information System v2.0</span>
+              <span class="preview-window__badge" id="intiHeroBadge" data-i18n="inti.hero.badge_dashboard">Live Dashboard</span>
+            </div>
+            <!-- Horizon Tabs for Hero -->
+            <div class="stock-chart-interactive__tabs" style="padding: 8px 12px; margin-bottom: 0; background: var(--color-surface-hover); border-bottom: 1px solid var(--color-border);" id="intiHeroTabs">
+              <button class="horizon-tab horizon-tab--active"
+                data-src="/projects/inti/inti-dashboard.png"
+                data-badge="Live Dashboard"
+                data-caption-key="inti.hero.caption_dashboard"
+                data-i18n="inti.hero.tab_dashboard">Dasbor Utama</button>
+              <button class="horizon-tab"
+                data-src="/projects/inti/inti-qr-checklist.png"
+                data-badge="Mobile Checklist"
+                data-caption-key="inti.hero.caption_qr"
+                data-i18n="inti.hero.tab_qr">Checklist Mobile QR</button>
+              <button class="horizon-tab"
+                data-src="/projects/inti/inti-laporan-aktivitas.png"
+                data-badge="Excel Reports"
+                data-caption-key="inti.hero.caption_laporan"
+                data-i18n="inti.hero.tab_laporan">Laporan &amp; Ekspor Excel</button>
+              <button class="horizon-tab"
+                data-src="/projects/inti/inti-ruangan-qrcode.png"
+                data-badge="QR Generator"
+                data-caption-key="inti.hero.caption_room_qr"
+                data-i18n="inti.hero.tab_room_qr">Master Ruangan &amp; QR</button>
+            </div>
+            <div class="preview-window__body" style="padding: 0; background: var(--color-surface);">
+              <div style="position: relative; overflow: hidden; border-radius: 0 0 var(--radius-md) var(--radius-md);">
+                <img
+                  id="intiHeroImg"
+                  src="/projects/inti/inti-dashboard.png"
+                  alt="UMPROP System Preview"
+                  style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--color-border); transition: opacity 0.2s ease;"
+                  loading="lazy"
+                />
+                <div style="padding: 10px 14px; font-size: 0.78rem; color: var(--color-text-secondary); line-height: 1.45; background: var(--color-surface);" id="intiHeroCaption" data-i18n-html="inti.hero.caption_dashboard">
+                  <strong>Dasbor Utama:</strong> Antarmuka terpusat yang menampilkan ringkasan operasional fasilitas dan menu dinamis berdasarkan peran aktif.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. PROBLEM STATEMENT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.challenge">Challenge & Context</span>
+          <h2 class="project-section__title">
+            <i data-lucide="help-circle"></i>
+            <span data-i18n="detail.title.problem">The Problem</span>
+          </h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-narrative">
+            <p data-i18n="inti.prob.p1">
+              The existing internal process at PT INTI relied heavily on manual data entry and decentralized spreadsheets to log operational records, project milestones, and resource allocations.
+            </p>
+            <p data-i18n="inti.prob.p2">
+              Without automated ingestion and validation pipelines, consolidating periodic reports required significant manual effort to reformat columns, cross-verify data integrity, and resolve formatting inconsistencies across departmental submissions.
+            </p>
+          </div>
+          <div class="problem-callout">
+            <span class="problem-callout__title">
+              <i data-lucide="alert-circle" style="width:16px;height:16px;color:#DC2626;"></i>
+              <span data-i18n="inti.prob.callout_title">Operational Pain Points</span>
+            </span>
+            <div class="problem-callout__list">
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.prob.c1">Manual data copying between disparate spreadsheets prone to human error</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.prob.c2">Inconsistent spreadsheet column structures causing ingestion friction</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.prob.c3">Time-consuming manual report compilation during operational cycles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MY CONTRIBUTION (HIGH VISIBILITY) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.roles">Role & Responsibilities</span>
+          <h2 class="project-section__title">
+            <i data-lucide="user-check"></i>
+            <span data-i18n="detail.title.contribution">My Contribution</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="inti.contrib.lead">
+            I focused on restructuring data workflows, designing relational database tables, implementing Excel import modules, and developing backend business logic.
+          </p>
+        </div>
+
+        <div class="contribution-grid">
+          <!-- Database Design -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="database"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="inti.contrib.t1_title">Database Schema Design</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t1_d1">Designed normalized relational tables with proper primary keys, foreign keys, and indexes</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t1_d2">Structured data models to accommodate variable operational attributes and audit logs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excel Ingestion -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="file-spreadsheet"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="inti.contrib.t2_title">Excel Import Engine</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t2_d1">Built automated file parsers to read and ingest multi-sheet Excel files</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t2_d2">Implemented strict data type validation and anomaly detection prior to database insertion</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Mapping -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="qr-code"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="inti.contrib.t3_title">Checklist Ruangan QR Code</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t3_d1">Developed algorithmic mapping routines to translate dynamic Excel headers into database entities</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t3_d2">Created transformation handlers to harmonize date formats, currency values, and category codes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Logic -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="inti.contrib.t4_title">Logika Hak Akses &amp; Pelaporan</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t4_d1">Wrote backend controllers and services executing transactional data storage</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="inti.contrib.t4_d2">Implemented automated query routines to generate structured summary reports for management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WORKFLOW / DATA FLOW (PROMINENT LARGE PIPELINE) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.architecture">End-to-End Workflow</span>
+          <h2 class="project-section__title">
+            <i data-lucide="git-branch"></i>
+            <span data-i18n="detail.title.workflow">Workflow & Data Flow</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="inti.wf.lead">
+            The automated pipeline replaces manual data handling with a 5-stage automated ingestion, mapping, storage, and reporting workflow.
+          </p>
+        </div>
+
+        <div class="workflow-pipeline-container">
+          <div class="workflow-pipeline">
+            <!-- Step 1 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="inti.wf.s1_num">01 / UPLOAD</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="upload-cloud"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="inti.wf.s1_name">Excel Upload &amp; QR Scan</span>
+              <span class="workflow-stage__desc" data-i18n="inti.wf.s1_desc">Ingests task templates from Excel or captures field inspections via mobile QR Code scans.</span>
+              <span class="workflow-stage__badge" data-i18n="inti.wf.s1_badge">Excel &amp; QR Mobile</span>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="inti.wf.s2_num">02 / VALIDATE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="scan-search"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="inti.wf.s2_name">Parse &amp; Validate</span>
+              <span class="workflow-stage__desc" data-i18n="inti.wf.s2_desc">Verifies data types, cell integrity, and checks user authorization per assigned role.</span>
+              <span class="workflow-stage__badge" data-i18n="inti.wf.s2_badge">Validation Rules</span>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="inti.wf.s3_num">03 / MAPPING</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="shuffle"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="inti.wf.s3_name">Auto Data Mapping</span>
+              <span class="workflow-stage__desc" data-i18n="inti.wf.s3_desc">Automatically maps checklist tasks to designated rooms, roles, and time frequencies.</span>
+              <span class="workflow-stage__badge" data-i18n="inti.wf.s3_badge">Mapping Engine</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="inti.wf.s4_num">04 / STORAGE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="database"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="inti.wf.s4_name">Database Storage</span>
+              <span class="workflow-stage__desc" data-i18n="inti.wf.s4_desc">Inserts validated records transactionally into MySQL tables with audit timestamps.</span>
+              <span class="workflow-stage__badge" data-i18n="inti.wf.s4_badge">MySQL Database</span>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="inti.wf.s5_num">05 / REPORT</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="file-text"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="inti.wf.s5_name">Automated Reports</span>
+              <span class="workflow-stage__desc" data-i18n="inti.wf.s5_desc">Aggregates performance logs and exports structured Excel (.xlsx) summaries for leadership.</span>
+              <span class="workflow-stage__badge" data-i18n="inti.wf.s5_badge">Instant Excel Export</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Feature Showcase (Split Left Image / Right Details) -->
+        <div style="margin-top: var(--space-8);">
+          <div class="pipe-showcase-box">
+            <div class="pipe-showcase-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="preview-window__dots"><span></span><span></span><span></span></div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-text);" data-i18n="inti.pipe.title">Dokumentasi Fitur &amp; Implementasi Sistem UMPROP</span>
+              </div>
+              <span class="preview-window__badge" id="intiPipeBadge">1. Autentikasi Login</span>
+            </div>
+
+            <div class="pipe-showcase-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                <div class="stock-chart-interactive__tabs" id="intiPipeTabs" style="margin-bottom: 0;">
+                  <button class="horizon-tab horizon-tab--active"
+                    data-src="/projects/inti/inti-login-auth.png"
+                    data-badge="1. Autentikasi Login"
+                    data-caption-key="inti.pipe.cap_login"
+                    data-tags="Authentication Gateway, Password Hashing, Account Activation"
+                    data-i18n="inti.pipe.tab_login">1. Auth Login</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-dashboard.png"
+                    data-badge="2. Dasbor Utama"
+                    data-caption-key="inti.pipe.cap_dashboard"
+                    data-tags="Dynamic Sidebar, Centralized Landing, Role-Based Access"
+                    data-i18n="inti.pipe.tab_dashboard">2. Dashboard</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-role-setting.png"
+                    data-badge="3. Pengaturan Peran"
+                    data-caption-key="inti.pipe.cap_role"
+                    data-tags="Operational Roles, CS / ME / Gardener / Takmir, CRUD Role"
+                    data-i18n="inti.pipe.tab_role">3. Role Setting</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-permission-matrix.png"
+                    data-badge="4. Matriks Hak Akses"
+                    data-caption-key="inti.pipe.cap_permission"
+                    data-tags="Permission Matrix, Dynamic Menu Control, Security Boundary"
+                    data-i18n="inti.pipe.tab_permission">4. Permission Matrix</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-pemetaan-aktivitas.png"
+                    data-badge="5. Pemetaan Ruangan"
+                    data-caption-key="inti.pipe.cap_pemetaan"
+                    data-tags="Task to Room Mapping, Frequency Scheduling, Operational SOP"
+                    data-i18n="inti.pipe.tab_pemetaan">5. Room Mapping</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-lokasi-master.png"
+                    data-badge="6. Master Lokasi"
+                    data-caption-key="inti.pipe.cap_lokasi"
+                    data-tags="Campus Building Master, Floor Hierarchy, Room Aggregation"
+                    data-i18n="inti.pipe.tab_lokasi">6. Location Master</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-ruangan-qrcode.png"
+                    data-badge="7. Ruangan & QR Code"
+                    data-caption-key="inti.pipe.cap_ruangan"
+                    data-tags="Room Catalog, Auto QR Code Generator, Printable Asset Tag"
+                    data-i18n="inti.pipe.tab_ruangan">7. Room & QR Code</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-import-excel-modal.png"
+                    data-badge="8. Modal Impor Excel"
+                    data-caption-key="inti.pipe.cap_import_excel"
+                    data-tags="Excel Batch Upload, Column Schema Validation, Sample Template Download"
+                    data-i18n="inti.pipe.tab_import_excel">8. Modal Impor Excel</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-template-aktivitas.png"
+                    data-badge="9. Pustaka Templat SOP"
+                    data-caption-key="inti.pipe.cap_template"
+                    data-tags="SOP Checklist Library, Batch Excel Ingestion, Multi-Sheet Export"
+                    data-i18n="inti.pipe.tab_template">9. Pustaka Templat SOP</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-qr-checklist.png"
+                    data-badge="10. Checklist Mobile QR"
+                    data-caption-key="inti.pipe.cap_qr"
+                    data-tags="Mobile Web Interface, QR Scan Trigger, Timestamped Status"
+                    data-i18n="inti.pipe.tab_qr">10. QR Mobile Checklist</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/inti/inti-laporan-aktivitas.png"
+                    data-badge="11. Laporan & Ekspor Excel"
+                    data-caption-key="inti.pipe.cap_laporan"
+                    data-tags="Multi-Criteria Filter, Activity History Log, Excel (.xlsx) Export"
+                    data-i18n="inti.pipe.tab_laporan">11. Reports & Excel Export</button>
+                </div>
+                <span style="font-size: 0.72rem; color: var(--color-accent); font-weight: 600;">
+                  <i data-lucide="zoom-in" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> Klik gambar untuk Zoom
+                </span>
+              </div>
+
+              <!-- Split Container: Image on Left, Details on Right -->
+              <div class="pipe-showcase-split" style="border: none; border-radius: 0;">
+                <div class="pipe-showcase-left" title="Klik untuk memperbesar">
+                  <img
+                    id="intiPipeImg"
+                    src="/projects/inti/inti-login-auth.png"
+                    alt="UMPROP Feature Screenshot"
+                    class="pipe-showcase-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pipe-showcase-right">
+                  <div id="intiPipeCaption" class="pipe-step-card" data-i18n-html="inti.pipe.cap_login">
+                    <strong>Halaman Autentikasi:</strong> Gerbang masuk sistem yang aman dengan enkripsi password (<code>password_hash</code>) dan validasi status akun.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="intiPipeTags">
+                    <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">Authentication Gateway</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Password Hashing</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Account Activation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </section>
+
+      <!-- 5. BEFORE VS AFTER COMPARISON -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="inti.cmp.kicker">Process Evolution</span>
+          <h2 class="project-section__title">
+            <i data-lucide="git-compare"></i>
+            <span data-i18n="inti.cmp.title">Before vs After Workflow</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="inti.cmp.lead">
+            Comparison of how the redeveloped system transformed manual data tasks into an automated pipeline:
+          </p>
+        </div>
+
+        <div class="compare-grid">
+          <!-- Before Card -->
+          <div class="compare-card compare-card--before">
+            <span class="compare-card__tag" data-i18n="inti.cmp.before_tag">Legacy Process (Before)</span>
+            <h3 class="compare-card__title" data-i18n="inti.cmp.before_title">Manual &amp; Fragmented Workflow</h3>
+            <div class="compare-card__list">
+              <div class="compare-card__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.cmp.b1">Manual data entry and copy-pasting across disparate spreadsheets</span>
+              </div>
+              <div class="compare-card__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.cmp.b2">No automated validation, causing formatting mistakes and corrupt inputs</span>
+              </div>
+              <div class="compare-card__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="inti.cmp.b3">Hours spent manually collating and reconciling data for periodic reports</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- After Card -->
+          <div class="compare-card compare-card--after">
+            <span class="compare-card__tag" data-i18n="inti.cmp.after_tag">Redeveloped System (After)</span>
+            <h3 class="compare-card__title" data-i18n="inti.cmp.after_title">Automated &amp; Centralized Pipeline</h3>
+            <div class="compare-card__list">
+              <div class="compare-card__item">
+                <i data-lucide="check"></i>
+                <span data-i18n="inti.cmp.a1">One-click batch Excel import with automatic dynamic column mapping</span>
+              </div>
+              <div class="compare-card__item">
+                <i data-lucide="check"></i>
+                <span data-i18n="inti.cmp.a2">Pre-import validation engine verifying data types before database insertion</span>
+              </div>
+              <div class="compare-card__item">
+                <i data-lucide="check"></i>
+                <span data-i18n="inti.cmp.a3">Instant automated report generation powered by centralized SQL database</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SOLUTION -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.implementation">Technical Implementation</span>
+          <h2 class="project-section__title">
+            <i data-lucide="lightbulb"></i>
+            <span data-i18n="detail.title.solution">The Solution</span>
+          </h2>
+        </div>
+        <div class="problem-narrative" style="max-width: 800px;">
+          <p data-i18n="inti.sol.p1">
+            The redevelopment established a standardized data ingestion layer that automatically interprets varying spreadsheet formats and maps columns directly to relational schema definitions.
+          </p>
+          <p data-i18n="inti.sol.p2">
+            By consolidating data into a normalized database structure, the system ensures single-source-of-truth integrity while significantly cutting down the operational overhead required to compile and produce periodic reports.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. RESULTS & IMPACT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.outcomes">Outcomes</span>
+          <h2 class="project-section__title">
+            <i data-lucide="trophy"></i>
+            <span data-i18n="detail.title.results">Project Results</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="inti.res.lead">
+            Key improvements delivered through the redeveloped internal system:
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="inti.res.pill1">Ingestion Automation</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="inti.res.r1_title">Automated Spreadsheet Ingestion</h3>
+            <p class="result-metric-card__desc" data-i18n="inti.res.r1_desc">
+              Replaced manual cell-by-cell typing with batch Excel ingestion, drastically reducing manual administrative workload.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="inti.res.pill2">Data Consistency</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="inti.res.r2_title">Enhanced Data Integrity</h3>
+            <p class="result-metric-card__desc" data-i18n="inti.res.r2_desc">
+              Built-in validation checks flag corrupt entries and formatting discrepancies before data is committed to storage.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="inti.res.pill3">Scalable Foundation</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="inti.res.r3_title">Normalized Relational Architecture</h3>
+            <p class="result-metric-card__desc" data-i18n="inti.res.r3_desc">
+              Established a clean, extensible database schema capable of accommodating future operational modules and entities.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="inti.res.pill4">Reporting Speed</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="inti.res.r4_title">Instant Report Aggregation</h3>
+            <p class="result-metric-card__desc" data-i18n="inti.res.r4_desc">
+              Enabled immediate operational report generation directly from database records, replacing manual compilation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. TECH STACK -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.tech_methods">Technologies & Methods</span>
+          <h2 class="project-section__title">
+            <i data-lucide="layers"></i>
+            <span data-i18n="detail.title.tech">Tech Stack</span>
+          </h2>
+        </div>
+        <div class="project-tech">
+          <span class="tag tag--accent">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL / Relational DB</span>
+          <span class="tag">Excel (openpyxl)</span>
+          <span class="tag">Database Design</span>
+          <span class="tag">Automated Data Mapping</span>
+          <span class="tag">Data Validation</span>
+          <span class="tag">Backend Processing</span>
+        </div>
+      </section>
+
+      <!-- 9. PROJECT GALLERY / SCREENSHOTS -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.gallery">Visual Artifacts</span>
+          <h2 class="project-section__title">
+            <i data-lucide="image"></i>
+            <span data-i18n="detail.title.gallery">Project Gallery</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="inti.gal.lead">
+            Tinjauan visual dari antarmuka sistem UMPROP, alur checklist QR Code, matriks hak akses, dan output laporan Excel:
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card 1: Dashboard -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-dashboard.png"
+                alt="Dasbor Utama Sistem UMPROP"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c1_title">Dasbor Utama Sistem UMPROP</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c1_desc">Halaman awal beranda sistem dengan menu dinamis yang menyesuaikan hak akses dan peran staf operasional.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: QR Mobile Checklist -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-qr-checklist.png"
+                alt="Pelaksanaan Tugas Petugas (QR Code Mobile Checklist)"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c2_title">Pelaksanaan Tugas Petugas (QR Code Mobile Checklist)</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c2_desc">Antarmuka responsif saat petugas lapangan memindai QR Code di ruangan untuk menandai tugas selesai atau mencatat kendala.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Laporan Aktivitas -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-laporan-aktivitas.png"
+                alt="Laporan Aktivitas & Rekapitulasi Kinerja (Export Excel)"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c3_title">Laporan Aktivitas & Rekapitulasi Kinerja (Export Excel)</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c3_desc">Rekaman riwayat pekerjaan lapangan dengan filter komprehensif dan tombol ekspor spreadsheet Excel (.xlsx) untuk manajemen.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Master Ruangan & QR Code -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-ruangan-qrcode.png"
+                alt="Data Master Ruangan & Generator QR Code"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c4_title">Data Master Ruangan & Generator QR Code</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c4_desc">Katalog master ruangan fisik dengan generator QR Code otomatis yang siap dicetak dan ditempel di dinding/pintu.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Tata Ruang & Pemetaan -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-pemetaan-aktivitas.png"
+                alt="Tata Ruang & Pemetaan Aktivitas per Ruangan"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c5_title">Tata Ruang & Pemetaan Aktivitas per Ruangan</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c5_desc">Konfigurasi pemetaan yang menghubungkan ruangan spesifik dengan checklist SOP dan jadwal frekuensi pengecekan.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Modal Impor Excel (FEATURED) -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-import-excel-modal.png"
+                alt="Modal Impor Template Aktivitas dari Excel"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c_import_title">Modal Impor Template Aktivitas dari Excel</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c_import_desc">Fitur batch import SOP tugas via file Excel (.xlsx). Dilengkapi panduan struktur kolom (Kolom A: Nama Aktivitas, Kolom B: Kategori, Kolom C: Standar Pekerjaan) dan tautan unduh file contoh terstandar.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Templat Aktivitas Library -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-template-aktivitas.png"
+                alt="Templat Aktivitas & Import/Export Excel Checklist"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c6_title">Templat Aktivitas & Import/Export Excel Checklist</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c6_desc">Standar operasional prosedur (SOP) tugas yang mendukung pengunggahan puluhan checklist sekaligus melalui file Excel.</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Form Tambah Template Manual -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-tambah-template-modal.png"
+                alt="Form Tambah Template Aktivitas Manual"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c_tambah_title">Form Tambah Template Aktivitas Manual</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c_tambah_desc">Formulir input dinamis untuk menambahkan standar tugas baru, kategori divisi, serta sub-standar checklist secara fleksibel.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Permission Matrix -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-permission-matrix.png"
+                alt="Pengaturan Hak Akses (Permission Matrix & Dynamic Menu)"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c7_title">Pengaturan Hak Akses (Permission Matrix & Dynamic Menu)</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c7_desc">Matriks hak akses berbasis checkbox yang mengatur izin akses menu sidebar secara granular untuk setiap peran.</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Role Setting -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-role-setting.png"
+                alt="Pengaturan Peran Staf Operasional (Role Setting)"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c8_title">Pengaturan Peran Staf Operasional (Role Setting)</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c8_desc">Pengelolaan daftar divisi kerja staf lapangan di lingkungan PT INTI (Admin, CS, ME, Gardener, Takmir Masjid).</p>
+            </div>
+          </div>
+
+          <!-- Card 9: Lokasi Master -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-lokasi-master.png"
+                alt="Data Master Lokasi Gedung & Area Kampus PT INTI"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c9_title">Data Master Lokasi Gedung & Area Kampus PT INTI</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c9_desc">Master data gedung utama, lantai, area taman luar, dan fasilitas masjid beserta agregasi jumlah ruangan.</p>
+            </div>
+          </div>
+
+          <!-- Card 10: User Management -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-user-management.png"
+                alt="Manajemen Pengguna & Aktivasi Akun Staf"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c10_title">Manajemen Pengguna & Aktivasi Akun Staf</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c10_desc">Administrasi akun pengguna untuk menyetujui pendaftaran staf baru, penugasan peran kerja, dan kontrol akses.</p>
+            </div>
+          </div>
+
+          <!-- Card 11: Login Auth -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-login-auth.png"
+                alt="Halaman Autentikasi Login & Keamanan Sistem"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c11_title">Halaman Autentikasi Login & Keamanan Sistem</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c11_desc">Pintu masuk sistem dengan enkripsi password standar password_hash, verifikasi aktivasi akun, dan fitur reset sandi.</p>
+            </div>
+          </div>
+
+          <!-- Card 12: Nextcloud GA Master -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/inti/inti-screenshot-2379.png"
+                alt="Master Spreadsheet Operasional (Nextcloud PT INTI)"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="inti.gal.c12_title">Master Spreadsheet Operasional (Nextcloud PT INTI)</h3>
+              <p class="gallery-card__desc" data-i18n="inti.gal.c12_desc">Tangkapan layar file master operasional (Monitoring Apps GA.xlsx) yang diakses melalui Nextcloud resmi PT INTI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Links -->
+      <div class="project-links">
+        <a href="/#projects" class="btn btn--secondary">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal for Crisp Full-Screen Viewing -->
+  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <div class="image-modal__content">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="imageModalTitle">Screenshot Preview</span>
+        <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">
+          <i data-lucide="x" style="width:18px;height:18px;"></i>
+        </button>
+      </div>
+      <div class="image-modal__body">
+        <img id="imageModalImg" src="" alt="High-Resolution Preview" class="image-modal__img" />
+      </div>
+      <div class="image-modal__footer" id="imageModalDesc"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Muhamad Ilham</p>
+  </footer>
+
+</body>
+</html>

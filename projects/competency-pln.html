@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competency Match System (PT PLN) — Muhamad Ilham</title>
+  <meta name="description" content="Data processing system for matching and analyzing employee competency data at PT PLN (Persero), handling 100K+ rows and generating millions of comparison data points." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Competency Match System (PT PLN) — Muhamad Ilham" />
+  <meta property="og:description" content="Data processing system for matching and analyzing 100K+ employee competency records at PT PLN (Persero)." />
+  <meta property="og:site_name" content="Muhamad Ilham Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Competency Match System — PT PLN (Persero)" />
+  <meta name="twitter:description" content="Data processing system for matching and analyzing 100K+ employee competency records at PT PLN (Persero)." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/variables.css" />
+  <link rel="stylesheet" href="/style/base.css" />
+  <link rel="stylesheet" href="/style/layout.css" />
+  <link rel="stylesheet" href="/style/components.css" />
+  <link rel="stylesheet" href="/style/sections/project-detail.css" />
+
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">ilham<span>.</span></a>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#experience" class="navbar__link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="/#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="/#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="/#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Actions: Language Switcher & Mobile Toggle -->
+      <div class="navbar__actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <span class="lang-switch__divider">|</span>
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-detail">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="/#projects" class="project-detail__back">
+        <i data-lucide="arrow-left"></i>
+        <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+      </a>
+
+      <!-- 1. PROJECT HEADER / OVERVIEW (2-COLUMN LAYOUT) -->
+      <header class="project-hero-grid">
+        <div class="project-hero-info">
+          <span class="project-detail__label">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="pln.label">Internship Project — PT PLN (Persero)</span>
+          </span>
+          <h1 class="project-detail__title" data-i18n="pln.title">Competency Match System</h1>
+          <p class="project-detail__summary" data-i18n="pln.summary">
+            A high-performance data processing and matching pipeline designed to evaluate competency gaps across 100,000+ employee records, executing multi-level comparison workflows that generate millions of evaluation points for strategic career path recommendations.
+          </p>
+          <div class="project-detail__meta">
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.type">Project Type</span>
+              <span class="project-detail__meta-value" data-i18n="pln.meta.type_val">Corporate Internship</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.company">Company</span>
+              <span class="project-detail__meta-value" data-i18n="pln.meta.company_val">PT PLN (Persero) Pusat</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.role">My Role</span>
+              <span class="project-detail__meta-value" data-i18n="pln.meta.role_val">Data Analyst Intern</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.scale">Data Scale</span>
+              <span class="project-detail__meta-value" data-i18n="pln.meta.scale_val">100K+ Rows / Millions Comparisons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Live System Preview Window -->
+        <div class="project-hero-visual">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title" data-i18n="pln.hero.title_bar">CompetencyMatch Analytics Engine v1.0</span>
+              <span class="preview-window__badge" id="plnHeroBadge" data-i18n="pln.hero.badge_dashboard">Live Dashboard</span>
+            </div>
+            <div class="preview-window__body" style="padding: 0;">
+              <div class="stock-chart-interactive" style="border: none; border-radius: 0;">
+                <div class="stock-chart-interactive__screen" style="max-height: 280px; overflow: hidden; background: #0F172A; display: flex; align-items: center; justify-content: center;">
+                  <img
+                    id="plnHeroChartImg"
+                    src="/projects/pln/pln-web-dashboard-full.png"
+                    alt="PLN Competency Match Dashboard"
+                    class="stock-chart-interactive__img"
+                    style="width: 100%; height: 100%; object-fit: contain; cursor: zoom-in;"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="stock-chart-interactive__footer" style="padding: 8px 12px; background: #F8F9FA;">
+                  <div class="stock-chart-interactive__tabs" id="plnHeroTabs">
+                    <button class="horizon-tab horizon-tab--active" data-src="/projects/pln/pln-web-dashboard-full.png" data-badge="Live Dashboard" data-caption-key="pln.hero.caption_dashboard" data-i18n="pln.hero.tab_dashboard">Main Dashboard</button>
+                    <button class="horizon-tab" data-src="/projects/pln/pln-web-visualization-charts.png" data-badge="Interactive Visuals" data-caption-key="pln.hero.caption_charts" data-i18n="pln.hero.tab_charts">Visual Analytics</button>
+                    <button class="horizon-tab" data-src="/projects/pln/pln-excel-export-detail.png" data-badge="Excel (.xlsx)" data-caption-key="pln.hero.caption_excel" data-i18n="pln.hero.tab_excel">Excel Deliverable</button>
+                  </div>
+                </div>
+                <!-- Dynamic Caption Banner -->
+                <div id="plnHeroCaption" class="stock-chart-interactive__caption" data-i18n-html="pln.hero.caption_dashboard" style="padding: 8px 12px; font-size: 0.76rem; color: var(--color-text-secondary); border-top: 1px solid var(--color-border); background: #FFFFFF;">
+                  <strong>Main Dashboard:</strong> Overview of matching rate, competency category distribution, and top career transition recommendations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. PROBLEM STATEMENT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.challenge">Challenge & Context</span>
+          <h2 class="project-section__title">
+            <i data-lucide="help-circle"></i>
+            <span data-i18n="detail.title.problem">The Problem</span>
+          </h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-narrative">
+            <p data-i18n="pln.prob.p1">
+              At PT PLN (Persero) headquarters, managing human resource development across nationwide business units involves assessing employee competencies against dynamic role standards.
+            </p>
+            <p data-i18n="pln.prob.p2">
+              Because raw competency logs span over 100,000 rows across multiple divisions and positions, performing manual comparisons between current competencies and target role requirements was time-prohibitive, error-prone, and incapable of uncovering strategic career progression pathways at scale.
+            </p>
+          </div>
+          <div class="problem-callout">
+            <div class="problem-callout__header">
+              <i data-lucide="alert-triangle"></i>
+              <span data-i18n="pln.prob.callout_title">Scale & Processing Hurdles</span>
+            </div>
+            <ul class="problem-callout__list">
+              <li><i data-lucide="x-circle"></i> <span data-i18n="pln.prob.c1">100K+ rows of raw competency data stored across heterogeneous spreadsheets</span></li>
+              <li><i data-lucide="x-circle"></i> <span data-i18n="pln.prob.c2">Combinatorial matching generating millions of comparative evaluations</span></li>
+              <li><i data-lucide="x-circle"></i> <span data-i18n="pln.prob.c3">Inconsistent naming codes hindering automated gap scoring</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MY CONTRIBUTION -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.roles">Roles & Ownership</span>
+          <h2 class="project-section__title">
+            <i data-lucide="user-check"></i>
+            <span data-i18n="detail.title.contribution">My Contribution</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="pln.contrib.lead">
+            As a Data Analyst Intern, I developed the automated data cleaning scripts, transformation pipelines, and algorithmic comparison routines in Python.
+          </p>
+        </div>
+
+        <div class="contribution-grid">
+          <!-- 1. Large Data Cleaning -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon"><i data-lucide="sparkles"></i></div>
+              <h3 class="contribution-card__title" data-i18n="pln.contrib.t1_title">Large Data Cleaning</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t1_d1">Standardized inconsistent competency naming codes and removed duplicate records across source datasets</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t1_d2">Handled missing values and normalized categorical competency levels across organizational divisions</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Data Transformation -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon"><i data-lucide="table"></i></div>
+              <h3 class="contribution-card__title" data-i18n="pln.contrib.t2_title">Data Transformation</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t2_d1">Restructured flat spreadsheet tables into relational format matrices optimized for high-volume joins</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t2_d2">Mapped employee job families and competency proficiency levels against benchmark competency frameworks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Competency Matching Engine -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon"><i data-lucide="git-merge"></i></div>
+              <h3 class="contribution-card__title" data-i18n="pln.contrib.t3_title">Competency Matching Engine</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t3_d1">Programmed Python algorithms to evaluate employee actual proficiency versus target position criteria</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t3_d2">Executed cross-comparisons scaling from 485K rows per grade up to 7–8 Million data points for full-scale evaluations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Dual Export & Gap Analytics -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon"><i data-lucide="bar-chart-3"></i></div>
+              <h3 class="contribution-card__title" data-i18n="pln.contrib.t4_title">Dual Export & Gap Analytics</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t4_d1">Built flexible output options allowing users to either download multi-sheet Excel (.xlsx) workbooks or save directly to MySQL database tables</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="pln.contrib.t4_d2">Computed competency delta indicators (Match, Skill Gap, Surplus) to isolate specific training requirements and career paths</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WORKFLOW / DATA PIPELINE -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.workflow">Processing Architecture</span>
+          <h2 class="project-section__title">
+            <i data-lucide="git-branch"></i>
+            <span data-i18n="detail.title.workflow">Workflow & Data Flow</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="pln.wf.lead">
+            The data pipeline ingests large-scale raw spreadsheets, standardizes competency taxonomies, runs cross-job matching, and generates structured gap analytics.
+          </p>
+        </div>
+
+        <!-- 6-Stage Workflow Pipeline -->
+        <div class="workflow-pipeline-container">
+          <div class="workflow-pipeline">
+            <!-- Step 1 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s1_num">01 / SOURCE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="file-spreadsheet"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s1_name">Raw Excel Ingestion</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s1_desc">Loads 100K+ rows of raw employee competency logs from multiple divisional files.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s1_badge">100K+ Records</span>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s2_num">02 / CLEANING</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="filter"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s2_name">Taxonomy Cleaning</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s2_desc">Deduplicates, validates codes, and normalizes skill naming across business units.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s2_badge">Pandas Pipeline</span>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s3_num">03 / TRANSFORMATION</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="binary"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s3_name">Matrix Restructuring</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s3_desc">Pivots and reshapes flat datasets into relational arrays for optimized comparison.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s3_badge">Matrix Arrays</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s4_num">04 / MATCHING</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="shuffle"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s4_name">Cross-Role Matching</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s4_desc">Evaluates actual vs required levels, processing 485K rows per grade up to 7–8 Million across all grades.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s4_badge">7–8M Combinations</span>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s5_num">05 / ANALYSIS</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="scale"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s5_name">Gap Delta Scoring</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s5_desc">Calculates delta gaps (-1, -2, match) and scores target position suitability.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s5_badge">Gap Delta Scoring</span>
+            </div>
+            
+            <!-- Step 6 -->
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="pln.wf.s6_num">06 / EXPORT</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="file-output"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="pln.wf.s6_name">Flexible Dual Export</span>
+              <span class="workflow-stage__desc" data-i18n="pln.wf.s6_desc">Outputs structured Excel (.xlsx) per grade or writes directly to MySQL database in batches to support up to 7–8M rows.</span>
+              <span class="workflow-stage__badge" data-i18n="pln.wf.s6_badge">Excel & MySQL (7-8M)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Pipeline Showcase Box -->
+        <div style="margin-top: var(--space-2xl);">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title" data-i18n="pln.pipe.title">Data Pipeline & System Implementation Showcase</span>
+              <span class="preview-window__badge" id="plnPipeBadge">1. Excel Text Extraction</span>
+            </div>
+            <div class="preview-window__body" style="padding: 0;">
+              <!-- Navigation Tabs on Top -->
+              <div style="padding: 10px 16px; background: #F8FAFC; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div class="stock-chart-interactive__tabs" id="plnPipeTabs">
+                  <button class="horizon-tab horizon-tab--active"
+                    data-src="/projects/pln/pln-excel-extraction-formula.png"
+                    data-badge="1. Ekstraksi Formula Excel"
+                    data-caption-key="pln.pipe.cap_excel"
+                    data-tags="Formula Engineering, 100K+ Data Rows, Automated Wrangling"
+                    data-i18n="pln.pipe.tab_excel">1. Excel Text Extraction</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-excel-processed-jobs.png"
+                    data-badge="2. Hasil Olahan Jabatan"
+                    data-caption-key="pln.pipe.cap_processed"
+                    data-tags="Taxonomy Normalization, 11K+ Master Dictionary, Clean Relational Schema"
+                    data-i18n="pln.pipe.tab_processed">2. Processed Job Data</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-excel-master-rekap.png"
+                    data-badge="3. Rekap Sistem (111.9K+ Asli)"
+                    data-caption-key="pln.pipe.cap_system_rekap"
+                    data-tags="111.9K+ Assessment Rows, Multi-Tier Competencies, Production Input"
+                    data-i18n="pln.pipe.tab_system_rekap">3. System Rekap (111K+)</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-web-db-config.png"
+                    data-badge="4. Konfigurasi Database"
+                    data-caption-key="pln.pipe.cap_db_config"
+                    data-tags="MySQL Integration, Automated Table Ingestion, Connection Profile"
+                    data-i18n="pln.pipe.tab_db_config">4. Database Config</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-web-hierarchy-mapping.png"
+                    data-badge="5. Dynamic Mapping Web"
+                    data-caption-key="pln.pipe.cap_mapping"
+                    data-tags="Dynamic Column Detection, 1300+ Job Filter, Hierarchy Transition Rules"
+                    data-i18n="pln.pipe.tab_mapping">5. Dynamic Mapping Web</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-web-dashboard-full.png"
+                    data-badge="6. Dashboard Analisis Sistem"
+                    data-caption-key="pln.pipe.cap_dashboard_full"
+                    data-tags="485K Rows Single Grade, 7-8M Rows All Grades, Top 5 Career Ranks"
+                    data-i18n="pln.pipe.tab_dashboard_full">6. Web Dashboard</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-mysql-database-batch.png"
+                    data-badge="7. MySQL Batch Processing"
+                    data-caption-key="pln.pipe.cap_db"
+                    data-tags="Direct MySQL Storage, 195K+ Rows/Batch, High Scalability (<0.01s)"
+                    data-i18n="pln.pipe.tab_db">7. MySQL Batch Database</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-web-visualization-charts.png"
+                    data-badge="8. Visualisasi Grafik Interaktif"
+                    data-caption-key="pln.pipe.cap_charts"
+                    data-tags="Category Proportions, Top 10 Rankings, Interactive Drilldown"
+                    data-i18n="pln.pipe.tab_charts">8. Visual Analytics</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-excel-export-detail.png"
+                    data-badge="9. Deliverable Excel (485K+)"
+                    data-caption-key="pln.pipe.cap_export_detail"
+                    data-tags="Excel Deliverable, 485K+ Rows Export, Decision-Ready HR Matrix"
+                    data-i18n="pln.pipe.tab_export_detail">9. Excel Deliverable (485K+)</button>
+                  <button class="horizon-tab"
+                    data-src="/projects/pln/pln-excel-breakdown-matrix.png"
+                    data-badge="10. Matriks Kontribusi Multi-Tier"
+                    data-caption-key="pln.pipe.cap_breakdown"
+                    data-tags="Category Contribution %, Multi-Tier Matrix, Deep Gap Analytics"
+                    data-i18n="pln.pipe.tab_breakdown">10. Multi-Tier Matrix Breakdown</button>
+                </div>
+                <span style="font-size: 0.72rem; color: var(--color-accent); font-weight: 600;">
+                  <i data-lucide="zoom-in" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> Klik gambar untuk Zoom
+                </span>
+              </div>
+
+              <!-- Split Container: Image on Left, Details on Right -->
+              <div class="pipe-showcase-split" style="border: none; border-radius: 0;">
+                <div class="pipe-showcase-left" title="Klik untuk memperbesar">
+                  <img
+                    id="plnPipeImg"
+                    src="/projects/pln/pln-excel-extraction-formula.png"
+                    alt="Pipeline Step Screenshot"
+                    class="pipe-showcase-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pipe-showcase-right">
+                  <div id="plnPipeCaption" class="pipe-step-card" data-i18n-html="pln.pipe.cap_excel">
+                    <strong>Ekstraksi Teks Excel:</strong> Formula tingkat lanjut (SEARCH, TRIM, CLEAN, INDEX/MATCH) mengekstrak uraian jabatan dari dokumen Word mentah menjadi format tabular terstruktur.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="plnPipeTags">
+                    <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">Formula Engineering</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">100K+ Data Rows</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Automated Wrangling</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SOLUTION -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.approach">Technical Approach</span>
+          <h2 class="project-section__title">
+            <i data-lucide="lightbulb"></i>
+            <span data-i18n="detail.title.solution">The Solution</span>
+          </h2>
+        </div>
+        <div class="problem-narrative" style="max-width: 800px;">
+          <p data-i18n="pln.sol.p1">
+            An automated Python data processing pipeline that programmatically ingests raw competency logs, reconciles disparate naming conventions, and executes batch matrix comparison routines.
+          </p>
+          <p data-i18n="pln.sol.p2">
+            Instead of evaluating employees one by one against a single predetermined job role, the system performs broad matrix evaluations across alternative roles within the job family — pinpointing the exact competencies requiring upskilling while highlighting optimal career path matches based on current competencies.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. RESULTS & IMPACT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.outcomes">Outcomes</span>
+          <h2 class="project-section__title">
+            <i data-lucide="trophy"></i>
+            <span data-i18n="detail.title.results">Project Results</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="pln.res.lead">
+            Key deliverables and operational impact achieved through the data processing pipeline:
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="pln.res.pill1">High Volume Scale</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="pln.res.r1_title">Large-Scale Data Processing</h3>
+            <p class="result-metric-card__desc" data-i18n="pln.res.r1_desc">
+              Successfully processed datasets exceeding 100,000 rows and computed multi-million row comparison matrices without performance bottlenecks.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="pln.res.pill2">Process Efficiency</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="pln.res.r2_title">Automated Comparison Workflow</h3>
+            <p class="result-metric-card__desc" data-i18n="pln.res.r2_desc">
+              Replaced time-consuming manual evaluation methods with automated Python batch processing, drastically speeding up analysis turnaround.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="pln.res.pill3">Analytical Precision</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="pln.res.r3_title">Objective Competency Gap Detection</h3>
+            <p class="result-metric-card__desc" data-i18n="pln.res.r3_desc">
+              Provided systematic delta scores for every competency parameter, removing subjective assessment variances across divisions.
+            </p>
+          </div>
+
+          <div class="result-metric-card">
+            <div class="result-metric-card__header">
+              <i data-lucide="check-circle-2"></i>
+              <span data-i18n="pln.res.pill4">Decision Support</span>
+            </div>
+            <h3 class="result-metric-card__title" data-i18n="pln.res.r4_title">Data-Driven Career Recommendations</h3>
+            <p class="result-metric-card__desc" data-i18n="pln.res.r4_desc">
+              Delivered clean, structured analytical datasets enabling HR leadership to make data-informed career transition and training decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TECH STACK -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.tech">Tools & Technologies</span>
+          <h2 class="project-section__title">
+            <i data-lucide="cpu"></i>
+            <span data-i18n="detail.title.tech">Tech Stack</span>
+          </h2>
+        </div>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Data Wrangling</span>
+          <span class="tag">ETL Pipeline</span>
+          <span class="tag">Matrix Operations</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Advanced Excel (MOS Certified)</span>
+          <span class="tag">Data Modeling</span>
+          <span class="tag">Competency Framework</span>
+        </div>
+      </section>
+
+      <!-- 8. PROJECT GALLERY / SCREENSHOTS -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.gallery">Visual Artifacts</span>
+          <h2 class="project-section__title">
+            <i data-lucide="image"></i>
+            <span data-i18n="detail.title.gallery">Project Gallery</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="pln.gal.lead">
+            Visual overview of the CompetencyMatch web interface, Excel data extraction formulas, interactive charts, and database outputs:
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-web-dashboard-full.png" alt="Competency Match Full Web Dashboard" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c1_title">Competency Match Full Web Dashboard</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c1_desc">Full-screen interactive web dashboard featuring automated column mapping, level selection, match percentage summary, and top career transition recommendations.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-web-visualization-charts.png" alt="Interactive Visual Analytics" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c2_title">Interactive Visual Analytics & Category Breakdown</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c2_desc">Interactive chart module showing top competency frequency rankings, category proportion pie charts (Technical, Functional, Role, Core), and drilldowns.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-web-db-config.png" alt="Database Configuration & MySQL Export Interface" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c3_title">Database Configuration & MySQL Export Interface</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c3_desc">In-app database profile management configuring active MySQL connection parameters (Host, Port, DB Name, User) for automated table exports.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-extraction-formula.png" alt="Excel Text Extraction & Formula Cleaning" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c4_title">Excel Text Extraction & Formula Cleaning</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c4_desc">Advanced formula engineering (SEARCH, TRIM, CLEAN, INDEX/MATCH) parsing messy Word job descriptions into clean tabular fields.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-processed-jobs.png" alt="Standardized Processed Job Master Dataset" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c5_title">Standardized Processed Job Master Dataset</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c5_desc">Restructured master data table mapping normalized columns: Job Code, Level, Profession Group, Business Stream, and Work Unit (11,232+ entries).</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-master-rekap.png" alt="Authentic System Assessment Master Dataset (111.9K+ Rows)" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c6_title">Authentic System Assessment Master Dataset (111.9K+ Rows)</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c6_desc">Full-scale authentic master spreadsheet (file: Rekap Jabatan Assessment PeG 2025) used inside the web system mapping 111,900+ rows across Position, Organization, Grade, Job Code, and Competency Levels.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #F8FAFC; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-web-hierarchy-mapping.png" alt="Career Hierarchy Matrix & Multi-Job Filter" style="width: 100%; height: 220px; object-fit: contain; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c7_title">Career Hierarchy Matrix & Multi-Job Filter</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c7_desc">Dynamic level mapping matrix configuring valid transition pathways between job grades, coupled with a searchable 1,300+ job filter modal.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-mysql-database-batch.png" alt="High-Performance MySQL Batch Processing Table" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c8_title">High-Performance MySQL Batch Processing Table (195K+ Rows)</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c8_desc">Relational MySQL database console storing 195,801+ computed cross-role evaluation pairs with query response times under 0.01 seconds.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-export-detail.png" alt="Structured Career Advisory Deliverable Spreadsheet (485K+ Rows)" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c9_title">Structured Career Advisory Deliverable Spreadsheet (485K+ Rows)</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c9_desc">Final exportable spreadsheet (Hasil_Generalist 1.xlsx) generated for HR leadership, detailing individual candidate compatibility, gap deltas, and strategic recommendation tiers.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-breakdown-matrix.png" alt="Granular Multi-Tier Contribution & Composition Matrix" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c10_title">Granular Multi-Tier Contribution & Composition Matrix</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c10_desc">Detailed spreadsheet analysis computing specific ratios and percentages: Technical Contribution (C_T), Functional Contribution %, Role Contribution %, and Owned Composition %.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-excel-multi-composition.png" alt="Multi-Dimensional Composition Analysis (Technical, Functional & Role)" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c11_title">Multi-Dimensional Composition Analysis (Technical, Functional & Role)</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c11_desc">Extended evaluation columns cross-analyzing combined category contributions (Technical + Functional, Functional + Role, Technical + Functional + Role) for complete holistic assessment.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-card__frame" style="padding: 0; background: #0B0F19; min-height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img src="/projects/pln/pln-source-word-doc.png" alt="Raw Word Job Description Document (Initial Unstructured Input)" style="width: 100%; height: 220px; object-fit: contain; background: #0B0F19; cursor: zoom-in;" loading="lazy" />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="pln.gal.c12_title">Raw Word Job Description Document (Source Input)</h3>
+              <p class="gallery-card__desc" data-i18n="pln.gal.c12_desc">Original semi-structured Microsoft Word job description documents from PLN Pusdiklat containing job title, generalist level, main objectives, and core outputs before spreadsheet ingestion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Links -->
+      <div class="project-links">
+        <a href="/#projects" class="btn btn--secondary">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal for Crisp Full-Screen Viewing -->
+  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <div class="image-modal__content">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="imageModalTitle">Screenshot Preview</span>
+        <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">
+          <i data-lucide="x" style="width:18px;height:18px;"></i>
+        </button>
+      </div>
+      <div class="image-modal__body">
+        <img id="imageModalImg" src="" alt="High-Resolution Preview" class="image-modal__img" />
+      </div>
+      <div class="image-modal__footer" id="imageModalDesc"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Muhamad Ilham</p>
+  </footer>
+
+</body>
+</html>
