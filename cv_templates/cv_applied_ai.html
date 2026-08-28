@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Muhamad Ilham - Applied AI & Machine Learning</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 18mm 15mm 18mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      font-size: 9.6pt;
+      line-height: 1.44;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+    }
+    .name {
+      font-size: 19pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .role-title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 5px;
+    }
+    .contact-info {
+      font-size: 9pt;
+      color: #475569;
+    }
+    .contact-info a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    .summary {
+      text-align: justify;
+      margin-bottom: 14px;
+      font-size: 9.4pt;
+      line-height: 1.46;
+      color: #334155;
+    }
+    .section {
+      margin-bottom: 13px;
+      break-inside: avoid;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .item {
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .item-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 9.8pt;
+    }
+    .item-period {
+      font-size: 8.8pt;
+      color: #475569;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .item-subtitle {
+      font-style: italic;
+      color: #334155;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+    .item-subtitle strong {
+      font-style: normal;
+      color: #0f172a;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 17px;
+      margin-top: 2px;
+    }
+    li {
+      margin-bottom: 4px;
+      text-align: justify;
+      color: #1e293b;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+    }
+    .skills-table td {
+      padding: 3.5px 0;
+      vertical-align: top;
+      font-size: 9.3pt;
+    }
+    .skill-label {
+      font-weight: 700;
+      color: #0f172a;
+      width: 25%;
+    }
+    .skill-val {
+      color: #1e293b;
+      width: 75%;
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">Muhamad Ilham</h1>
+    <div class="role-title">Applied AI | Machine Learning Specialist</div>
+    <div class="contact-info">
+      +62 851 5639 0983 &nbsp;|&nbsp; Ilhamx404@gmail.com &nbsp;|&nbsp; <a href="https://ilhamword.github.io/portofolio-ilham/">Portofolio Online</a> &nbsp;|&nbsp; Cianjur, Indonesia
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    Lulusan S1 Teknik Informatika (IPK 3,70/4,00) dengan keahlian mendalam pada siklus hidup <em>machine learning</em> (end-to-end ML lifecycle), pemodelan <em>deep learning</em> deret waktu (LSTM), dan <em>Natural Language Processing</em> (NLP). Berhasil mengembangkan sistem forecasting saham perbankan (BBCA) dengan mengintegrasikan data teknikal harga saham dan analisis sentimen berita (TF-IDF + Logistic Regression), menghasilkan akurasi klasifikasi sentimen 92,06% serta reduksi error peramalan multi-horizon (MAPE 1,53%–3,64%). Berpengalaman magang di 2 BUMN (PLN Kantor Pusat & PT INTI) dalam rekayasa data relasional berskala besar dan deployment sistem berbasis model komputasi.
+  </p>
+
+  <!-- PENDIDIKAN -->
+  <section class="section">
+    <h2 class="section-title">Pendidikan</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Universitas Sangga Buana YPKP</span>
+        <span class="item-period">2022 – 2026</span>
+      </div>
+      <div class="item-subtitle">S1 Teknik Informatika — <strong>IPK 3,70 / 4,00</strong></div>
+      <ul>
+        <li><strong>Skripsi:</strong> Prediksi Harga Saham BBCA Menggunakan Long Short-Term Memory (LSTM) dengan Penambahan Sentimen Berita Berbasis TF-IDF dan Logistic Regression.</li>
+        <li>Fokus penelitian: Arsitektur Neural Network deret waktu, Feature Fusion (kuantitatif harga + kualitatif sentimen teks), Text Preprocessing NLP Bahasa Indonesia, dan Evaluasi Multi-Horizon (H+1 s/d H+7).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROYEK UTAMA: MACHINE LEARNING & AI -->
+  <section class="section">
+    <h2 class="section-title">Proyek Machine Learning & Applied AI Utama</h2>
+
+    <!-- BBCA AI Project -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">BBCA Hybrid LSTM & NLP Sentiment Stock Forecasting Engine</span>
+        <span class="item-period">Proyek Riset & Capstone</span>
+      </div>
+      <div class="item-subtitle">Python, TensorFlow/Keras, Scikit-learn, TF-IDF, Logistic Regression, Flask, MySQL</div>
+      <ul>
+        <li>Mengembangkan sistem machine learning end-to-end: otomatisasi pengumpulan data, text preprocessing, feature engineering gabungan, pelatihan model deep learning, evaluasi metrik ilmiah, hingga deployment dashboard web.</li>
+        <li>Membangun model klasifikasi sentimen berita finansial berbahasa Indonesia menggunakan TF-IDF Vectorizer dan Logistic Regression, mencapai akurasi <strong>92,06% pada 1.475+ dataset berita</strong>.</li>
+        <li>Merancang arsitektur model <strong>Hybrid LSTM</strong> yang menggabungkan fitur sekuensial harga (OHLCV) dengan skor agregasi polaritas sentimen harian untuk proyeksi harga multi-horizon (H+1, H+3, H+5, H+7).</li>
+        <li>Mengevaluasi performa model: Model Hybrid terbukti konsisten mengungguli baseline LSTM murni di seluruh horizon pengujian, mencapai <strong>MAPE 1,53% (H+1), 2,43% (H+3), 3,03% (H+5), dan 3,64% (H+7)</strong> (reduksi error mencapai 27,3%).</li>
+        <li>Men-deploy model ke dalam dashboard web Flask & MySQL interaktif dengan visualisasi candlestick chart, grafik prediksi vs aktual, dan transparansi rumus kalkulasi agregasi sentimen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HALAMAN 2 -->
+  <div class="page-break"></div>
+
+  <!-- PENGALAMAN MAGANG & KERJA (Mencakup Semua Pengalaman) -->
+  <section class="section">
+    <h2 class="section-title">Pengalaman Magang & Kerja</h2>
+
+    <!-- PLN -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">PT PLN (Persero) – Kantor Pusat</span>
+        <span class="item-period">15 Jul 2025 – 15 Okt 2025</span>
+      </div>
+      <div class="item-subtitle"><strong>Data Analyst Intern</strong> — Divisi Strategi Human Capital (HST), Bidang Sistem Kompetensi</div>
+      <ul>
+        <li>Mengembangkan algoritma pencocokan kompetensi (*rule-based competency matching engine*) untuk menghitung skor kecocokan profil pegawai terhadap ribuan standar jabatan secara objektif dan bebas bias.</li>
+        <li>Mengolah dan memproses <strong>100.000+ baris data relasi jabatan-kompetensi</strong> yang diekspansi menjadi jutaan titik data komparasi kandidat untuk kebutuhan simulasi suksesi dan rekomendasi jalur karier SDM.</li>
+        <li>Melakukan pembersihan data (*data cleaning*), normalisasi teks uraian jabatan, transformasi data, dan automasi pemrosesan dataset menggunakan Python (Pandas) dan formula spreadsheet tingkat lanjut.</li>
+      </ul>
+    </div>
+
+    <!-- INTI -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">PT Industri Telekomunikasi Indonesia (Persero) – PT INTI</span>
+        <span class="item-period">20 Okt 2025 – 20 Jan 2026</span>
+      </div>
+      <div class="item-subtitle"><strong>Software & Data Developer Intern</strong> — Divisi Pemasaran & Penjualan (Bagian Teknologi Informasi)</div>
+      <ul>
+        <li>Menyempurnakan alur data dan arsitektur database relasional MySQL pada sistem manajemen fasilitas internal (UMPROP), mencakup integrasi 11 modul operasional.</li>
+        <li>Membangun modul batch ingestion data Excel otomatis untuk memetakan dataset checklist secara dinamis ke entitas database, memastikan integritas dan konsistensi data operasional harian.</li>
+      </ul>
+    </div>
+
+    <!-- MANDIRI -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Rakamin Academy x Bank Mandiri</span>
+        <span class="item-period">Mar 2025 – Apr 2025</span>
+      </div>
+      <div class="item-subtitle"><strong>Mobile & API Integration Developer</strong> (Project-Based Virtual Intern)</div>
+      <ul>
+        <li>Membangun integrasi data client-side dengan REST API untuk mengonsumsi dan menyajikan feed data finansial secara real-time.</li>
+        <li>Mengimplementasikan arsitektur dynamic pagination dan asynchronous network request. Meraih predikat <strong>Excellent (Nilai: 91,74 / 100)</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERTIFIKASI & LISENSI RESMI -->
+  <section class="section">
+    <h2 class="section-title">Sertifikasi & Lisensi Resmi</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Microsoft Office Specialist (MOS): Excel Associate — Microsoft / Certiport</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">Credential ID: CcHy-DkNY — <strong>Skor Ujian: 960 / 1000</strong> (Akurasi 100% pada semua domain ujian)</div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Sertifikat Magang Data Analyst — PT PLN (Persero) Kantor Pusat</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">No. Sertifikat: 1411/HR/HST/2025 (Pengolahan 100K+ Data Relasional & Sistem Kompetensi)</div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Project-Based Virtual Internship — Rakamin Academy x Bank Mandiri</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">Mobile & API Integration Developer — Nilai Akhir: 91,74 / 100 (Excellent)</div>
+    </div>
+  </section>
+
+  <!-- KEAHLIAN TEKNIS -->
+  <section class="section">
+    <h2 class="section-title">Keahlian Teknis (Technical Skills)</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-label">Machine Learning & Deep Learning:</td>
+        <td class="skill-val"><strong>LSTM (Long Short-Term Memory)</strong>, Recurrent Neural Networks (RNN), Logistic Regression, Feature Engineering, Multi-Horizon Time-Series Forecasting, Model Evaluation (MAPE, Confusion Matrix, Classification Report).</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Natural Language Processing:</td>
+        <td class="skill-val">TF-IDF Vectorization, Text Preprocessing (Tokenization, Indonesian Stopwords, Stemming, Regex Cleaning), Sentiment Polarity Classification.</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Frameworks & Libraries:</td>
+        <td class="skill-val"><strong>TensorFlow / Keras</strong>, <strong>Scikit-learn</strong>, Pandas, NumPy, OpenPyXL, Matplotlib, Seaborn.</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Programming & Deployment:</td>
+        <td class="skill-val">Python, SQL (MySQL), Flask Web App / REST API, Jupyter Notebook, Git & GitHub, Postman.</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Muhamad Ilham - Data Engineer</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 18mm 15mm 18mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      font-size: 9.6pt;
+      line-height: 1.44;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+    }
+    .name {
+      font-size: 19pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .role-title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 5px;
+    }
+    .contact-info {
+      font-size: 9pt;
+      color: #475569;
+    }
+    .contact-info a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    .summary {
+      text-align: justify;
+      margin-bottom: 14px;
+      font-size: 9.4pt;
+      line-height: 1.46;
+      color: #334155;
+    }
+    .section {
+      margin-bottom: 13px;
+      break-inside: avoid;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .item {
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .item-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 9.8pt;
+    }
+    .item-period {
+      font-size: 8.8pt;
+      color: #475569;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .item-subtitle {
+      font-style: italic;
+      color: #334155;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+    .item-subtitle strong {
+      font-style: normal;
+      color: #0f172a;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 17px;
+      margin-top: 2px;
+    }
+    li {
+      margin-bottom: 4px;
+      text-align: justify;
+      color: #1e293b;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+    }
+    .skills-table td {
+      padding: 3.5px 0;
+      vertical-align: top;
+      font-size: 9.3pt;
+    }
+    .skill-label {
+      font-weight: 700;
+      color: #0f172a;
+      width: 24%;
+    }
+    .skill-val {
+      color: #1e293b;
+      width: 76%;
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">Muhamad Ilham</h1>
+    <div class="role-title">Data Engineer | Database Specialist</div>
+    <div class="contact-info">
+      +62 851 5639 0983 &nbsp;|&nbsp; Ilhamx404@gmail.com &nbsp;|&nbsp; <a href="https://ilhamword.github.io/portofolio-ilham/">Portofolio Online</a> &nbsp;|&nbsp; Cianjur, Indonesia
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    Lulusan S1 Teknik Informatika (IPK 3,70/4,00) dengan keahlian utama pada perancangan arsitektur database relasional (MySQL 3NF), rekayasa pipeline data (ETL/ELT), integrasi REST API, dan automasi batch file ingestion. Berpengalaman di 2 BUMN (PT INTI dan PT PLN Kantor Pusat) dalam merestrukturisasi skema database terintegrasi, membangun parser spreadsheet otomatis, menangani transformasi 100.000+ baris data relasional berskala besar, serta membangun data pipeline otomatis periodik yang menghubungkan data pasar finansial ke database terpusat.
+  </p>
+
+  <!-- PENDIDIKAN -->
+  <section class="section">
+    <h2 class="section-title">Pendidikan</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Universitas Sangga Buana YPKP</span>
+        <span class="item-period">2022 – 2026</span>
+      </div>
+      <div class="item-subtitle">S1 Teknik Informatika — <strong>IPK 3,70 / 4,00</strong></div>
+      <ul>
+        <li><strong>Skripsi:</strong> Pengembangan Pipeline Data End-to-End dan Integrasi Multi-Sumber Data (API Finansial & RSS News Feeds) Berbasis Database Terstruktur dan Pemodelan Prediktif Deret Waktu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PENGALAMAN MAGANG & KERJA (Bagian 1: PT INTI & PT PLN) -->
+  <section class="section">
+    <h2 class="section-title">Pengalaman Magang & Kerja</h2>
+
+    <!-- INTI -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">PT Industri Telekomunikasi Indonesia (Persero) – PT INTI</span>
+        <span class="item-period">20 Okt 2025 – 20 Jan 2026</span>
+      </div>
+      <div class="item-subtitle"><strong>Database & Backend Developer Intern</strong> — Divisi Pemasaran & Penjualan (Bagian Teknologi Informasi)</div>
+      <ul>
+        <li>Merestrukturisasi skema database relasional MySQL ternormalisasi (3NF) pada sistem UMPROP, menetapkan relasi foreign key, indexing tabel, serta menjamin integritas referensial data fasilitas kampus PT INTI.</li>
+        <li>Merancang dan membangun <strong>Automated Excel Batch Ingestion Pipeline</strong> yang secara otomatis mem-parsing file spreadsheet (.xlsx), memvalidasi tipe data & struktur kolom, serta memetakan baris data ke tabel relasional ruangan dan jadwal tugas (mengeliminasi human error entri data manual).</li>
+        <li>Mengembangkan arsitektur backend untuk data filtering, autentikasi multi-level role/permission, modul ekspor/impor data terstruktur, dan generator QR Code dinamis untuk pelabelan fasilitas fisik.</li>
+      </ul>
+    </div>
+
+    <!-- PLN -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">PT PLN (Persero) – Kantor Pusat</span>
+        <span class="item-period">15 Jul 2025 – 15 Okt 2025</span>
+      </div>
+      <div class="item-subtitle"><strong>Data Processing & Transformation Intern</strong> — Divisi Strategi Human Capital (HST)</div>
+      <ul>
+        <li>Merancang pipeline transformasi dan pemrosesan data berskala besar menggunakan Python (Pandas) untuk memproses <strong>100.000+ baris data relasi jabatan-kompetensi</strong> menjadi jutaan record siap olah.</li>
+        <li>Membangun modul validasi data otomatis untuk mendeteksi data corrupt, karakter encoding anomali, spasi ganda, dan missing values pada raw data uraian jabatan sebelum disimpan ke database/rekap assessment.</li>
+        <li>Mengotomasi pemetaan struktur formasi jabatan lama ke baru serta restrukturisasi matriks RACI menggunakan Python dan formula spreadsheet tingkat lanjut.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HALAMAN 2 -->
+  <div class="page-break"></div>
+
+  <!-- PENGALAMAN MAGANG (Lanjutan: Bank Mandiri) -->
+  <section class="section">
+    <h2 class="section-title">Pengalaman Magang & Kerja (Lanjutan)</h2>
+
+    <!-- MANDIRI -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Rakamin Academy x Bank Mandiri</span>
+        <span class="item-period">Mar 2025 – Apr 2025</span>
+      </div>
+      <div class="item-subtitle"><strong>API Integration Developer</strong> (Project-Based Virtual Intern)</div>
+      <ul>
+        <li>Membangun pipeline konsumsi data dari REST API eksternal secara asinkron untuk penarikan data headline berita finansial secara real-time.</li>
+        <li>Mengimplementasikan manajemen state data, penanganan network exception, serta arsitektur dynamic pagination (infinite scrolling) untuk optimasi pemuatan dataset feed yang efisien. Meraih predikat <strong>Excellent (Nilai: 91,74 / 100)</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROYEK PIPELINE & DATA ENGINEERING -->
+  <section class="section">
+    <h2 class="section-title">Proyek Rekayasa Data & Pipeline (Data Engineering)</h2>
+
+    <!-- BBCA Data Pipeline -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Automated Financial & News Data Pipeline Engine (BBCA Project)</span>
+        <span class="item-period">Proyek Riset & Engineering</span>
+      </div>
+      <div class="item-subtitle">Python, MySQL, REST API Ingestion, Cron Task Scheduling, Flask Backend</div>
+      <ul>
+        <li>Membangun cron-job automated data pipeline dengan interval eksekusi periodik (setiap 30 menit) untuk mengambil data pasar saham (Yahoo Finance API) dan berita finansial (Google News RSS).</li>
+        <li>Mengimplementasikan modul ekstraksi dan transformasi teks: pembersihan regex, tokenisasi, normalisasi, dan kalkulasi nilai sentimen yang disimpan secara terstruktur ke tabel database MySQL.</li>
+        <li>Merancang skema tabel database MySQL untuk menyimpan histori pergerakan harga saham harian (OHLCV), metadata artikel berita, bobot skor sentimen, dan output log komparasi model.</li>
+        <li>Membangun RESTful API endpoints menggunakan Flask untuk melayani query data terfilter, status pipeline background, dan ekspor dataset ke format XLSX.</li>
+      </ul>
+    </div>
+
+    <!-- UMPROP Facility Data Platform -->
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">UMPROP Enterprise Data Platform & Batch Parser (PT INTI)</span>
+        <span class="item-period">Proyek Sistem Enterprise</span>
+      </div>
+      <div class="item-subtitle">MySQL (3NF), PHP (CodeIgniter 4), Batch Excel Ingestion, Role-Based Access Control</div>
+      <ul>
+        <li>Mengembangkan 11 modul sistem terintegrasi yang menangani alur data harian pemeliharaan fasilitas kampus industri tanpa kertas (*paperless workflow*).</li>
+        <li>Menyusun mekanisme validasi transaksi database untuk mencegah redundansi data checklist ruangan dan memastikan integritas data audit trail.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERTIFIKASI RESMI -->
+  <section class="section">
+    <h2 class="section-title">Sertifikasi & Lisensi Resmi</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Microsoft Office Specialist (MOS): Excel Associate — Microsoft / Certiport</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">Credential ID: CcHy-DkNY — <strong>Skor Ujian: 960 / 1000</strong> (Akurasi 100% pada Tables & Formulas)</div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Sertifikat Magang Data Analyst — PT PLN (Persero) Kantor Pusat</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">No. Sertifikat: 1411/HR/HST/2025 (Pengolahan 100K+ Data Relasional)</div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Project-Based Virtual Internship — Rakamin Academy x Bank Mandiri</span>
+        <span class="item-period">2025</span>
+      </div>
+      <div class="item-subtitle">Mobile & API Integration Developer — Nilai Akhir: 91,74 / 100 (Excellent)</div>
+    </div>
+  </section>
+
+  <!-- KEAHLIAN TEKNIS -->
+  <section class="section">
+    <h2 class="section-title">Keahlian Teknis (Technical Skills)</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-label">Database & Storage:</td>
+        <td class="skill-val"><strong>MySQL</strong> (3NF Normalization, Foreign Key Constraints, Indexing, Query Optimization, Transaction Management), Relational Database Modeling, Data Integrity Audit.</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Data Engineering & ETL:</td>
+        <td class="skill-val">ETL/Data Pipeline Ingestion, Automated Batch File Parsing (Excel/CSV), Data Cleaning & Transformation, REST API Ingestion, Cron Job Automation, Data Validation.</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Programming Languages:</td>
+        <td class="skill-val">Python (Pandas, Polars, OpenPyXL, Requests), SQL, PHP (CodeIgniter 4), JavaScript, HTML5/CSS3.</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Tools & Infrastructure:</td>
+        <td class="skill-val">Git & GitHub, Postman (API Testing), VS Code, Flask, Jupyter Notebook, Linux/Windows Server Environment.</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>
