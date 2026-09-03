@@ -25,6 +25,7 @@ export default defineConfig({
         bbcaStock: resolve(__dirname, 'projects/bbca-stock.html'),
         competencyPln: resolve(__dirname, 'projects/competency-pln.html'),
         umpropInti: resolve(__dirname, 'projects/umprop-inti.html'),
+        ekycFraudDetection: resolve(__dirname, 'projects/ekyc-fraud-detection.html'),
       },
     },
   },

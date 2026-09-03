@@ -312,7 +312,122 @@ export function initProjectDetailTabs() {
     });
   }
 
-  // 9. Initialize Image Lightbox for project screenshots
+  // 9. eKYC Hero Tab Switcher
+  const ekycHeroTabs = document.querySelectorAll('#ekycHeroTabs .horizon-tab');
+  const ekycHeroImg = document.getElementById('ekycHeroImg');
+  const ekycHeroCaption = document.getElementById('ekycHeroCaption');
+  const ekycHeroBadge = document.getElementById('ekycHeroBadge');
+
+  if (ekycHeroTabs.length > 0 && ekycHeroImg) {
+    ekycHeroTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        ekycHeroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
+        tab.classList.add('horizon-tab--active');
+
+        const newSrc = tab.getAttribute('data-src');
+        const badge = tab.getAttribute('data-badge') || 'Live Preview';
+        const captionKey = tab.getAttribute('data-caption-key') || 'ekyc.hero.caption_admin';
+        const currentLang = getCurrentLang();
+        const dict = translations[currentLang] || translations.en;
+
+        ekycHeroImg.style.opacity = '0.3';
+        setTimeout(() => {
+          ekycHeroImg.src = newSrc;
+          ekycHeroImg.style.opacity = '1';
+        }, 120);
+
+        if (ekycHeroBadge) ekycHeroBadge.textContent = badge;
+        if (ekycHeroCaption) {
+          ekycHeroCaption.setAttribute('data-i18n-html', captionKey);
+          ekycHeroCaption.innerHTML = dict[captionKey] || '';
+        }
+      });
+    });
+  }
+
+  // 10. eKYC Pipeline Showcase Tab Switcher
+  const ekycPipeTabs = document.querySelectorAll('#ekycPipeTabs .horizon-tab');
+  const ekycPipeImg = document.getElementById('ekycPipeImg');
+  const ekycPipeCaption = document.getElementById('ekycPipeCaption');
+  const ekycPipeBadge = document.getElementById('ekycPipeBadge');
+  const ekycPipeTags = document.getElementById('ekycPipeTags');
+
+  if (ekycPipeTabs.length > 0 && ekycPipeImg) {
+    ekycPipeTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        ekycPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
+        tab.classList.add('horizon-tab--active');
+
+        const newSrc = tab.getAttribute('data-src');
+        const badge = tab.getAttribute('data-badge') || 'Pipeline Step';
+        const captionKey = tab.getAttribute('data-caption-key') || 'ekyc.pipe.cap_selfie';
+        const tags = tab.getAttribute('data-tags') || '';
+        const currentLang = getCurrentLang();
+        const dict = translations[currentLang] || translations.en;
+
+        ekycPipeImg.style.opacity = '0.3';
+        setTimeout(() => {
+          ekycPipeImg.src = newSrc;
+          ekycPipeImg.style.opacity = '1';
+        }, 120);
+
+        if (ekycPipeBadge) ekycPipeBadge.textContent = badge;
+        if (ekycPipeCaption) {
+          ekycPipeCaption.setAttribute('data-i18n-html', captionKey);
+          ekycPipeCaption.innerHTML = dict[captionKey] || '';
+        }
+        if (ekycPipeTags && tags) {
+          const tagArray = tags.split(',');
+          ekycPipeTags.innerHTML = tagArray
+            .map((t, idx) => `<span class="tag ${idx === 0 ? 'tag--accent' : ''}" style="font-size: 0.68rem; padding: 2px 8px;">${t.trim()}</span>`)
+            .join('');
+        }
+      });
+    });
+  }
+
+  // 11. eKYC RAG Copilot Tab Switcher
+  const ekycRagTabs = document.querySelectorAll('#ekycRagTabs .horizon-tab');
+  const ekycRagImg = document.getElementById('ekycRagImg');
+  const ekycRagCaption = document.getElementById('ekycRagCaption');
+  const ekycRagBadge = document.getElementById('ekycRagBadge');
+  const ekycRagTags = document.getElementById('ekycRagTags');
+
+  if (ekycRagTabs.length > 0 && ekycRagImg) {
+    ekycRagTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        ekycRagTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
+        tab.classList.add('horizon-tab--active');
+
+        const newSrc = tab.getAttribute('data-src');
+        const badge = tab.getAttribute('data-badge') || 'RAG Assistant';
+        const captionKey = tab.getAttribute('data-caption-key') || 'ekyc.rag.cap_kb';
+        const tags = tab.getAttribute('data-tags') || '';
+        const currentLang = getCurrentLang();
+        const dict = translations[currentLang] || translations.en;
+
+        ekycRagImg.style.opacity = '0.3';
+        setTimeout(() => {
+          ekycRagImg.src = newSrc;
+          ekycRagImg.style.opacity = '1';
+        }, 120);
+
+        if (ekycRagBadge) ekycRagBadge.textContent = badge;
+        if (ekycRagCaption) {
+          ekycRagCaption.setAttribute('data-i18n-html', captionKey);
+          ekycRagCaption.innerHTML = dict[captionKey] || '';
+        }
+        if (ekycRagTags && tags) {
+          const tagArray = tags.split(',');
+          ekycRagTags.innerHTML = tagArray
+            .map((t, idx) => `<span class="tag ${idx === 0 ? 'tag--accent' : ''}" style="font-size: 0.68rem; padding: 2px 8px;">${t.trim()}</span>`)
+            .join('');
+        }
+      });
+    });
+  }
+
+  // 12. Initialize Image Lightbox for project screenshots
   initImageLightbox();
 }
 
@@ -328,7 +443,7 @@ export function initImageLightbox() {
 
   function openImage(src, title, desc) {
     if (modalImg) modalImg.src = src;
-    if (modalTitle) modalTitle.textContent = title || 'Screenshot Preview';
+    if (modalTitle) modalTitle.textContent = title || '';
     if (modalDesc) modalDesc.textContent = desc || '';
     modal.classList.add('image-modal--open');
     document.body.style.overflow = 'hidden';
@@ -337,12 +452,15 @@ export function initImageLightbox() {
   function closeImage() {
     modal.classList.remove('image-modal--open');
     document.body.style.overflow = '';
-    if (modalImg) modalImg.src = '';
   }
 
-  // Attach to zoomable images and gallery cards
-  document.querySelectorAll('.pipe-showcase-left, .gallery-card, #plnHeroChartImg, #bbcaHeroChartImg, #intiHeroImg').forEach((el) => {
-    el.addEventListener('click', (e) => {
+  const clickableElements = document.querySelectorAll(
+    '.preview-window__body, .pipe-showcase-left, .gallery-card'
+  );
+
+  clickableElements.forEach((el) => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
       let src = '';
       let title = '';
       let desc = '';
@@ -353,7 +471,11 @@ export function initImageLightbox() {
       } else if (el.classList.contains('pipe-showcase-left')) {
         const img = el.querySelector('img');
         if (img) src = img.src;
-        // Check if inside PLN, INTI, or BBCA
+        // Check if inside eKYC, PLN, INTI, or BBCA
+        const ekycCap = document.getElementById('ekycPipeCaption');
+        const ekycBdg = document.getElementById('ekycPipeBadge');
+        const ekycRagCap = document.getElementById('ekycRagCaption');
+        const ekycRagBdg = document.getElementById('ekycRagBadge');
         const plnCap = document.getElementById('plnPipeCaption');
         const plnBdg = document.getElementById('plnPipeBadge');
         const intiCap = document.getElementById('intiPipeCaption');
@@ -361,13 +483,19 @@ export function initImageLightbox() {
         const bbcaCap = document.getElementById('bbcaPipeCaption');
         const bbcaBdg = document.getElementById('bbcaPipeBadge');
 
-        if (bbcaCap && el.contains(document.getElementById('bbcaPipeImg'))) {
+        if (ekycCap && el.contains(document.getElementById('ekycPipeImg'))) {
+          if (ekycBdg) title = ekycBdg.textContent;
+          if (ekycCap) desc = ekycCap.innerText;
+        } else if (ekycRagCap && el.contains(document.getElementById('ekycRagImg'))) {
+          if (ekycRagBdg) title = ekycRagBdg.textContent;
+          if (ekycRagCap) desc = ekycRagCap.innerText;
+        } else if (bbcaCap && el.contains(document.getElementById('bbcaPipeImg'))) {
           if (bbcaBdg) title = bbcaBdg.textContent;
           if (bbcaCap) desc = bbcaCap.innerText;
         } else if (intiCap && el.contains(document.getElementById('intiPipeImg'))) {
           if (intiBdg) title = intiBdg.textContent;
           if (intiCap) desc = intiCap.innerText;
-        } else if (plnCap) {
+        } else if (plnCap && el.contains(document.getElementById('plnPipeImg'))) {
           if (plnBdg) title = plnBdg.textContent;
           if (plnCap) desc = plnCap.innerText;
         }

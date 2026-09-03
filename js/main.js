@@ -39,11 +39,12 @@ function initHeroConsoleTabs() {
   const panes = {
     pln: document.getElementById('pane-pln'),
     inti: document.getElementById('pane-inti'),
-    bbca: document.getElementById('pane-bbca')
+    bbca: document.getElementById('pane-bbca'),
+    ekyc: document.getElementById('pane-ekyc')
   };
 
   let currentIndex = 0;
-  const projectKeys = ['pln', 'inti', 'bbca'];
+  const projectKeys = ['pln', 'inti', 'bbca', 'ekyc'];
   let isHovered = false;
 
   function switchTab(targetKey) {
