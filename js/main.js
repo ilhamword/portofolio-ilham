@@ -1,9 +1,13 @@
 // ===== Main Entry =====
+import { inject } from '@vercel/analytics';
 import { initNavigation } from './navigation.js';
 import { initAnimations } from './animations.js';
 import { initI18n } from './i18n.js';
 import { initCertificatesModal } from './certificates.js';
 import { initProjectDetailTabs } from './project-detail.js';
+
+// Initialize Vercel Analytics
+inject();
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
