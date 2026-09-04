@@ -156,42 +156,153 @@
         </div>
       </header>
 
-      <!-- 2. PROBLEM STATEMENT & BACKGROUND -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="ekyc.prob.kicker">Fintech Security Context</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.prob.title">The High Stakes of Digital Identity Fraud</h2>
-        <p class="detail-section__lead" data-i18n="ekyc.prob.lead">
-          Traditional e-KYC systems rely either on manual reviewers or rudimentary OCR libraries that suffer from high character error rates, inability to detect digital photo tampering, and zero validation of identity number internal consistency.
-        </p>
-        <div class="detail-prose">
-          <p data-i18n="ekyc.prob.p1">
-            Financial institutions and fintech startups face severe compliance penalties and multi-billion rupiah credit default risks when fraudsters submit fabricated KTP images, stolen national identities, or replayed video selfies.
-          </p>
-          <p data-i18n="ekyc.prob.p2">
-            Legacy OCR tools frequently hallucinate indistinct digits on weathered Indonesian national ID cards, causing legitimate borrowers to be rejected while sophisticated Photoshop edits slip through without forensic examination.
-          </p>
+      <!-- 2. PROBLEM STATEMENT (BBCA-STYLE) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="ekyc.prob.kicker">Fintech Security Context</span>
+          <h2 class="project-section__title">
+            <i data-lucide="help-circle"></i>
+            <span data-i18n="ekyc.prob.title">The High Stakes of Digital Identity Fraud</span>
+          </h2>
         </div>
-
-        <div class="detail-callout" style="margin-top: var(--space-xl);">
-          <h4 class="detail-callout__title" data-i18n="ekyc.prob.callout_title">Critical Banking Vulnerabilities</h4>
-          <ul class="detail-callout__list">
-            <li data-i18n="ekyc.prob.c1">Replay attacks using printed photos or smartphone screens during video selfies</li>
-            <li data-i18n="ekyc.prob.c2">Stolen identity numbers (NIK) with altered physical birthdates and altered names</li>
-            <li data-i18n="ekyc.prob.c3">Digital manipulation and splice tampering of identity card photos</li>
-            <li data-i18n="ekyc.prob.c4">Manual reviewer fatigue resulting in high turnaround time (>24 hours)</li>
-          </ul>
+        <div class="problem-layout">
+          <div class="problem-narrative">
+            <p data-i18n="ekyc.prob.p1">
+              Financial institutions and fintech startups face severe compliance penalties and multi-billion rupiah credit default risks when fraudsters submit fabricated KTP images, stolen national identities, or replayed video selfies.
+            </p>
+            <p data-i18n="ekyc.prob.p2">
+              Legacy OCR tools frequently hallucinate indistinct digits on weathered Indonesian national ID cards, causing legitimate borrowers to be rejected while sophisticated Photoshop edits slip through without forensic examination.
+            </p>
+          </div>
+          <div class="problem-callout">
+            <span class="problem-callout__title">
+              <i data-lucide="alert-circle" style="width:16px;height:16px;color:#DC2626;"></i>
+              <span data-i18n="ekyc.prob.callout_title">Critical Banking Vulnerabilities</span>
+            </span>
+            <div class="problem-callout__list">
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="ekyc.prob.c1">Replay attacks using printed photos or smartphone screens during video selfies</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="ekyc.prob.c2">Stolen identity numbers (NIK) with altered physical birthdates and altered names</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="ekyc.prob.c3">Digital manipulation and splice tampering of identity card photos</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="ekyc.prob.c4">Manual reviewer fatigue resulting in high turnaround time (&gt;24 hours)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- 3. SYSTEM ARCHITECTURE & PROCESS FLOW DIAGRAM (THE REQUESTED AWESOME DIAGRAM) -->
-      <section class="detail-section" id="architecture">
-        <span class="detail-section__kicker" data-i18n="ekyc.arch.kicker">High-Throughput Architecture</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.arch.title">5-Tier End-to-End Processing Pipeline</h2>
-        <p class="detail-section__lead" data-i18n="ekyc.arch.lead">
-          From real-time browser camera stream to immutable database ledger and core-banking webhook push, every millisecond is optimized for zero hallucination and mathematical tamper defense.
-        </p>
+      <!-- 3. MY CONTRIBUTION (BBCA-STYLE CARD GRID) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.roles">Role &amp; Responsibilities</span>
+          <h2 class="project-section__title">
+            <i data-lucide="user-check"></i>
+            <span data-i18n="detail.title.contribution">My Contribution</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="ekyc.contrib.lead">
+            I designed, built, and tested the complete identity verification system — from real-time anti-spoof liveness detection to Gemini multimodal AI OCR, forensic NIK validation, and enterprise webhook dispatch.
+          </p>
+        </div>
 
-        <!-- Process Flow Diagram Frame -->
+        <div class="contribution-grid">
+          <!-- Card 1: Liveness & Anti-Spoof -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="scan-face"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="ekyc.contrib.t1_title">Anti-Spoof Liveness Detection</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t1_d1">Built 3-stage MediaPipe Face Mesh challenge-response (Neutral, Blink, Mouth Open) with real-time landmark tracking</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t1_d2">Implemented Error Level Analysis (ELA) to detect printed/digital screen replay attacks with JPEG compression forensics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Computer Vision -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="image"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="ekyc.contrib.t2_title">Computer Vision Pipeline</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t2_d1">Engineered OpenCV 4-point perspective warp to rectify tilted KTP cards into orthogonal plane for optimal OCR</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t2_d2">Built CLAHE histogram equalization and auto-crop pipeline to extract official passport photo chip</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Gemini AI OCR -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="sparkles"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="ekyc.contrib.t3_title">Gemini Multimodal AI OCR</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t3_d1">Integrated Google Gemini Vision API with strict Pydantic V2 schemas for deterministic 16-digit NIK extraction</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t3_d2">Designed prompt engineering templates for structured field parsing (name, address, birthdate, gender) with zero hallucination</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Forensic & Backend -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="ekyc.contrib.t4_title">Forensic Engine &amp; Backend</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t4_d1">Built Dukcapil mathematical NIK decomposer validating province, regency, district codes and birthday consistency</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="ekyc.contrib.t4_d2">Designed FastAPI async backend with MySQL audit trails, ReportLab PDF certificates, and core-banking webhook dispatch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WORKFLOW & DATA FLOW (BBCA-STYLE PIPELINE STAGES) -->
+      <section class="project-section" id="architecture">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.architecture">End-to-End Architecture</span>
+          <h2 class="project-section__title">
+            <i data-lucide="git-branch"></i>
+            <span data-i18n="detail.title.workflow">Workflow &amp; Data Flow</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="ekyc.arch.lead">
+            From real-time browser camera stream to immutable database ledger and core-banking webhook push, every millisecond is optimized for zero hallucination and mathematical tamper defense.
+          </p>
+        </div>
+
+        <!-- Process Flow Diagram -->
         <div class="preview-window" style="margin: var(--space-xl) 0; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
           <div class="preview-window__bar">
             <div class="preview-window__dots">
@@ -200,7 +311,7 @@
             <span class="preview-window__title" data-i18n="ekyc.arch.title_bar">verif-ai.pipeline.core :: architecture-spec-v1</span>
             <span class="preview-window__badge" data-i18n="ekyc.arch.badge">5-Tier Pipeline Architecture</span>
           </div>
-          <div class="preview-window__body" style="padding: 0; background: #070A13;">
+          <div class="preview-window__body" style="padding: 0; background: #FFFFFF;">
             <img
               src="/projects/ekyc/ekyc-process-flow.png"
               alt="e-KYC End-to-End Pipeline & Forensic Architecture Diagram"
@@ -213,165 +324,173 @@
           </div>
         </div>
 
-        <!-- 5 Architecture Tier Cards -->
-        <div class="pipeline-workflow" style="margin-top: var(--space-xl);">
-          <div class="pipeline-step">
-            <span class="pipeline-step__num">TIER 1</span>
-            <h4 class="pipeline-step__name" data-i18n="ekyc.arch.t1_title">01 / Ingestion & Active Liveness</h4>
-            <p class="pipeline-step__desc" data-i18n="ekyc.arch.t1_desc">
-              MediaPipe-powered 3-stage challenge-response test (Neutral, Blink, Mouth Open) paired with Error Level Analysis (ELA) to block screen replay attacks.
-            </p>
-            <span class="tag tag--accent" style="margin-top: 8px; font-size: 0.7rem;">MediaPipe + ELA</span>
-          </div>
-
-          <div class="pipeline-step">
-            <span class="pipeline-step__num">TIER 2</span>
-            <h4 class="pipeline-step__name" data-i18n="ekyc.arch.t2_title">02 / Computer Vision Preprocessing</h4>
-            <p class="pipeline-step__desc" data-i18n="ekyc.arch.t2_desc">
-              OpenCV 4-point perspective warp rectifies tilted ID cards to an orthogonal plane, enhances contrast with CLAHE, and crops the official photo chip.
-            </p>
-            <span class="tag tag--accent" style="margin-top: 8px; font-size: 0.7rem;">OpenCV 4-Point Warp</span>
-          </div>
-
-          <div class="pipeline-step">
-            <span class="pipeline-step__num">TIER 3</span>
-            <h4 class="pipeline-step__name" data-i18n="ekyc.arch.t3_title">03 / Multimodal AI OCR Engine</h4>
-            <p class="pipeline-step__desc" data-i18n="ekyc.arch.t3_desc">
-              Google Gemini Multimodal Vision API conditioned with strict Pydantic schemas, extracting 16-digit NIK, full name, birthdate, and address deterministically.
-            </p>
-            <span class="tag tag--accent" style="margin-top: 8px; font-size: 0.7rem;">Gemini + Pydantic</span>
-          </div>
-
-          <div class="pipeline-step">
-            <span class="pipeline-step__num">TIER 4</span>
-            <h4 class="pipeline-step__name" data-i18n="ekyc.arch.t4_title">04 / Mathematical Forensic & Match</h4>
-            <p class="pipeline-step__desc" data-i18n="ekyc.arch.t4_desc">
-              Deconstructs NIK digits 7-12 to verify birthday consistency, applies +40 offset for females, validates Kemendagri regional hierarchy, and computes FaceNet Euclidean L2 distance.
-            </p>
-            <span class="tag tag--accent" style="margin-top: 8px; font-size: 0.7rem;">Dukcapil Math + FaceNet</span>
-          </div>
-
-          <div class="pipeline-step">
-            <span class="pipeline-step__num">TIER 5</span>
-            <h4 class="pipeline-step__name" data-i18n="ekyc.arch.t5_title">05 / Enterprise Core & Dispatch</h4>
-            <p class="pipeline-step__desc" data-i18n="ekyc.arch.t5_desc">
-              FastAPI asynchronous core records audit trails in MySQL, stamps a cryptographically signed PDF certificate, and dispatches JSON events to core-banking webhooks.
-            </p>
-            <span class="tag tag--accent" style="margin-top: 8px; font-size: 0.7rem;">FastAPI + Webhooks</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. OPERATIONAL PIPELINE SHOWCASE (ALL USER SCREENSHOTS INTEGRATED) -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="ekyc.pipe.kicker">Interactive Walkthrough</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.pipe.title">Operational Verification Workflow</h2>
-        <p class="detail-section__lead" data-i18n="ekyc.pipe.lead">
-          Explore each operational phase of the e-KYC pipeline from raw video feed capture to enterprise ERP/Core-Banking webhook integration:
-        </p>
-
-        <!-- Pipeline Tab Switcher Layout -->
-        <div class="pipe-showcase-grid">
-          
-          <!-- Left: Big Interactive Window -->
-          <div class="pipe-showcase-left">
-            <div class="card-mini-window">
-              <div class="card-mini-window__bar">
-                <div class="card-mini-window__dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <span class="card-mini-window__title">verif-ai-workflow-stage.internal</span>
-                <span class="card-mini-window__badge" id="ekycPipeBadge">1. Panduan Selfie & Liveness</span>
+        <!-- Workflow Stages (BBCA-style) -->
+        <div class="workflow-pipeline-container">
+          <div class="workflow-pipeline">
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="ekyc.arch.t1_num">01 / LIVENESS</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="scan-face"></i>
               </div>
-              <div class="card-mini-window__body" style="padding: 0; background: #0B1120; min-height: 380px; display: flex; align-items: center; justify-content: center;">
-                <img
-                  id="ekycPipeImg"
-                  src="/projects/ekyc/ekyc-selfie-guide.png"
-                  alt="e-KYC Operational Step"
-                  style="width: 100%; height: auto; max-height: 440px; object-fit: contain; display: block; transition: opacity 0.2s ease;"
-                />
+              <span class="workflow-stage__name" data-i18n="ekyc.arch.t1_title">Active Liveness Detection</span>
+              <span class="workflow-stage__desc" data-i18n="ekyc.arch.t1_desc">MediaPipe-powered 3-stage challenge-response test paired with Error Level Analysis (ELA) to block screen replay attacks.</span>
+              <span class="workflow-stage__badge">MediaPipe + ELA</span>
+            </div>
+
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="ekyc.arch.t2_num">02 / CV PIPELINE</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="image"></i>
               </div>
-              <!-- Live Tags -->
-              <div style="padding: 8px 12px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; gap: 6px; flex-wrap: wrap;" id="ekycPipeTags">
-                <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">MediaPipe Mesh</span>
-                <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Oval Guide</span>
-                <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Anti-Screen Replay</span>
+              <span class="workflow-stage__name" data-i18n="ekyc.arch.t2_title">Computer Vision Preprocessing</span>
+              <span class="workflow-stage__desc" data-i18n="ekyc.arch.t2_desc">OpenCV 4-point perspective warp rectifies tilted ID cards, enhances contrast with CLAHE, and crops the official photo chip.</span>
+              <span class="workflow-stage__badge">OpenCV 4-Point Warp</span>
+            </div>
+
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="ekyc.arch.t3_num">03 / AI OCR</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="sparkles"></i>
               </div>
-              <!-- Caption -->
-              <div style="padding: 10px 14px; background: var(--color-surface); border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.45;" id="ekycPipeCaption" data-i18n-html="ekyc.pipe.cap_selfie">
-                <strong>Live Selfie Capture Guide:</strong> Real-time browser guidance circle ensuring optimal facial alignment and natural ambient lighting before initiating active liveness tests.
+              <span class="workflow-stage__name" data-i18n="ekyc.arch.t3_title">Gemini Multimodal OCR</span>
+              <span class="workflow-stage__desc" data-i18n="ekyc.arch.t3_desc">Google Gemini Vision API with strict Pydantic schemas, extracting NIK, full name, birthdate, and address deterministically.</span>
+              <span class="workflow-stage__badge">Gemini + Pydantic</span>
+            </div>
+
+            <div class="workflow-stage">
+              <span class="workflow-stage__num" data-i18n="ekyc.arch.t4_num">04 / FORENSIC</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="shield-check"></i>
               </div>
+              <span class="workflow-stage__name" data-i18n="ekyc.arch.t4_title">Mathematical Forensic &amp; FaceNet</span>
+              <span class="workflow-stage__desc" data-i18n="ekyc.arch.t4_desc">Deconstructs NIK digits 7-12 for birthday consistency, validates Kemendagri regional hierarchy, and computes FaceNet L2 distance.</span>
+              <span class="workflow-stage__badge">Dukcapil Math + FaceNet</span>
+            </div>
+
+            <div class="workflow-stage workflow-stage--highlight">
+              <span class="workflow-stage__num" data-i18n="ekyc.arch.t5_num">05 / DISPATCH</span>
+              <div class="workflow-stage__icon">
+                <i data-lucide="send"></i>
+              </div>
+              <span class="workflow-stage__name" data-i18n="ekyc.arch.t5_title">Enterprise Core &amp; Webhooks</span>
+              <span class="workflow-stage__desc" data-i18n="ekyc.arch.t5_desc">FastAPI async core records audit trails in MySQL, stamps PDF certificates, and dispatches JSON events to core-banking webhooks.</span>
+              <span class="workflow-stage__badge">FastAPI + Webhooks</span>
             </div>
           </div>
+        </div>
 
-          <!-- Right: Interactive Step List -->
-          <div class="pipe-showcase-right" id="ekycPipeTabs">
-            
-            <button class="horizon-tab horizon-tab--active"
-              data-src="/projects/ekyc/ekyc-selfie-guide.png"
-              data-badge="1. Panduan Selfie & Liveness"
-              data-caption-key="ekyc.pipe.cap_selfie"
-              data-tags="MediaPipe Mesh, Oval Guide, Anti-Screen Replay"
-              data-i18n="ekyc.pipe.tab_selfie">
-              1. Selfie &amp; Liveness Guide
-            </button>
+        <!-- Interactive Pipeline Showcase Box (End-to-End Operational Lifecycle) -->
+        <div style="margin-top: var(--space-2xl);">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title" data-i18n="ekyc.pipe.title">Operational Verification Workflow</span>
+              <span class="preview-window__badge" id="ekycPipeBadge">1. Panduan Selfie &amp; Liveness</span>
+            </div>
+            <div class="preview-window__body" style="padding: 0;">
+              <!-- Navigation Tabs on Top -->
+              <div style="padding: 10px 16px; background: #F8FAFC; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div class="stock-chart-interactive__tabs" id="ekycPipeTabs">
+                  <button type="button" class="horizon-tab horizon-tab--active"
+                    data-src="/projects/ekyc/ekyc-selfie-guide.png"
+                    data-badge="1. Panduan Selfie &amp; Liveness"
+                    data-caption-key="ekyc.pipe.cap_selfie"
+                    data-tags="MediaPipe Mesh, Oval Guide, Anti-Screen Replay"
+                    data-i18n="ekyc.pipe.tab_selfie">
+                    1. Selfie &amp; Liveness Guide
+                  </button>
 
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-liveness-crop.png"
-              data-badge="2. Bukti 3-Tahap & Crop KTP"
-              data-caption-key="ekyc.pipe.cap_proof"
-              data-tags="3-Tahap Liveness, OpenCV Perspective, Auto-Crop Pasfoto"
-              data-i18n="ekyc.pipe.tab_proof">
-              2. 3-Stage Liveness &amp; Crop
-            </button>
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-liveness-crop.png"
+                    data-badge="2. Bukti 3-Tahap &amp; Crop KTP"
+                    data-caption-key="ekyc.pipe.cap_proof"
+                    data-tags="3-Tahap Liveness, OpenCV Perspective, Auto-Crop Pasfoto"
+                    data-i18n="ekyc.pipe.tab_proof">
+                    2. 3-Stage Liveness &amp; Crop
+                  </button>
 
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-dukcapil-sync.png"
-              data-badge="3. Sinkron NIK & Kemendagri"
-              data-caption-key="ekyc.pipe.cap_dukcapil"
-              data-tags="Dukcapil NIK Math, DoB Cross-Match, Kemendagri Wilayah"
-              data-i18n="ekyc.pipe.tab_dukcapil">
-              3. NIK &amp; Kemendagri Sync
-            </button>
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-dukcapil-sync.png"
+                    data-badge="3. Sinkron NIK &amp; Kemendagri"
+                    data-caption-key="ekyc.pipe.cap_dukcapil"
+                    data-tags="Dukcapil NIK Math, DoB Cross-Match, Kemendagri Wilayah"
+                    data-i18n="ekyc.pipe.tab_dukcapil">
+                    3. NIK &amp; Kemendagri Sync
+                  </button>
 
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-admin-records.png"
-              data-badge="4. Riwayat Buku Audit"
-              data-caption-key="ekyc.pipe.cap_records"
-              data-tags="MySQL Audit Ledger, OJK Ready, PDF Certificate Download"
-              data-i18n="ekyc.pipe.tab_records">
-              4. Audit Ledger History
-            </button>
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-admin-records.png"
+                    data-badge="4. Riwayat Buku Audit"
+                    data-caption-key="ekyc.pipe.cap_records"
+                    data-tags="MySQL Audit Ledger, OJK Ready, PDF Certificate Download"
+                    data-i18n="ekyc.pipe.tab_records">
+                    4. Audit Ledger History
+                  </button>
 
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-webhook-handshake.png"
-              data-badge="5. Handshake Webhook"
-              data-caption-key="ekyc.pipe.cap_handshake"
-              data-tags="Webhook.site, Event Listener, System Ready Ping"
-              data-i18n="ekyc.pipe.tab_handshake">
-              5. Webhook Handshake
-            </button>
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-webhook-handshake.png"
+                    data-badge="5. Handshake Webhook"
+                    data-caption-key="ekyc.pipe.cap_handshake"
+                    data-tags="Webhook.site, Event Listener, System Ready Ping"
+                    data-i18n="ekyc.pipe.tab_handshake">
+                    5. Webhook Handshake
+                  </button>
 
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-webhook-payload.png"
-              data-badge="6. Payload JSON Perbankan"
-              data-caption-key="ekyc.pipe.cap_payload"
-              data-tags="Masked PII, Biometric Confidence, Core-Banking Push"
-              data-i18n="ekyc.pipe.tab_payload">
-              6. Banking JSON Payload
-            </button>
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-webhook-payload.png"
+                    data-badge="6. Payload JSON Perbankan"
+                    data-caption-key="ekyc.pipe.cap_payload"
+                    data-tags="Masked PII, Biometric Confidence, Core-Banking Push"
+                    data-i18n="ekyc.pipe.tab_payload">
+                    6. Banking JSON Payload
+                  </button>
+                </div>
+                <span style="font-size: 0.72rem; color: var(--color-accent); font-weight: 600;">
+                  <i data-lucide="zoom-in" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> Klik gambar untuk Zoom
+                </span>
+              </div>
 
+              <!-- Split Container: Image on Left, Details on Right -->
+              <div class="pipe-showcase-split" style="border: none; border-radius: 0;">
+                <div class="pipe-showcase-left" title="Klik untuk memperbesar">
+                  <img
+                    id="ekycPipeImg"
+                    src="/projects/ekyc/ekyc-selfie-guide.png"
+                    alt="e-KYC Operational Step"
+                    class="pipe-showcase-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pipe-showcase-right">
+                  <div id="ekycPipeCaption" class="pipe-step-card" data-i18n-html="ekyc.pipe.cap_selfie">
+                    <strong>Live Selfie Capture Guide:</strong> Real-time browser guidance circle ensuring optimal facial alignment and natural ambient lighting before initiating active liveness tests.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="ekycPipeTags">
+                    <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">MediaPipe Mesh</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Oval Guide</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Anti-Screen Replay</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- 5. DUKCAPIL MATHEMATICAL FORENSIC NIK DECOMPOSER -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="ekyc.forensic.kicker">Mathematical Deconstruction</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.forensic.title">Dukcapil 16-Digit Forensic NIK Dissector</h2>
-        <p class="detail-section__lead" data-i18n="ekyc.forensic.lead">
-          How the system detects forged national ID numbers without needing direct external database access through algorithmic decomposition of Indonesia's national ID schema:
-        </p>
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="ekyc.forensic.kicker">Mathematical Deconstruction</span>
+          <h2 class="project-section__title">
+            <i data-lucide="binary"></i>
+            <span data-i18n="ekyc.forensic.title">Dukcapil 16-Digit Forensic NIK Dissector</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="ekyc.forensic.lead">
+            How the system detects forged national ID numbers without needing direct external database access through algorithmic decomposition of Indonesia's national ID schema:
+          </p>
+        </div>
 
         <!-- 16-Digit Interactive Breakdown Grid -->
         <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl); margin: var(--space-xl) 0;">
@@ -447,9 +566,17 @@
       </section>
 
       <!-- 6. KEY BENCHMARKS & RELIABILITY -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="ekyc.metrics.kicker">System Performance</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.metrics.title">Key Benchmarks & Reliability</h2>
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="ekyc.metrics.kicker">System Performance</span>
+          <h2 class="project-section__title">
+            <i data-lucide="gauge"></i>
+            <span data-i18n="ekyc.metrics.title">Key Benchmarks &amp; Reliability</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="ekyc.metrics.lead">
+            Deterministic verification throughput, biometric precision thresholds, and sub-second multi-layer forensic execution metrics:
+          </p>
+        </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg);">
           <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); text-align: center;">
@@ -479,96 +606,111 @@
       </section>
 
       <!-- 7. AI COMPLIANCE COPILOT & RAG ENGINE (4 NEW SCREENSHOTS) -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="ekyc.rag.kicker">AI Copilot &amp; Regulation Grounding</span>
-        <h2 class="detail-section__title" data-i18n="ekyc.rag.title">AI Compliance Copilot &amp; Semantic RAG Engine</h2>
-        <p class="detail-section__lead" data-i18n="ekyc.rag.lead">
-          An intelligent Retrieval-Augmented Generation (RAG) assistant grounded in statutory POJK banking regulations, internal fraud SOPs, and live MySQL audit records to provide zero-hallucination compliance verification.
-        </p>
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="ekyc.rag.kicker">AI Copilot &amp; Regulation Grounding</span>
+          <h2 class="project-section__title">
+            <i data-lucide="bot"></i>
+            <span data-i18n="ekyc.rag.title">AI Compliance Copilot &amp; Semantic RAG Engine</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="ekyc.rag.lead">
+            An intelligent Retrieval-Augmented Generation (RAG) assistant grounded in statutory POJK banking regulations, internal fraud SOPs, and live MySQL audit records to provide zero-hallucination compliance verification.
+          </p>
+        </div>
 
-        <!-- RAG Tab Switcher Layout -->
-        <div class="pipe-showcase-grid">
-          
-          <!-- Left: Big Interactive Window -->
-          <div class="pipe-showcase-left">
-            <div class="card-mini-window">
-              <div class="card-mini-window__bar">
-                <div class="card-mini-window__dots">
-                  <span></span><span></span><span></span>
+        <!-- RAG Tab Switcher Box -->
+        <div style="margin-top: var(--space-xl);">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title">verif-ai.copilot :: compliance-rag-engine</span>
+              <span class="preview-window__badge" id="ekycRagBadge">1. Knowledge Base PDF</span>
+            </div>
+            <div class="preview-window__body" style="padding: 0;">
+              <!-- Navigation Tabs on Top -->
+              <div style="padding: 10px 16px; background: #F8FAFC; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div class="stock-chart-interactive__tabs" id="ekycRagTabs">
+                  <button type="button" class="horizon-tab horizon-tab--active"
+                    data-src="/projects/ekyc/ekyc-rag-knowledge-base.png"
+                    data-badge="1. Knowledge Base PDF"
+                    data-caption-key="ekyc.rag.cap_kb"
+                    data-tags="Semantic RAG, PDF Chunking, POJK Grounding"
+                    data-i18n="ekyc.rag.tab_kb">
+                    1. PDF Knowledge Base
+                  </button>
+
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-rag-compliance-chat.png"
+                    data-badge="2. Tanya Regulasi POJK"
+                    data-caption-key="ekyc.rag.cap_chat"
+                    data-tags="POJK No. 12/2017, FaceNet L2 Threshold, Dual-Factor Verification"
+                    data-i18n="ekyc.rag.tab_chat">
+                    2. POJK Regulatory Chat
+                  </button>
+
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-rag-db-analytics.png"
+                    data-badge="3. Query Database MySQL"
+                    data-caption-key="ekyc.rag.cap_db"
+                    data-tags="Live MySQL Query, Approval Rate 70%, Zero Hallucination"
+                    data-i18n="ekyc.rag.tab_db">
+                    3. Live MySQL DB Query
+                  </button>
+
+                  <button type="button" class="horizon-tab"
+                    data-src="/projects/ekyc/ekyc-rag-citations-escalation.png"
+                    data-badge="4. Sitasi &amp; Eskalasi"
+                    data-caption-key="ekyc.rag.cap_citations"
+                    data-tags="Cited Sources, PDF Chapter Refs, Fraud Escalation SOP"
+                    data-i18n="ekyc.rag.tab_citations">
+                    4. Citations &amp; Escalation
+                  </button>
                 </div>
-                <span class="card-mini-window__title">verif-ai.copilot :: compliance-rag-engine</span>
-                <span class="card-mini-window__badge" id="ekycRagBadge">1. Knowledge Base PDF</span>
+                <span style="font-size: 0.72rem; color: var(--color-accent); font-weight: 600;">
+                  <i data-lucide="zoom-in" style="width:12px;height:12px;display:inline-block;vertical-align:middle;"></i> Klik gambar untuk Zoom
+                </span>
               </div>
-              <div class="card-mini-window__body" style="padding: 0; background: #0B1120; min-height: 380px; display: flex; align-items: center; justify-content: center;">
-                <img
-                  id="ekycRagImg"
-                  src="/projects/ekyc/ekyc-rag-knowledge-base.png"
-                  alt="e-KYC RAG Compliance Copilot"
-                  style="width: 100%; height: auto; max-height: 440px; object-fit: contain; display: block; transition: opacity 0.2s ease;"
-                />
-              </div>
-              <!-- Live Tags -->
-              <div style="padding: 8px 12px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; gap: 6px; flex-wrap: wrap;" id="ekycRagTags">
-                <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">Semantic RAG</span>
-                <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">PDF Chunking</span>
-                <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">POJK Grounding</span>
-              </div>
-              <!-- Caption -->
-              <div style="padding: 10px 14px; background: var(--color-surface); border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.45;" id="ekycRagCaption" data-i18n-html="ekyc.rag.cap_kb">
-                <strong>RAG Knowledge Base Ingestion:</strong> Ingestion pipeline parsing statutory banking PDF guidelines (POJK No. 12/2017 &amp; 23/2019) and fraud escalation SOPs into high-density vector chunks.
+
+              <!-- Split Container: Image on Left, Details on Right -->
+              <div class="pipe-showcase-split" style="border: none; border-radius: 0;">
+                <div class="pipe-showcase-left" title="Klik untuk memperbesar">
+                  <img
+                    id="ekycRagImg"
+                    src="/projects/ekyc/ekyc-rag-knowledge-base.png"
+                    alt="e-KYC RAG Compliance Copilot"
+                    class="pipe-showcase-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="pipe-showcase-right">
+                  <div id="ekycRagCaption" class="pipe-step-card" data-i18n-html="ekyc.rag.cap_kb">
+                    <strong>RAG Knowledge Base Ingestion:</strong> Ingestion pipeline parsing statutory banking PDF guidelines (POJK No. 12/2017 &amp; 23/2019) and fraud escalation SOPs into high-density vector chunks.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="ekycRagTags">
+                    <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">Semantic RAG</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">PDF Chunking</span>
+                    <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">POJK Grounding</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- Right: Interactive Step List -->
-          <div class="pipe-showcase-right" id="ekycRagTabs">
-            
-            <button class="horizon-tab horizon-tab--active"
-              data-src="/projects/ekyc/ekyc-rag-knowledge-base.png"
-              data-badge="1. Knowledge Base PDF"
-              data-caption-key="ekyc.rag.cap_kb"
-              data-tags="Semantic RAG, PDF Chunking, POJK Grounding"
-              data-i18n="ekyc.rag.tab_kb">
-              1. PDF Knowledge Base
-            </button>
-
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-rag-compliance-chat.png"
-              data-badge="2. Tanya Regulasi POJK"
-              data-caption-key="ekyc.rag.cap_chat"
-              data-tags="POJK No. 12/2017, FaceNet L2 Threshold, Dual-Factor Verification"
-              data-i18n="ekyc.rag.tab_chat">
-              2. POJK Regulatory Chat
-            </button>
-
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-rag-db-analytics.png"
-              data-badge="3. Query Database MySQL"
-              data-caption-key="ekyc.rag.cap_db"
-              data-tags="Live MySQL Query, Approval Rate 70%, Zero Hallucination"
-              data-i18n="ekyc.rag.tab_db">
-              3. Live MySQL DB Query
-            </button>
-
-            <button class="horizon-tab"
-              data-src="/projects/ekyc/ekyc-rag-citations-escalation.png"
-              data-badge="4. Sitasi &amp; Eskalasi"
-              data-caption-key="ekyc.rag.cap_citations"
-              data-tags="Cited Sources, PDF Chapter Refs, Fraud Escalation SOP"
-              data-i18n="ekyc.rag.tab_citations">
-              4. Citations &amp; Escalation
-            </button>
-
           </div>
         </div>
       </section>
 
       <!-- 8. COMPLETE TECH STACK -->
-      <section class="detail-section">
-        <span class="detail-section__kicker" data-i18n="hero.tech_core">Core Stack:</span>
-        <h2 class="detail-section__title">Technologies &amp; Libraries</h2>
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.tech">Technologies Used</span>
+          <h2 class="project-section__title">
+            <i data-lucide="layers"></i>
+            <span data-i18n="detail.title.tech">Tech Stack</span>
+          </h2>
+        </div>
         
-        <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md);">
+        <div class="project-tech">
           <span class="tag tag--accent">Python 3.10+</span>
           <span class="tag tag--accent">FastAPI (Async)</span>
           <span class="tag tag--accent">Google GenAI SDK (Gemini Vision)</span>
@@ -585,8 +727,16 @@
         </div>
       </section>
 
-      <!-- 8. PROJECT NAVIGATION LINKS -->
-      <nav class="project-nav" style="display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-2xl); border-top: 1px solid var(--color-border); margin-top: var(--space-3xl);">
+      <!-- Bottom Links -->
+      <div class="project-links">
+        <a href="/#projects" class="btn btn--secondary">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+        </a>
+      </div>
+
+      <!-- Project Pagination Navigation -->
+      <nav class="project-nav" style="display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-2xl); border-top: 1px solid var(--color-border); margin-top: var(--space-2xl);">
         <a href="/projects/bbca-stock.html" class="project-card__link" style="display: flex; align-items: center; gap: 6px;">
           <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
           <span>BBCA Stock Forecasting</span>
@@ -600,15 +750,19 @@
     </div>
   </main>
 
-  <!-- Universal Image Lightbox Modal -->
-  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">&times;</button>
+  <!-- Image Lightbox Modal for Crisp Full-Screen Viewing -->
+  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
     <div class="image-modal__content">
-      <img id="imageModalImg" src="" alt="Zoomed Screenshot" />
-      <div class="image-modal__info">
-        <h4 id="imageModalTitle" style="font-size: 1rem; color: #FFFFFF; font-weight: 600; margin-bottom: 4px;"></h4>
-        <p id="imageModalDesc" style="font-size: 0.85rem; color: #94A3B8; line-height: 1.4;"></p>
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="imageModalTitle">Screenshot Preview</span>
+        <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">
+          <i data-lucide="x" style="width:18px;height:18px;"></i>
+        </button>
       </div>
+      <div class="image-modal__body">
+        <img id="imageModalImg" src="" alt="High-Resolution Preview" class="image-modal__img" />
+      </div>
+      <div class="image-modal__footer" id="imageModalDesc"></div>
     </div>
   </div>
 

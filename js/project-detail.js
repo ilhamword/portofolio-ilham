@@ -9,7 +9,8 @@ export function initProjectDetailTabs() {
 
   if (heroTabs.length > 0 && heroImg) {
     heroTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         heroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -39,7 +40,8 @@ export function initProjectDetailTabs() {
 
   if (galTabs.length > 0 && galImg) {
     galTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         galTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -61,7 +63,8 @@ export function initProjectDetailTabs() {
 
   if (archTabs.length > 0 && archImg) {
     archTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         archTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -95,7 +98,8 @@ export function initProjectDetailTabs() {
 
   if (plnHeroTabs.length > 0 && plnHeroImg) {
     plnHeroTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         plnHeroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -129,7 +133,8 @@ export function initProjectDetailTabs() {
 
   if (plnPipeTabs.length > 0 && plnPipeImg) {
     plnPipeTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         plnPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -169,7 +174,8 @@ export function initProjectDetailTabs() {
 
   if (intiHeroTabs.length > 0 && intiHeroImg) {
     intiHeroTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         intiHeroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -203,7 +209,8 @@ export function initProjectDetailTabs() {
 
   if (intiPipeTabs.length > 0 && intiPipeImg) {
     intiPipeTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         intiPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -247,7 +254,8 @@ export function initProjectDetailTabs() {
 
   if (bbcaPipeTabs.length > 0 && bbcaPipeImg) {
     bbcaPipeTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         bbcaPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -287,7 +295,8 @@ export function initProjectDetailTabs() {
   // Multi-Horizon Sub-Tabs switcher inside Tab 6
   if (bbcaPipeSubTabs.length > 0 && bbcaPipeImg) {
     bbcaPipeSubTabs.forEach((subTab) => {
-      subTab.addEventListener('click', () => {
+      subTab.addEventListener('click', (e) => {
+        e.stopPropagation();
         bbcaPipeSubTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         subTab.classList.add('horizon-tab--active');
 
@@ -320,7 +329,8 @@ export function initProjectDetailTabs() {
 
   if (ekycHeroTabs.length > 0 && ekycHeroImg) {
     ekycHeroTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         ekycHeroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -354,7 +364,8 @@ export function initProjectDetailTabs() {
 
   if (ekycPipeTabs.length > 0 && ekycPipeImg) {
     ekycPipeTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         ekycPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -395,7 +406,8 @@ export function initProjectDetailTabs() {
 
   if (ekycRagTabs.length > 0 && ekycRagImg) {
     ekycRagTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
         ekycRagTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
         tab.classList.add('horizon-tab--active');
 
@@ -442,6 +454,7 @@ export function initImageLightbox() {
   const modalClose = document.getElementById('imageModalClose');
 
   function openImage(src, title, desc) {
+    if (!src) return;
     if (modalImg) modalImg.src = src;
     if (modalTitle) modalTitle.textContent = title || '';
     if (modalDesc) modalDesc.textContent = desc || '';
@@ -454,63 +467,95 @@ export function initImageLightbox() {
     document.body.style.overflow = '';
   }
 
-  const clickableElements = document.querySelectorAll(
-    '.preview-window__body, .pipe-showcase-left, .gallery-card'
-  );
+  // 1. Pipeline & RAG split view image (left side only)
+  const pipeShowcases = document.querySelectorAll('.pipe-showcase-left');
+  pipeShowcases.forEach((left) => {
+    left.style.cursor = 'zoom-in';
+    left.addEventListener('click', (e) => {
+      if (e.target.closest('button, a, .horizon-tab, .stock-chart-interactive__tabs, .pipe-showcase-right')) {
+        return;
+      }
+      const img = left.querySelector('img');
+      if (!img) return;
 
-  clickableElements.forEach((el) => {
-    el.style.cursor = 'zoom-in';
-    el.addEventListener('click', () => {
-      let src = '';
       let title = '';
       let desc = '';
 
-      if (el.tagName === 'IMG') {
-        src = el.src;
-        title = el.alt || 'System Screenshot';
-      } else if (el.classList.contains('pipe-showcase-left')) {
-        const img = el.querySelector('img');
-        if (img) src = img.src;
-        // Check if inside eKYC, PLN, INTI, or BBCA
-        const ekycCap = document.getElementById('ekycPipeCaption');
-        const ekycBdg = document.getElementById('ekycPipeBadge');
-        const ekycRagCap = document.getElementById('ekycRagCaption');
-        const ekycRagBdg = document.getElementById('ekycRagBadge');
-        const plnCap = document.getElementById('plnPipeCaption');
-        const plnBdg = document.getElementById('plnPipeBadge');
-        const intiCap = document.getElementById('intiPipeCaption');
-        const intiBdg = document.getElementById('intiPipeBadge');
-        const bbcaCap = document.getElementById('bbcaPipeCaption');
-        const bbcaBdg = document.getElementById('bbcaPipeBadge');
+      const ekycCap = document.getElementById('ekycPipeCaption');
+      const ekycBdg = document.getElementById('ekycPipeBadge');
+      const ekycRagCap = document.getElementById('ekycRagCaption');
+      const ekycRagBdg = document.getElementById('ekycRagBadge');
+      const plnCap = document.getElementById('plnPipeCaption');
+      const plnBdg = document.getElementById('plnPipeBadge');
+      const intiCap = document.getElementById('intiPipeCaption');
+      const intiBdg = document.getElementById('intiPipeBadge');
+      const bbcaCap = document.getElementById('bbcaPipeCaption');
+      const bbcaBdg = document.getElementById('bbcaPipeBadge');
 
-        if (ekycCap && el.contains(document.getElementById('ekycPipeImg'))) {
-          if (ekycBdg) title = ekycBdg.textContent;
-          if (ekycCap) desc = ekycCap.innerText;
-        } else if (ekycRagCap && el.contains(document.getElementById('ekycRagImg'))) {
-          if (ekycRagBdg) title = ekycRagBdg.textContent;
-          if (ekycRagCap) desc = ekycRagCap.innerText;
-        } else if (bbcaCap && el.contains(document.getElementById('bbcaPipeImg'))) {
-          if (bbcaBdg) title = bbcaBdg.textContent;
-          if (bbcaCap) desc = bbcaCap.innerText;
-        } else if (intiCap && el.contains(document.getElementById('intiPipeImg'))) {
-          if (intiBdg) title = intiBdg.textContent;
-          if (intiCap) desc = intiCap.innerText;
-        } else if (plnCap && el.contains(document.getElementById('plnPipeImg'))) {
-          if (plnBdg) title = plnBdg.textContent;
-          if (plnCap) desc = plnCap.innerText;
-        }
+      if (left.contains(document.getElementById('ekycPipeImg'))) {
+        title = ekycBdg ? ekycBdg.textContent : 'e-KYC Operational Step';
+        desc = ekycCap ? ekycCap.innerText : '';
+      } else if (left.contains(document.getElementById('ekycRagImg'))) {
+        title = ekycRagBdg ? ekycRagBdg.textContent : 'AI Compliance Copilot';
+        desc = ekycRagCap ? ekycRagCap.innerText : '';
+      } else if (left.contains(document.getElementById('bbcaPipeImg'))) {
+        title = bbcaBdg ? bbcaBdg.textContent : 'BBCA Pipeline Step';
+        desc = bbcaCap ? bbcaCap.innerText : '';
+      } else if (left.contains(document.getElementById('intiPipeImg'))) {
+        title = intiBdg ? intiBdg.textContent : 'INTI System Step';
+        desc = intiCap ? intiCap.innerText : '';
+      } else if (left.contains(document.getElementById('plnPipeImg'))) {
+        title = plnBdg ? plnBdg.textContent : 'PLN Pipeline Step';
+        desc = plnCap ? plnCap.innerText : '';
       } else {
-        const img = el.querySelector('img');
-        if (img) src = img.src;
-        const titleEl = el.querySelector('.gallery-card__title');
-        const descEl = el.querySelector('.gallery-card__desc');
-        if (titleEl) title = titleEl.textContent;
-        if (descEl) desc = descEl.textContent;
+        title = img.alt || 'System Screenshot';
       }
 
-      if (src) {
-        openImage(src, title, desc);
+      openImage(img.src, title, desc);
+    });
+  });
+
+  // 2. Standalone Preview Windows (e.g. Architecture Diagrams or Hero Preview without inner tabs)
+  const previewBodies = document.querySelectorAll('.preview-window__body');
+  previewBodies.forEach((body) => {
+    // If it contains tabs or a split showcase, DO NOT attach zoom-in to the entire window container
+    if (body.querySelector('.pipe-showcase-split, .stock-chart-interactive__tabs, .horizon-tab')) {
+      body.style.cursor = 'default';
+      return;
+    }
+    body.style.cursor = 'zoom-in';
+    body.addEventListener('click', (e) => {
+      if (e.target.closest('button, a, .horizon-tab, .stock-chart-interactive__tabs')) {
+        return;
       }
+      const img = body.querySelector('img');
+      if (!img) return;
+
+      const titleEl = body.closest('.preview-window')?.querySelector('.preview-window__title');
+      const captionEl = body.nextElementSibling;
+      const title = titleEl ? titleEl.textContent : (img.alt || 'Architecture Diagram');
+      const desc = captionEl ? captionEl.innerText : '';
+      openImage(img.src, title, desc);
+    });
+  });
+
+  // 3. Gallery Cards (e.g. BBCA Project Gallery)
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  galleryCards.forEach((card) => {
+    const frame = card.querySelector('.gallery-card__frame') || card;
+    frame.style.cursor = 'zoom-in';
+    frame.addEventListener('click', (e) => {
+      if (e.target.closest('button, a, .horizon-tab, .stock-chart-interactive__tabs')) {
+        return;
+      }
+      const img = frame.querySelector('img');
+      if (!img) return;
+
+      const titleEl = card.querySelector('.gallery-card__title');
+      const descEl = card.querySelector('.gallery-card__desc');
+      const title = titleEl ? titleEl.textContent : (img.alt || 'Project Artifact');
+      const desc = descEl ? descEl.textContent : '';
+      openImage(img.src, title, desc);
     });
   });
 
