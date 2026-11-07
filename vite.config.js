@@ -3,14 +3,20 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
+  server: {
+    watch: {
+      ignored: ['**/gambar/**', '**/*.pdf', '**/dist/**']
+    }
+  },
   plugins: [
     {
       name: 'pdf-headers',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           if (req.url && req.url.includes('.pdf')) {
+            const filename = req.url.split('/').pop()?.split('?')[0] || 'document.pdf';
             res.setHeader('Content-Type', 'application/pdf');
-            res.setHeader('Content-Disposition', 'inline; filename="CV_Muhamad_Ilham_Data.pdf"');
+            res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
           }
           next();
         });

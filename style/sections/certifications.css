@@ -2,8 +2,13 @@
 
 .certifications__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
+}
+
+.cert-card--ieee {
+  border-left: 3px solid #2563EB;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
 .cert-card {

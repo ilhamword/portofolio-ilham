@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/style/layout.css" />
   <link rel="stylesheet" href="/style/components.css" />
   <link rel="stylesheet" href="/style/sections/project-detail.css" />
+  <link rel="stylesheet" href="/style/sections/certifications.css" />
 
   <script type="module" src="/js/main.js" defer></script>
 </head>
@@ -74,8 +75,8 @@
       <header class="project-hero-grid">
         <div class="project-hero-info">
           <span class="project-detail__label">
-            <i data-lucide="star" style="width:12px;height:12px;"></i>
-            <span data-i18n="bbca.label">Featured / Hero Project</span>
+            <i data-lucide="award" style="width:12px;height:12px;"></i>
+            <span data-i18n="bbca.label">IEEE Conference Paper & Applied ML Research</span>
           </span>
           <h1 class="project-detail__title" data-i18n="bbca.title">BBCA Stock Forecasting & News Sentiment Analysis</h1>
           <p class="project-detail__summary" data-i18n="bbca.summary">
@@ -84,15 +85,15 @@
           <div class="project-detail__meta">
             <div class="project-detail__meta-item">
               <span class="project-detail__meta-label" data-i18n="detail.meta.type">Project Type</span>
-              <span class="project-detail__meta-value" data-i18n="bbca.meta.type_val">Academic Capstone</span>
+              <span class="project-detail__meta-value" data-i18n="bbca.meta.type_val">IEEE Conference Paper (TSSA 2026)</span>
             </div>
             <div class="project-detail__meta-item">
               <span class="project-detail__meta-label" data-i18n="detail.meta.role">My Role</span>
-              <span class="project-detail__meta-value" data-i18n="bbca.meta.role_val">Data & ML Engineer</span>
+              <span class="project-detail__meta-value" data-i18n="bbca.meta.role_val">First Author & ML Researcher</span>
             </div>
             <div class="project-detail__meta-item">
-              <span class="project-detail__meta-label" data-i18n="detail.meta.target">Ticker Target</span>
-              <span class="project-detail__meta-value">BBCA.JK (Bank BCA)</span>
+              <span class="project-detail__meta-label" data-i18n="bbca.meta.indexing_label">Publication Status</span>
+              <span class="project-detail__meta-value" data-i18n="bbca.meta.indexing_val">Presented (In Press for IEEE Xplore)</span>
             </div>
             <div class="project-detail__meta-item">
               <span class="project-detail__meta-label" data-i18n="detail.meta.horizons">Forecasting Horizons</span>
@@ -153,6 +154,60 @@
           </div>
         </div>
       </header>
+
+      <!-- 1.5. CONFERENCE PUBLICATION & OFFICIAL CREDENTIAL CALLOUT -->
+      <section class="conference-callout" style="margin: var(--space-xl) 0 var(--space-2xl) 0; background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%); border: 1px solid rgba(37, 99, 235, 0.22); border-radius: var(--radius-lg); padding: var(--space-xl); position: relative; overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-xl); align-items: center; justify-content: space-between;">
+          <div style="flex: 1 1 560px; max-width: 720px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+              <span class="tag tag--accent" style="font-size: 0.72rem; padding: 3px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+                <i data-lucide="award" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:4px;"></i>
+                <span data-i18n="bbca.conf.badge">IEEE International Conference Paper</span>
+              </span>
+              <span style="font-size: 0.78rem; color: #10B981; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                <i data-lucide="check-circle-2" style="width:13px;height:13px;"></i>
+                <span data-i18n="bbca.conf.status">Presented at TSSA 2026 — In Publication Process (IEEE Xplore & Scopus)</span>
+              </span>
+            </div>
+
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text); line-height: 1.35; margin-bottom: 6px;" data-i18n="bbca.conf.title">
+              The 20th International Conference on Telecommunication Systems, Services, and Applications (TSSA 2026)
+            </h2>
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 12px;" data-i18n-html="bbca.conf.desc">
+              Organized by <strong>School of Electrical Engineering and Informatics (STEI), Institut Teknologi Bandung (ITB)</strong> in collaboration with Universitas Sangga Buana YPKP. Technically co-sponsored by <strong>IEEE Indonesia Section</strong> and <strong>IEEE Circuits and Systems Society (CAS)</strong>.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--color-text); margin-bottom: 12px;">
+              <span><i data-lucide="map-pin" style="width:13px;height:13px;vertical-align:middle;color:var(--color-accent);margin-right:4px;"></i><span data-i18n="bbca.conf.loc">Yogyakarta, Indonesia (1–2 Oct 2026)</span></span>
+              <span><i data-lucide="user-check" style="width:13px;height:13px;vertical-align:middle;color:#10B981;margin-right:4px;"></i><span data-i18n="bbca.conf.author">Author & Presenter: Muhamad Ilham</span></span>
+              <span><i data-lucide="layers" style="width:13px;height:13px;vertical-align:middle;color:#8B5CF6;margin-right:4px;"></i><span data-i18n="bbca.conf.track">Track: Information Systems & Applied AI</span></span>
+            </div>
+
+            <!-- Citation Box -->
+            <div style="background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-md); padding: 8px 12px; font-size: 0.76rem; color: var(--color-text-secondary); font-family: monospace; line-height: 1.45;">
+              <strong style="color: var(--color-text); font-family: var(--font-sans);" data-i18n="bbca.conf.citation_title">Citation (IEEE Format):</strong><br />
+              <span data-i18n="bbca.conf.citation_text">M. Ilham et al., "Stock Price Forecasting Using Hybrid Long Short-Term Memory (LSTM) with News Sentiment Integration Based on TF-IDF and Logistic Regression," in Proc. 20th IEEE Int. Conf. Telecommun. Syst., Serv., Appl. (TSSA), Yogyakarta, Indonesia, 2026 (In Press / To appear in IEEE Xplore).</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons / Certificate Preview Trigger -->
+          <div style="flex: 0 0 240px; display: flex; flex-direction: column; gap: 10px; align-self: center;">
+            <button type="button" class="btn btn--primary cert-card__view-btn"
+              data-cert-src="/certificates/SERTIFIKAT_TSSA_2026.png"
+              data-cert-pdf="/certificates/SERTIFIKAT_TSSA_2026.pdf"
+              data-cert-title="Certificate of Participation & Paper Presentation — IEEE TSSA 2026"
+              data-cert-issuer="STEI Institut Teknologi Bandung (ITB) & IEEE Indonesia Section (Yogyakarta, 1–2 Oct 2026)"
+              style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+              <i data-lucide="award" style="width:16px;height:16px;"></i>
+              <span data-i18n="bbca.conf.btn_cert">View Presenter Certificate</span>
+            </button>
+            <a href="/certificates/SERTIFIKAT_TSSA_2026.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 9px 14px;">
+              <i data-lucide="file-down" style="width:15px;height:15px;"></i>
+              <span data-i18n="bbca.conf.btn_pdf">Download Official Certificate (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- 2. PROBLEM STATEMENT -->
       <section class="project-section">
@@ -750,6 +805,33 @@
   <footer class="footer">
     <p>&copy; 2026 Muhamad Ilham</p>
   </footer>
+
+  <!-- Certificate Lightbox Modal -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" tabindex="-1">
+    <div class="cert-modal__dialog">
+      <div class="cert-modal__header">
+        <div class="cert-modal__title-box">
+          <h3 class="cert-modal__title" id="certModalTitle">Certificate Preview</h3>
+          <span class="cert-modal__subtitle" id="certModalSubtitle">Verified Credential</span>
+        </div>
+        <button class="cert-modal__close" id="certModalClose" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="cert-modal__body">
+        <img src="" alt="Certificate Document" class="cert-modal__img" id="certModalImg" />
+      </div>
+      <div class="cert-modal__footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm" id="certModalOpenBtn">
+          <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+          <span data-i18n="certifications.modal.open_tab">Open Original File</span>
+        </a>
+        <button type="button" class="btn btn--ghost btn--sm" id="certModalCloseBtn">
+          <span data-i18n="certifications.modal.close">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
