@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITB Healthcare Reservation &amp; Quota Engine — Muhamad Ilham</title>
+  <meta name="description" content="Institutional healthcare reservation platform and dynamic doctor-shift quota engine for Institut Teknologi Bandung (ITB), handling 73,000+ patient records, BPJS PCare API bridging, and Azure AD SSO." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ITB Healthcare Reservation &amp; Quota Engine — Muhamad Ilham" />
+  <meta property="og:description" content="Institutional healthcare reservation platform and dynamic doctor-shift quota engine for Institut Teknologi Bandung (ITB), handling 73,000+ patient records, BPJS PCare API bridging, and Azure AD SSO." />
+  <meta property="og:site_name" content="Muhamad Ilham Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ITB Healthcare Reservation &amp; Quota Engine" />
+  <meta name="twitter:description" content="Institutional healthcare reservation platform and dynamic doctor-shift quota engine for Institut Teknologi Bandung (ITB), handling 73,000+ patient records, BPJS PCare API bridging, and Azure AD SSO." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/variables.css" />
+  <link rel="stylesheet" href="/style/base.css" />
+  <link rel="stylesheet" href="/style/layout.css" />
+  <link rel="stylesheet" href="/style/components.css" />
+  <link rel="stylesheet" href="/style/sections/project-detail.css" />
+
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">ilham<span>.</span></a>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#experience" class="navbar__link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="/#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="/#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="/#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li><a href="/#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Actions: Language Switcher & Mobile Toggle -->
+      <div class="navbar__actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+          <span class="lang-switch__divider">|</span>
+          <button class="lang-btn lang-btn--active" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-detail">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="/#projects" class="project-detail__back">
+        <i data-lucide="arrow-left"></i>
+        <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+      </a>
+
+      <!-- 1. PROJECT HEADER / OVERVIEW (2-COLUMN LAYOUT) -->
+      <header class="project-hero-grid">
+        <div class="project-hero-info">
+          <span class="project-detail__label">
+            <i data-lucide="building-2" style="width:12px;height:12px;"></i>
+            <span data-i18n="itb.label">Enterprise Freelance — Institut Teknologi Bandung</span>
+          </span>
+          <h1 class="project-detail__title" data-i18n="itb.title">ITB Healthcare Reservation &amp; Quota Engine</h1>
+          <p class="project-detail__summary" data-i18n="itb.summary">
+            Modernized and engineered an institutional-scale clinic booking and clinical screening infrastructure for Institut Teknologi Bandung (UPT Layanan Kesehatan ITB / Bumi Medika Ganesha). Architected high-concurrency doctor-shift quota matching, automated BPJS PCare API bridging, Azure AD SSO integration, and multi-profile patient workflows handling 73,000+ patient records and 58,000+ transactional logs across 47 relational tables.
+          </p>
+          <div class="project-detail__meta">
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.type">Project Type</span>
+              <span class="project-detail__meta-value" data-i18n="itb.meta.type_val">Enterprise Freelance</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.company">Institution</span>
+              <span class="project-detail__meta-value" data-i18n="itb.meta.company_val">Institut Teknologi Bandung (ITB)</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.role">My Role</span>
+              <span class="project-detail__meta-value" data-i18n="itb.meta.role_val">Full-Stack &amp; Systems Engineer</span>
+            </div>
+            <div class="project-detail__meta-item">
+              <span class="project-detail__meta-label" data-i18n="detail.meta.focus">Core Focus</span>
+              <span class="project-detail__meta-value" data-i18n="itb.meta.focus_val">Concurrency, Quota Matcher &amp; API Bridging</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Preview Window (Interactive System Screenshots) -->
+        <div class="project-hero-visual">
+          <div class="preview-window">
+            <div class="preview-window__bar">
+              <div class="preview-window__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-window__title" data-i18n="itb.hero.title_bar">reservasi.itb.ac.id :: clinical-engine-v2</span>
+              <span class="preview-window__badge" id="itbHeroBadge" data-i18n="itb.hero.badge_booking">Live Booking Engine</span>
+            </div>
+            <!-- Horizon Tabs for Hero -->
+            <div class="stock-chart-interactive__tabs" style="padding: 8px 12px; margin-bottom: 0; background: var(--color-surface-hover); border-bottom: 1px solid var(--color-border);" id="itbHeroTabs">
+              <button class="horizon-tab horizon-tab--active"
+                data-src="/projects/itb/itb-layanan-klinik.png"
+                data-badge="Live Booking Engine"
+                data-caption-key="itb.hero.caption_booking"
+                data-i18n="itb.hero.tab_booking">Kalender Layanan</button>
+              <button class="horizon-tab"
+                data-src="/projects/itb/itb-pilih-dokter-shift.png"
+                data-badge="Doctor &amp; Shift Slots"
+                data-caption-key="itb.hero.caption_doctor"
+                data-i18n="itb.hero.tab_doctor">Pilih Dokter &amp; Shift</button>
+              <button class="horizon-tab"
+                data-src="/projects/itb/itb-tiket-antrean.png"
+                data-badge="Barcode Ticket"
+                data-caption-key="itb.hero.caption_ticket"
+                data-i18n="itb.hero.tab_ticket">E-Tiket &amp; Barcode</button>
+              <button class="horizon-tab"
+                data-src="/projects/itb/itb-architecture-system.png"
+                data-badge="UML Architecture"
+                data-caption-key="itb.hero.caption_architecture"
+                data-i18n="itb.hero.tab_architecture">Arsitektur UML</button>
+              <button class="horizon-tab"
+                data-src="/projects/itb/itb-menu-spesialis.png"
+                data-badge="Specialty Menu"
+                data-caption-key="itb.hero.caption_menu"
+                data-i18n="itb.hero.tab_menu">Menu Layanan Poli</button>
+              <button class="horizon-tab"
+                data-src="/projects/itb/itb-dashboard-home.png"
+                data-badge="Civitas Portal"
+                data-caption-key="itb.hero.caption_portal"
+                data-i18n="itb.hero.tab_portal">Portal Dasbor Utama</button>
+            </div>
+            <div class="preview-window__body" style="padding: 0; background: var(--color-surface);">
+              <div style="position: relative; overflow: hidden; border-radius: 0 0 var(--radius-md) var(--radius-md);">
+                <img
+                  id="itbHeroImg"
+                  src="/projects/itb/itb-layanan-klinik.png"
+                  alt="ITB Healthcare System Preview"
+                  style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--color-border); transition: opacity 0.2s ease;"
+                  loading="lazy"
+                />
+                <div style="padding: 10px 14px; font-size: 0.78rem; color: var(--color-text-secondary); line-height: 1.45; background: var(--color-surface);" id="itbHeroCaption" data-i18n-html="itb.hero.caption_booking">
+                  <strong>Mesin Reservasi &amp; Kalender Interaktif:</strong> Antarmuka terpadu FullCalendar untuk pemilihan poli pratama/spesialis, pencocokan jadwal dokter, dan kuota slot real-time dengan perlindungan race condition.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- METRIC STRIP -->
+      <section class="project-detail__metrics-strip" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin: var(--space-2xl) 0; padding: var(--space-lg); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+        <div class="metric-card" style="text-align: center;">
+          <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading);">73,104</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;" data-i18n="itb.metrics.patients">Pasien Terdaftar</div>
+        </div>
+        <div class="metric-card" style="text-align: center; border-left: 1px solid var(--color-border);">
+          <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading);">58,741+</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;" data-i18n="itb.metrics.logs">Log Transaksi Reservasi &amp; MCU</div>
+        </div>
+        <div class="metric-card" style="text-align: center; border-left: 1px solid var(--color-border);">
+          <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading);">47</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;" data-i18n="itb.metrics.tables">Tabel Relasional Ternormalisasi</div>
+        </div>
+        <div class="metric-card" style="text-align: center; border-left: 1px solid var(--color-border);">
+          <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading);">19,029</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;" data-i18n="itb.metrics.users">Civitas ITB (Dosen, Mhs, Tendik)</div>
+        </div>
+      </section>
+
+      <!-- 2. PROBLEM STATEMENT -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.challenge">Challenge &amp; Context</span>
+          <h2 class="project-section__title">
+            <i data-lucide="help-circle"></i>
+            <span data-i18n="detail.title.problem">The Problem</span>
+          </h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-narrative">
+            <p data-i18n="itb.prob.p1">
+              UPT Layanan Kesehatan ITB (Bumi Medika Ganesha / BMG) serves tens of thousands of active students, lecturers, academic staff, and their families across Ganesha and Jatinangor campuses. During peak academic medical check-up (MCU) cycles and routine consultations, the legacy system experienced severe booking concurrency bottlenecks, slot overbooking, and synchronization delays with national health insurance services.
+            </p>
+            <p data-i18n="itb.prob.p2">
+              The operational challenge required modernizing the reservation pipeline with strict transactional concurrency to prevent race conditions during slot bookings, automating real-time participant eligibility checks via the BPJS PCare API, and establishing enterprise single sign-on (SSO) with Microsoft Azure AD while maintaining complete audit trails across 73,000+ patient records.
+            </p>
+          </div>
+          <div class="problem-callout">
+            <span class="problem-callout__title">
+              <i data-lucide="alert-circle" style="width:16px;height:16px;color:#DC2626;"></i>
+              <span data-i18n="itb.prob.callout_title">Institutional Bottlenecks</span>
+            </span>
+            <div class="problem-callout__list">
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="itb.prob.c1">High-concurrency race conditions leading to quota overbooking during peak morning hours</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="itb.prob.c2">Manual patient BPJS verification causing long queues at on-site clinic reception</span>
+              </div>
+              <div class="problem-callout__item">
+                <i data-lucide="x"></i>
+                <span data-i18n="itb.prob.c3">Disjointed multi-profile dependencies for academic staff families and dependents</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MY CONTRIBUTION (HIGH VISIBILITY) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.roles">Role &amp; Responsibilities</span>
+          <h2 class="project-section__title">
+            <i data-lucide="user-check"></i>
+            <span data-i18n="detail.title.contribution">My Contribution</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="itb.contrib.lead">
+            I engineered the full-stack architecture, database models, and external bridging integrations for the modernized Reservasi V2 platform.
+          </p>
+        </div>
+
+        <div class="contribution-grid">
+          <!-- Quota Matcher -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="calendar-clock"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="itb.contrib.t1_title">Dynamic Quota &amp; Shift Engine</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t1_d1">Architected concurrency-safe slot allocation matching doctor shifts, daily quotas, and branch locations</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t1_d2">Implemented database transaction locks to eliminate race conditions and zero-quota booking anomalies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BPJS Bridging -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="network"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="itb.contrib.t2_title">BPJS PCare API Bridging</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t2_d1">Integrated REST client with HMAC-SHA256 timestamp signature authentication for BPJS PCare endpoints</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t2_d2">Built automated participant NIK verification and clinic specialty mapping routines</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Auth -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="itb.contrib.t3_title">Enterprise Identity &amp; SSO</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t3_d1">Implemented Microsoft Azure AD OAuth 2.0 and ITB Centralized SSO for seamless single sign-on</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t3_d2">Structured two-factor email OTP validation and role-based permissions (Dosen, Mahasiswa, Tendik, Peneliti)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Screening & Documents -->
+          <div class="contribution-card">
+            <div class="contribution-card__header">
+              <div class="contribution-card__icon">
+                <i data-lucide="file-check"></i>
+              </div>
+              <h3 class="contribution-card__title" data-i18n="itb.contrib.t4_title">Clinical Screening &amp; Documents</h3>
+            </div>
+            <div class="contribution-card__tasks">
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t4_d1">Built SRQ-20 mental health assessment scoring engine with automatic clinical risk indexing</span>
+              </div>
+              <div class="contribution-card__task">
+                <span data-i18n="itb.contrib.t4_d2">Engineered tamper-proof QR code verification and PDF exporters for MCU, radiology, and EKG medical reports</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TECHNICAL ARCHITECTURE & SYSTEMS BREAKDOWN -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.tech">Engineering Deep Dive</span>
+          <h2 class="project-section__title">
+            <i data-lucide="cpu"></i>
+            <span data-i18n="itb.tech.title">System Architecture &amp; Database Integrity</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="itb.tech.lead">
+            A deep breakdown of the high-throughput architecture supporting 73,000+ patient records, zero-race-condition quota matching, and external interoperability.
+          </p>
+        </div>
+
+        <!-- Architecture Diagram Card -->
+        <div class="preview-window" style="margin-bottom: var(--space-xl);">
+          <div class="preview-window__bar">
+            <div class="preview-window__dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="preview-window__title">ITB Healthcare Enterprise UML Architecture Specification</span>
+            <span class="preview-window__badge">5-Layer Architecture</span>
+          </div>
+          <div class="preview-window__body" style="padding: 0; background: #FFFFFF;">
+            <img
+              src="/projects/itb/itb-architecture-system.png"
+              alt="ITB Healthcare System Architecture UML Diagram"
+              style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--color-border);"
+              data-zoomable
+              loading="lazy"
+            />
+            <div style="padding: 12px 16px; font-size: 0.8rem; color: #475569; line-height: 1.5; background: #F8FAFC;" data-i18n-html="itb.tech.arch_caption">
+              <strong>Diagram Arsitektur 5 Lapis:</strong> (1) Client &amp; Auth Gateway (Azure AD SSO, ITB SSO, OTP), (2) Quota &amp; Schedule Engine dengan concurrency lock, (3) Clinical Assessment Core (SRQ-20 &amp; Family unit), (4) External Healthcare Bridging (BPJS PCare REST API &amp; QR verification), dan (5) Relational Enterprise DB (47 tabel MySQL menangani 73k+ pasien dan 58k+ transaksi).
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Architecture Pillars Grid -->
+        <div class="contribution-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="contribution-card">
+            <h3 class="contribution-card__title" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="lock" style="width:18px;height:18px;color:var(--color-accent);"></i>
+              <span data-i18n="itb.pillar.p1_title">Concurrency &amp; Atomic Quota</span>
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); line-height: 1.5;" data-i18n="itb.pillar.p1_desc">
+              To prevent overbooking during high-demand doctor shifts, slot allocations are wrapped in transactional atomic queries with pessimistic row locking. If multiple users attempt to reserve the final remaining quota simultaneously, requests are serialized safely without data corruption.
+            </p>
+          </div>
+
+          <div class="contribution-card">
+            <h3 class="contribution-card__title" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="shuffle" style="width:18px;height:18px;color:var(--color-accent);"></i>
+              <span data-i18n="itb.pillar.p2_title">BPJS Signature &amp; API Fallback</span>
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); line-height: 1.5;" data-i18n="itb.pillar.p2_desc">
+              Bridging communications with BPJS PCare use cryptographic HMAC authorization headers generated per-request with UTC timestamp validation. Network timeouts or service downtimes trigger automated retry queues and graceful offline logging to prevent user booking blockage.
+            </p>
+          </div>
+
+          <div class="contribution-card">
+            <h3 class="contribution-card__title" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="users" style="width:18px;height:18px;color:var(--color-accent);"></i>
+              <span data-i18n="itb.pillar.p3_title">Normalized 47-Entity Schema</span>
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); line-height: 1.5;" data-i18n="itb.pillar.p3_desc">
+              Structured 47 relational tables separating identity (`pengguna`), patient medical masters (`pasien`), family hierarchies (`keluarga_pasien`), doctor shifts (`shift`, `jadwal_layanan`), and transactional event logs (`log_reservasi`, `log_reservasi_mcu`, `log_srq20`) to maintain 3NF normalization.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. INTERACTIVE FEATURE PIPELINE SHOWCASE -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.showcase">Interactive Showcase</span>
+          <h2 class="project-section__title">
+            <i data-lucide="layers"></i>
+            <span data-i18n="itb.pipe.title">System Features &amp; User Journeys</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="itb.pipe.lead">
+            Explore the core functional modules of the ITB healthcare platform through live UI captures.
+          </p>
+        </div>
+
+        <div class="preview-window">
+          <div class="preview-window__bar">
+            <div class="preview-window__dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="preview-window__title" data-i18n="itb.pipe.bar_title">Platform Showcase: Core Modules</span>
+            <span class="preview-window__badge" id="itbPipeBadge" data-i18n="itb.pipe.badge_layanan">Poli &amp; Kalender</span>
+          </div>
+
+          <!-- Feature Tabs -->
+          <div class="stock-chart-interactive__tabs" style="padding: 8px 12px; margin-bottom: 0; background: var(--color-surface-hover); border-bottom: 1px solid var(--color-border);" id="itbPipeTabs">
+            <button class="horizon-tab horizon-tab--active"
+              data-src="/projects/itb/itb-layanan-klinik.png"
+              data-badge="Poli &amp; Kalender"
+              data-caption-key="itb.pipe.cap_layanan"
+              data-tags="FullCalendar,Quota Slot,Doctor Shift,Real-time"
+              data-i18n="itb.pipe.tab_layanan">1. Booking Kalender V2</button>
+            <button class="horizon-tab"
+              data-src="/projects/itb/itb-pilih-dokter-shift.png"
+              data-badge="Pilih Dokter &amp; Shift"
+              data-caption-key="itb.pipe.cap_doctor"
+              data-tags="dr. Annisa Nadzira,dr. Adila Aafiyah,Sisa Kuota,Slot Booking"
+              data-i18n="itb.pipe.tab_doctor">2. Pilih Dokter &amp; Shift Jam</button>
+            <button class="horizon-tab"
+              data-src="/projects/itb/itb-tiket-antrean.png"
+              data-badge="E-Tiket &amp; Barcode"
+              data-caption-key="itb.pipe.cap_ticket"
+              data-tags="Nomor Antrean A001,Barcode Verifikasi,Jadwal Konsultasi"
+              data-i18n="itb.pipe.tab_ticket">3. E-Tiket &amp; Barcode Antrean</button>
+            <button class="horizon-tab"
+              data-src="/projects/itb/itb-menu-spesialis.png"
+              data-badge="Layanan Spesialis"
+              data-caption-key="itb.pipe.cap_menu"
+              data-tags="Spesialis Jiwa,Spesialis Mata,Penyakit Dalam,Periodonsia"
+              data-i18n="itb.pipe.tab_menu">4. Menu Poli &amp; Spesialis</button>
+            <button class="horizon-tab"
+              data-src="/projects/itb/itb-menu-sks.png"
+              data-badge="SKS &amp; Telefarmasi"
+              data-caption-key="itb.pipe.cap_sks"
+              data-tags="Surat Sehat,Bebas Narkoba,MMPI,Apotek Ganesa"
+              data-i18n="itb.pipe.tab_sks">5. Surat Sehat &amp; Telefarmasi</button>
+            <button class="horizon-tab"
+              data-src="/projects/itb/itb-anggota-keluarga.png"
+              data-badge="Multi-Pasien"
+              data-caption-key="itb.pipe.cap_keluarga"
+              data-tags="Hubungan Keluarga,NIK Validation,Dependents,BPJS"
+              data-i18n="itb.pipe.tab_keluarga">6. Manajemen Pasien &amp; Keluarga</button>
+          </div>
+
+          <div class="preview-window__body" style="padding: 0; background: var(--color-surface);">
+            <div style="position: relative; overflow: hidden;">
+              <img
+                id="itbPipeImg"
+                src="/projects/itb/itb-layanan-klinik.png"
+                alt="ITB Healthcare Feature Showcase"
+                style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--color-border); transition: opacity 0.2s ease;"
+                data-zoomable
+                loading="lazy"
+              />
+              <div style="padding: 12px 16px; background: var(--color-surface); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div style="font-size: 0.8rem; color: var(--color-text-secondary); max-width: 75%;" id="itbPipeCaption" data-i18n-html="itb.pipe.cap_layanan">
+                  <strong>Pemesanan Layanan Poli &amp; Kalender Interaktif:</strong> Tampilan kalender FullCalendar dengan filter poli spesialis, pemilihan dokter jaga, dan ketersediaan kuota real-time per shift layanan.
+                </div>
+                <div id="itbPipeTags" style="display: flex; gap: 6px; flex-wrap: wrap;">
+                  <span class="tag tag--accent" style="font-size: 0.68rem; padding: 2px 8px;">FullCalendar</span>
+                  <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Quota Slot</span>
+                  <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Doctor Shift</span>
+                  <span class="tag" style="font-size: 0.68rem; padding: 2px 8px;">Real-time</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. HIGH-RESOLUTION VISUAL GALLERY (GRID) -->
+      <section class="project-section">
+        <div class="project-section__header-group">
+          <span class="project-section__kicker" data-i18n="detail.kicker.gallery">System Artifacts</span>
+          <h2 class="project-section__title">
+            <i data-lucide="image"></i>
+            <span data-i18n="itb.gal.title">Interface &amp; Architecture Gallery</span>
+          </h2>
+          <p class="project-section__lead" data-i18n="itb.gal.lead">
+            Comprehensive system screenshots capturing administrative controls, clinical workflows, and multi-user modules. Click any image to view in full resolution.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card 1: Layanan Klinik -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-layanan-klinik.png"
+                alt="Antarmuka Pemesanan Jadwal Dokter dan Layanan Klinik"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c1_title">Antarmuka Pemesanan Layanan Klinik V2</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c1_desc">Sistem kalender FullCalendar yang memetakan ketersediaan kuota dan jadwal shift dokter secara real-time.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Pilih Dokter & Sisa Kuota -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-pilih-dokter-shift.png"
+                alt="Pemilihan Dokter dan Sisa Kuota Jam Pelayanan"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c2_title">Pencocokan Dokter &amp; Sisa Kuota Jam</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c2_desc">Alokasi slot jam pelayanan pagi/siang dengan visualisasi sisa kuota yang transparan per dokter.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: E-Tiket & Barcode Antrean -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-tiket-antrean.png"
+                alt="E-Tiket Reservasi dengan Barcode dan Nomor Antrean"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c3_title">E-Tiket &amp; Barcode Nomor Antrean</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c3_desc">Bukti reservasi digital resmi yang memuat Nomor Antrean A001 dan barcode untuk verifikasi saat hadir di klinik.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: UML Architecture -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-architecture-system.png"
+                alt="Arsitektur Sistem & Alur Transaksi Reservasi Layanan Kesehatan ITB"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c4_title">Diagram Arsitektur Sistem 5 Lapis</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c4_desc">Pemetaan alur end-to-end dari Azure AD SSO, Quota Matcher, SRQ-20, BPJS PCare API, hingga 47 tabel MySQL.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Menu Layanan Spesialis -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-menu-spesialis.png"
+                alt="Katalog Menu Layanan Dokter Spesialis"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c5_title">Katalog Konsultasi Dokter Spesialis</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c5_desc">Pilihan poliklinik spesialis mencakup Spesialis Jiwa, Spesialis Mata, dan Spesialis Penyakit Dalam.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Surat Sehat & Telefarmasi -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-menu-sks.png"
+                alt="Surat Keterangan Sehat, MMPI dan Telefarmasi"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c6_title">Surat Keterangan Sehat &amp; Telefarmasi</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c6_desc">Pengajuan surat keterangan sehat (SKS), tes buta warna, bebas narkoba, MMPI, dan tebus resep Apotek Ganesa.</p>
+            </div>
+          </div>
+
+          <!-- Card 7: Dashboard Home -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-dashboard-home.png"
+                alt="Portal Dasbor Utama Civitas ITB"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c7_title">Portal Dasbor Utama Civitas ITB</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c7_desc">Antarmuka beranda terpadu civitas akademika ITB yang memuat status profil dan gerbang akses layanan faskes.</p>
+            </div>
+          </div>
+
+          <!-- Card 8: Anggota Keluarga -->
+          <div class="gallery-card">
+            <div class="gallery-card__frame">
+              <img
+                src="/projects/itb/itb-anggota-keluarga.png"
+                alt="Manajemen Multi-Pasien dan Anggota Keluarga"
+                class="gallery-card__img"
+                data-zoomable
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-card__caption">
+              <h3 class="gallery-card__title" data-i18n="itb.gal.c8_title">Manajemen Profil Pasien &amp; Keluarga</h3>
+              <p class="gallery-card__desc" data-i18n="itb.gal.c8_desc">Struktur data hierarkis untuk menghubungkan civitas akademika ITB dengan tanggungan keluarga untuk layanan kesehatan terpadu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. MLE & SOFTWARE ENGINEERING TAKEAWAY -->
+      <section class="project-section" style="background: var(--color-surface); padding: var(--space-xl); border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-top: var(--space-2xl);">
+        <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+          <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.25); border-radius: var(--radius-md); padding: 12px; color: var(--color-accent); flex-shrink: 0;">
+            <i data-lucide="brain" style="width:28px;height:28px;"></i>
+          </div>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text); margin-bottom: 8px;" data-i18n="itb.mle.title">
+              Why This Matters for Machine Learning &amp; Applied AI Engineering
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 12px;" data-i18n="itb.mle.p1">
+              In real-world enterprise environments, machine learning systems do not operate in a vacuum. A model is only as effective as the software infrastructure that feeds it data, enforces concurrency, and integrates its predictions into production workflows.
+            </p>
+            <p style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6;" data-i18n="itb.mle.p2">
+              Developing and maintaining the ITB healthcare platform gave me hands-on mastery over transactional consistency across 47 relational tables, high-throughput slot matching algorithms, and enterprise API bridging (BPJS &amp; Azure AD). This provides the exact foundation required of a <strong>T-Shaped Machine Learning Engineer</strong>: the rare ability to build sophisticated predictive systems while possessing the software engineering rigor to deploy and scale them reliably for tens of thousands of real users.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Links -->
+      <div class="project-links" style="margin-top: var(--space-2xl); display: flex; justify-content: space-between; align-items: center;">
+        <a href="/#projects" class="btn btn--secondary">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span data-i18n="nav.back_projects">Back to Selected Projects</span>
+        </a>
+        <a href="/projects/bbca-stock.html" class="btn btn--primary">
+          <span data-i18n="detail.next_project">Next Project: BBCA Stock &amp; Sentiment Analysis</span>
+          <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal for Crisp Full-Screen Viewing -->
+  <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <div class="image-modal__content">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="imageModalTitle">Screenshot Preview</span>
+        <button class="image-modal__close" id="imageModalClose" aria-label="Close modal">
+          <i data-lucide="x" style="width:18px;height:18px;"></i>
+        </button>
+      </div>
+      <div class="image-modal__body">
+        <img id="imageModalImg" src="" alt="High-Resolution Preview" class="image-modal__img" />
+      </div>
+      <div class="image-modal__footer" id="imageModalDesc"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Muhamad Ilham</p>
+  </footer>
+
+</body>
+</html>

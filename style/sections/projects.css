@@ -207,11 +207,17 @@
   background: #FFFFFF;
 }
 
-/* --- 2-column grid for secondary cards --- */
+/* --- Grid for secondary cards --- */
 .projects__secondary {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .projects__secondary {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* --- Responsive --- */

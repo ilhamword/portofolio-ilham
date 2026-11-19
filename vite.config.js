@@ -32,6 +32,7 @@ export default defineConfig({
         competencyPln: resolve(__dirname, 'projects/competency-pln.html'),
         umpropInti: resolve(__dirname, 'projects/umprop-inti.html'),
         ekycFraudDetection: resolve(__dirname, 'projects/ekyc-fraud-detection.html'),
+        itbHealthcare: resolve(__dirname, 'projects/itb-healthcare.html'),
       },
     },
   },

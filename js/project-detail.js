@@ -439,6 +439,82 @@ export function initProjectDetailTabs() {
     });
   }
 
+  // 13. ITB Healthcare Hero Tab Switcher
+  const itbHeroTabs = document.querySelectorAll('#itbHeroTabs .horizon-tab');
+  const itbHeroImg = document.getElementById('itbHeroImg');
+  const itbHeroCaption = document.getElementById('itbHeroCaption');
+  const itbHeroBadge = document.getElementById('itbHeroBadge');
+
+  if (itbHeroTabs.length > 0 && itbHeroImg) {
+    itbHeroTabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        itbHeroTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
+        tab.classList.add('horizon-tab--active');
+
+        const newSrc = tab.getAttribute('data-src');
+        const badge = tab.getAttribute('data-badge') || 'Live Preview';
+        const captionKey = tab.getAttribute('data-caption-key') || 'itb.hero.caption_booking';
+        const currentLang = getCurrentLang();
+        const dict = translations[currentLang] || translations.en;
+
+        itbHeroImg.style.opacity = '0.3';
+        setTimeout(() => {
+          itbHeroImg.src = newSrc;
+          itbHeroImg.style.opacity = '1';
+        }, 120);
+
+        if (itbHeroBadge) itbHeroBadge.textContent = badge;
+        if (itbHeroCaption) {
+          itbHeroCaption.setAttribute('data-i18n-html', captionKey);
+          itbHeroCaption.innerHTML = dict[captionKey] || '';
+        }
+      });
+    });
+  }
+
+  // 14. ITB Healthcare Pipeline Showcase Tab Switcher
+  const itbPipeTabs = document.querySelectorAll('#itbPipeTabs .horizon-tab');
+  const itbPipeImg = document.getElementById('itbPipeImg');
+  const itbPipeCaption = document.getElementById('itbPipeCaption');
+  const itbPipeBadge = document.getElementById('itbPipeBadge');
+  const itbPipeTags = document.getElementById('itbPipeTags');
+
+  if (itbPipeTabs.length > 0 && itbPipeImg) {
+    itbPipeTabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        itbPipeTabs.forEach((t) => t.classList.remove('horizon-tab--active'));
+        tab.classList.add('horizon-tab--active');
+
+        const newSrc = tab.getAttribute('data-src');
+        const badge = tab.getAttribute('data-badge') || 'Poli & Kalender';
+        const captionKey = tab.getAttribute('data-caption-key') || 'itb.pipe.cap_layanan';
+        const tags = tab.getAttribute('data-tags') || '';
+        const currentLang = getCurrentLang();
+        const dict = translations[currentLang] || translations.en;
+
+        itbPipeImg.style.opacity = '0.3';
+        setTimeout(() => {
+          itbPipeImg.src = newSrc;
+          itbPipeImg.style.opacity = '1';
+        }, 120);
+
+        if (itbPipeBadge) itbPipeBadge.textContent = badge;
+        if (itbPipeCaption) {
+          itbPipeCaption.setAttribute('data-i18n-html', captionKey);
+          itbPipeCaption.innerHTML = dict[captionKey] || '';
+        }
+        if (itbPipeTags && tags) {
+          const tagArray = tags.split(',');
+          itbPipeTags.innerHTML = tagArray
+            .map((t, idx) => `<span class="tag ${idx === 0 ? 'tag--accent' : ''}" style="font-size: 0.68rem; padding: 2px 8px;">${t.trim()}</span>`)
+            .join('');
+        }
+      });
+    });
+  }
+
   // 12. Initialize Image Lightbox for project screenshots
   initImageLightbox();
 }
